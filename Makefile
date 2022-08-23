@@ -1,5 +1,8 @@
-report: \
-	slides/presentation.pfd
+reports: \
+	reports/probability_random_processes_and_inference.pdf
+
+presentation: \
+	slides/presentation.pdf
 
 .PHONY: \
 	all \
@@ -27,8 +30,11 @@ define lint
         ${1}
 endef
 
-slides/presentation.pfd: slides/presentation.pfd
+slides/presentation.pdf: slides/presentation.tex
 	$(renderPresentation)
+
+reports/probability_random_processes_and_inference.pdf: reports/probability_random_processes_and_inference.tex
+	$(renderLatex)
 
 figures:
 	mkdir --parents reports/tables
