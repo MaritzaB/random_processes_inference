@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[a4paper,top=1cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}  
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+%\usepackage{booktabs}
+%\usepackage{caption}
+%\usepackage{color}
+%\usepackage{float}
+%\usepackage{hyperref}
+
+\begin{document}
+\title{Probabilidad, procesos aleatorios e inferencia}
+\author{Ana Maritza Bello Yañez}
+\maketitle
+
+\tableofcontents
+
+\section{Probabilidad y conteo}
+
+\subsection{Definición clásica \cite{faber2012statistics}}
+
+La definición clásica de la probabilidad de un evento $A$, puede ser formulada
+de la siguiente manera:
+
+\begin{equation}
+    P(A)= \frac{n_A}{n_(total)}
+\end{equation}
+
+Donde $n_A$ es el número de formas igualmente probables por las cuales un
+experimento puede conducir a A; $n_(total)$ número total de formas igualmente
+probables en el experimento.
+
+- En la definición clásica el experimento no necesariamente se lleva a cabo ya que
+la respuesta es conocida de antemano.
+
+- La teoría clásica no da solución a menos de que todas las formas igualmente
+posibles puedan ser derivadas analíticamente.
+
+\section{Experimentos deterministas vs aleatorios}
+
+\subsection{Definicion: Observación}
+
+Cualquier registro de información, ya sea numérico o categórico. Por
+consiguiente, los números 2, 0, 1 y 2, que representan el número de accidentes
+que ocurrieron cada mes, de enero a abril, durante el año pasado en la
+intersección de Driftwood Lane y Royal Oak Drive, constitu- yen un conjunto de
+observaciones. Lo mismo ocurre con los datos categóricos N, D, N, N y D, que
+representan los artículos defectuosos o no defectuosos cuando se inspeccionan
+cinco artículos y se registran como observaciones \cite{walpole2012probabilidad}.
+
+\subsection{Definicion: Experimento}
+
+Cualquier proceso que genere un conjunto de datos. Un ejemplo simple de
+experimento estadístico es el lanzamiento de una moneda al aire. En tal
+experimento sólo hay dos resultados posibles: cara o cruz
+\cite{walpole2012probabilidad}.
+
+\subsection{Experimento determinista}
+Un experimento determinista es aquel que produce el mismo resultado cuando se le
+repite bajo las mismas condiciones.
+
+\subsection{Experimento aleatorio}
+Un experimento aleatorio es aquel que, cuando se le repite bajo las mismas
+condiciones, el resultado que se observa no siempre es el mismo y tampoco es
+predecible.
+
+\pagebreak
+\bibliography{../references/references.bib} 
+\bibliographystyle{apalike}
+
+\end{document}
