@@ -1,4 +1,5 @@
 reports: \
+	clean \
 	reports/probability_random_processes_and_inference.pdf
 
 presentation: \
