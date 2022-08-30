@@ -1,11 +1,7 @@
 \documentclass{article}
-\usepackage[a4paper,top=1cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}  
 \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
-%\usepackage{booktabs}
-%\usepackage{caption}
-%\usepackage{color}
-%\usepackage{float}
-%\usepackage{hyperref}
+\usepackage{tikz}
+
 
 \begin{document}
 \title{Probabilidad, procesos aleatorios e inferencia}
@@ -16,9 +12,10 @@
 
 \section{Probabilidad y conteo}
 
-\subsection{Definición clásica \cite{faber2012statistics}}
-
-La definición clásica de la probabilidad de un evento $A$, puede ser formulada
+\subsection{Definición clásica}
+\noindent
+% Definir comando para llamar noindent
+La definición clásica de la probabilidad \cite{faber2012statistics} de un evento $A$, puede ser formulada
 de la siguiente manera:
 
 \begin{equation}
@@ -37,17 +34,17 @@ posibles puedan ser derivadas analíticamente.
 
 \section{Experimentos deterministas vs aleatorios}
 
-\subsection{Definicion: Observación}
+\subsection{Definición: Observación}
 
 Cualquier registro de información, ya sea numérico o categórico. Por
 consiguiente, los números 2, 0, 1 y 2, que representan el número de accidentes
 que ocurrieron cada mes, de enero a abril, durante el año pasado en la
-intersección de Driftwood Lane y Royal Oak Drive, constitu- yen un conjunto de
+intersección de Driftwood Lane y Royal Oak Drive, constituyen un conjunto de
 observaciones. Lo mismo ocurre con los datos categóricos N, D, N, N y D, que
 representan los artículos defectuosos o no defectuosos cuando se inspeccionan
 cinco artículos y se registran como observaciones \cite{walpole2012probabilidad}.
 
-\subsection{Definicion: Experimento}
+\subsection{Definición: Experimento}
 
 Cualquier proceso que genere un conjunto de datos. Un ejemplo simple de
 experimento estadístico es el lanzamiento de una moneda al aire. En tal
@@ -62,6 +59,30 @@ repite bajo las mismas condiciones.
 Un experimento aleatorio es aquel que, cuando se le repite bajo las mismas
 condiciones, el resultado que se observa no siempre es el mismo y tampoco es
 predecible.
+
+%Fig.(\reference{gatito})
+%Tab.()
+%Ec.()
+
+\usetikzlibrary{lindenmayersystems}
+\def\trianglewidth{6cm}
+\pgfdeclarelindenmayersystem{Sierpinski triangle}{
+    \symbol{X}{\pgflsystemdrawforward}
+    \symbol{Y}{\pgflsystemdrawforward}
+    \rule{X -> X-Y+X+Y-X}
+    \rule{Y -> YY}
+}
+\foreach \level in {5}{
+    \tikzset{
+        l-system={step=\trianglewidth/(2^\level), order=\level, angle=-120}
+    }
+
+    \begin{tikzpicture}
+        \fill [black] (0,0) -- ++(0:\trianglewidth) -- ++(120:\trianglewidth) -- cycle;
+        \draw [draw=none] (0,0) l-system
+        [l-system={Sierpinski triangle, axiom=X},fill=gray];
+    \end{tikzpicture}
+}
 
 \pagebreak
 \bibliography{../references/references.bib} 
