@@ -7,14 +7,15 @@
 \title{Probabilidad, procesos aleatorios e inferencia}
 \author{Ana Maritza Bello Yañez}
 \maketitle
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
 
 \tableofcontents
 
 \section{Probabilidad y conteo}
 
 \subsection{Definición clásica}
-\noindent
-% Definir comando para llamar noindent
+
 La definición clásica de la probabilidad \cite{faber2012statistics} de un evento $A$, puede ser formulada
 de la siguiente manera:
 
@@ -63,26 +64,199 @@ predecible.
 %Fig.(\reference{gatito})
 %Tab.()
 %Ec.()
+\section{Triángulo de Sierpinski}
 
-\usetikzlibrary{lindenmayersystems}
-\def\trianglewidth{6cm}
-\pgfdeclarelindenmayersystem{Sierpinski triangle}{
-    \symbol{X}{\pgflsystemdrawforward}
-    \symbol{Y}{\pgflsystemdrawforward}
-    \rule{X -> X-Y+X+Y-X}
-    \rule{Y -> YY}
-}
-\foreach \level in {5}{
-    \tikzset{
-        l-system={step=\trianglewidth/(2^\level), order=\level, angle=-120}
+El matemático polaco Waclav Sierpinski (1882-1969), construyó este fractal en
+1919 del modo siguiente: tomó un triángulo equilátero, unió los puntos medios de
+los lados y formó cuatro triángulos interiores: tres triángulos equiláteros
+sombreados y un hueco que es otro triángulo equilátero. Repitió el proceso en
+cada uno de los triángulos sombreados, y siguió hasta el infinito el proceso en
+los tres triángulos restantes como el primero.
+\begin{figure}[htp]
+    \centering
+    \usetikzlibrary{lindenmayersystems}
+    \def\trianglewidth{3cm}
+    \pgfdeclarelindenmayersystem{Sierpinski triangle}{
+        \symbol{X}{\pgflsystemdrawforward}
+        \symbol{Y}{\pgflsystemdrawforward}
+        \rule{X -> X-Y+X+Y-X}
+        \rule{Y -> YY}
     }
+    \foreach \level in {1,3,5}{
+        \tikzset{
+            l-system={step=\trianglewidth/(2^\level), order=\level, angle=-120}
+        }
 
-    \begin{tikzpicture}
-        \fill [black] (0,0) -- ++(0:\trianglewidth) -- ++(120:\trianglewidth) -- cycle;
-        \draw [draw=none] (0,0) l-system
-        [l-system={Sierpinski triangle, axiom=X},fill=gray];
-    \end{tikzpicture}
-}
+        \begin{tikzpicture}
+            \fill [black] (0,0) -- ++(0:\trianglewidth) -- ++(120:\trianglewidth) -- cycle;
+            \draw [draw=none] (0,0) l-system
+            [l-system={Sierpinski triangle, axiom=X},fill=white];
+        \end{tikzpicture}
+    }
+    \caption{Tirángulo de Sierpinski para los niveles 1,3 y 5.}
+    \label{fig:sierpinski}
+\end{figure}
+
+\section{La belleza y utilidad de las matemáticas}
+
+Las matemáticas han impregnado todos los campos de la actividad científica y
+desempeñan un papel inestimable en la biología, la física, la química, la
+economía, la sociología y la ingeniería. Las matemáticas se pueden utilizar para
+ayudar a explicar los colores de una puesta de sol o la arquitectura de nuestro
+cerebro. Las matemáticas nos ayudan a construir aviones supersónicos y montañas
+rusas, simular el flujo de los recursos naturales de la Tierra, explorar
+realidades cuánticas subatómicas y obtener imágenes de galaxias lejanas.
+
+Las matemáticas han cambiado la forma en que vemos el cosmos.
+
+La utilidad de las matemáticas nos permite construir naves espaciales e
+investigar la geometría de nuestro universo. Los números pueden ser nuestro
+primer medio de comunicación con razas alienígenas inteligentes. Algunos físicos
+incluso han especulado que una comprensión de las dimensiones superiores y de la
+topología, el estudio de las formas y sus interrelaciones, podría algún día
+permitirnos escapar de nuestro universo, cuando termine en un gran calor o frío,
+y entonces podríamos llamar a todo el espacio. -tiempo nuestro hogar.
+
+El descubrimiento simultáneo ha ocurrido a menudo en la historia de las
+matemáticas.
+
+En 1858 el matemático alemán August Möbius (1790–1868) descubrió de forma simultánea e independiente
+la cinta de Möbius (un maravilloso objeto retorcido de un solo lado) junto con
+un erudito contemporáneo, el matemático alemán Johann Benedict Listado
+(1808–1882). Este descubrimiento simultáneo de la banda de Möbius por parte de
+Möbius y Listing, al igual que el del cálculo del erudito inglés Isaac Newton
+(1643-1727) y el matemático alemán Gottfried Wilhelm Leibniz (1646-1716), nos
+hacen preguntarnos por qué se hicieron tantos descubrimientos científicos en al
+mismo tiempo por personas que trabajan de forma independiente. Para dar otro
+ejemplo, los naturalistas británicos Charles Darwin (1809–1882) y Alfred Wallace
+(1823–1913) desarrollaron la teoría de la evolución de manera independiente y
+simultánea. De manera similar, el matemático húngaro János Bolyai (1802–1860) y
+el matemático ruso Nikolai Lobachevsky (1793–1856) parecían haber desarrollado
+la geometría hiperbólica de forma independiente y al mismo tiempo. \\
+
+Lo más probable es que tales descubrimientos simultáneos hayan ocurrido porque
+el momento era propicio para tales descubrimientos, dado el conocimiento
+acumulado por la humanidad en el momento en que se realizaron los
+descubrimientos. A veces, dos científicos se sienten estimulados al leer la
+misma investigación preliminar de uno de sus contemporáneos. Por otro lado, los
+místicos han sugerido que existe un significado más profundo para tales
+coincidencias. El biólogo austriaco Paul Kammerer (1880-1926) escribió:
+\textit{“Llegamos así a la imagen de un mosaico mundial o caleidoscopio cósmico que, a
+pesar de las constantes reorganizaciones y reorganizaciones, también se ocupa de
+unir lo similar”}. Comparó los eventos en nuestro mundo con la parte superior de
+las olas del océano que parecen aisladas y sin relación. De acuerdo con su
+controvertida teoría, notamos la parte superior de las olas, pero debajo de la
+superficie puede existir algún tipo de mecanismo sincrónico que misteriosamente
+conecta eventos en nuestro mundo y hace que se agrupen.
+
+Georges Ifrah en The Universal History of Numbers analiza la simultaneidad al
+escribir sobre las matemáticas mayas:
+
+\textit{Por lo tanto, vemos una vez más cómo las personas que han estado muy separadas
+en el tiempo o en el espacio han... llegado a resultados muy similares, si no
+idénticos... En algunos casos, la explicación de esto se puede encontrar en los
+contactos e influencias entre diferentes grupos de personas... La verdadera
+explicación está en lo que antes hemos llamado la unidad profunda de la cultura:
+la inteligencia del Homo sapiens es universal y su potencial es notablemente
+uniforme en todas partes del mundo.}
+
+Los pueblos antiguos, como los griegos, tenían una profunda fascinación por los
+números. ¿Podría ser que en tiempos difíciles los números fueran lo único
+constante en un mundo en constante cambio? Para los pitagóricos, una antigua
+secta griega, los números eran tangibles, inmutables, cómodos, eternos, más
+confiables que los amigos, menos amenazantes que Apolo y Zeus.
+
+El brillante matemático Paul Erdös (1913–1996) estaba fascinado por la teoría de
+los números, el estudio de los números enteros, y no tuvo problemas para
+plantear problemas, usando números enteros, que a menudo eran simples de
+plantear pero notoriamente difíciles de resolver. Erdös creía que si uno puede
+plantear un problema de matemáticas que no ha sido resuelto durante más de un
+siglo, entonces es un problema de teoría de números.
+
+Muchos aspectos del universo se pueden expresar con números enteros. Los
+patrones numéricos describen la disposición de los pétalos en una margarita, la
+reproducción de los conejos, la órbita de los planetas, las armonías de la
+música y las relaciones entre los elementos de la tabla periódica. Leopold
+Kronecker (1823–1891), un algebrista y teórico de los números alemán, dijo una
+vez: \textit{“Los números enteros provienen de Dios y todo lo demás fue creado por el
+hombre”}. Su implicación fue que la fuente principal de todas las matemáticas son
+los números enteros.
+
+Desde la época de Pitágoras, el papel de las proporciones de números enteros en
+las escalas musicales ha sido ampliamente apreciado. Más importante aún, los
+números enteros han sido cruciales en la evolución de la comprensión científica
+de la humanidad. Por ejemplo, el químico francés Antoine Lavoisier (1743–1794)
+descubrió que los compuestos químicos se componen de proporciones fijas de
+elementos que corresponden a las proporciones de números enteros pequeños. Esta
+fue una evidencia muy fuerte de la existencia de los átomos. En 1925, ciertas
+relaciones enteras entre las longitudes de onda de las líneas espectrales
+emitidas por los átomos excitados dieron las primeras pistas sobre la estructura
+de los átomos. Las proporciones casi enteras de los pesos atómicos fueron
+evidencia de que el núcleo atómico está formado por un número entero de
+nucleones similares (protones y neutrones).
+
+Las desviaciones de las proporciones de enteros condujeron al descubrimiento de
+isótopos elementales (variantes con un comportamiento químico casi idéntico pero
+con diferente número de neutrones). Pequeñas divergencias en las masas atómicas
+de los isótopos puros de los números enteros exactos confirmaron la famosa
+ecuación de Einstein E = mc 2 y también la posibilidad de bombas atómicas. Los
+números enteros están en todas partes en la física atómica. Las relaciones
+enteras son hebras fundamentales en el entramado matemático, o como dijo el
+matemático alemán Carl Friedrich Gauss (1777-1855): "Las matemáticas son la
+reina de las ciencias, y la teoría de números es la reina de las matemáticas".
+
+Nuestra descripción matemática del universo crece para siempre, pero nuestros
+cerebros y habilidades lingüísticas permanecen arraigados. Se están descubriendo
+o creando nuevos tipos de matemáticas todo el tiempo, pero necesitamos nuevas
+formas de pensar y comprender. Por ejemplo, en los últimos años, se han ofrecido
+pruebas matemáticas para problemas famosos de la historia de las matemáticas,
+pero los argumentos han sido demasiado largos y complicados para que los
+expertos estén seguros de que son correctos. El matemático Thomas Hales tuvo que
+esperar cinco años antes de que los revisores expertos de su artículo de
+geometría, enviado a la revista Annals of Mathematics, finalmente decidieran que
+no podían encontrar errores y que la revista debería publicar la prueba de
+Hales, pero solo con el descargo de responsabilidad que decía que no eran
+errores. ¡seguro que tenía razón! Además, matemáticos como Keith Devlin han
+admitido en el New York Times que “la historia de las matemáticas ha llegado a
+una etapa de tal abstracción que muchos de sus problemas fronterizos ni siquiera
+pueden ser entendidos por los expertos”. Si los expertos tienen tantos
+problemas, uno puede ver fácilmente el desafío de transmitir este tipo de
+información a una audiencia general. Hacemos lo mejor que podemos. Los
+matemáticos pueden construir teorías y realizar cálculos, pero es posible que no
+sean lo suficientemente capaces de comprender, explicar o comunicar
+completamente estas ideas.
+
+Una analogía física es relevante aquí. Cuando Werner Heisenberg se preocupó de
+que los seres humanos nunca llegaran a entender verdaderamente los átomos, Niels
+Bohr fue un poco más optimista. Él respondió a principios de la década de 1920:
+\textit{"Creo que aún podemos hacerlo, pero en el proceso es posible que tengamos que
+aprender qué significa realmente la palabra comprensión"}. Hoy, usamos
+computadoras para ayudarnos a razonar más allá de las limitaciones de nuestra
+propia intuición. De hecho, los experimentos con computadoras están llevando a
+los matemáticos a descubrimientos e ideas nunca antes soñados antes de la
+ubicuidad de estos dispositivos. Las computadoras y los gráficos por computadora
+permiten a los matemáticos descubrir resultados mucho antes de que puedan
+probarlos formalmente y abren campos matemáticos completamente nuevos. Incluso
+las herramientas informáticas simples, como las hojas de cálculo, brindan a los
+matemáticos modernos el poder que Gauss, Leonhard Euler y Newton habrían
+deseado. Como solo un ejemplo, a fines de la década de 1990, los programas de
+computadora diseñados por David Bailey y Helaman Ferguson ayudaron a producir
+nuevas fórmulas que relacionaban pi con log 5 y otras dos constantes. Como
+informa Erica Klarreich en Science News, una vez que la computadora produjo la
+fórmula, probar que era correcta fue extremadamente fácil. A menudo, el simple
+hecho de saber la respuesta es el mayor obstáculo que se debe superar al
+formular una prueba.
+
+En ocasiones, se han utilizado teorías matemáticas para predecir fenómenos que
+no se confirmaron hasta años después. Por ejemplo, las ecuaciones de Maxwell,
+llamadas así por el físico James Clerk Maxwell, predijeron las ondas de radio.
+Las ecuaciones de campo de Einstein sugirieron que la gravedad doblaría la luz y
+que el universo se está expandiendo. El físico Paul Dirac señaló una vez que las
+matemáticas abstractas que estudiamos ahora nos dan una idea de la física en el
+futuro. De hecho, sus ecuaciones predijeron la existencia de antimateria, que
+posteriormente fue descubierta. De manera similar, el matemático Nikolai
+Lobachevsky dijo que “no hay rama de las matemáticas, por abstracta que sea, que
+algún día no pueda aplicarse a los fenómenos del mundo real”.
 
 \pagebreak
 \bibliography{../references/references.bib} 
