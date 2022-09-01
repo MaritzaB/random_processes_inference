@@ -52,6 +52,13 @@ clean:
 	rm --force reports/*.pdf
 	rm --force reports/*.toc
 	rm --force reports/*.pytxcode
+	rm --force slides/*.aux
+	rm --force slides/*.log
+	rm --force slides/*.nav
+	rm --force slides/*.out
+	rm --force slides/*.pdf
+	rm --force slides/*.snm
+	rm --force slides/*.toc
 	rm --recursive --force __pycache__
 	rm --recursive --force .pytest_cache
 	rm --recursive --force */__pycache__
