@@ -15,11 +15,18 @@ RUN apt-get update && \
     gettext-base \
     git \
     make \
+    pandoc \
     python3 \
     python3-dev \
     python3-pip \
     texlive-full
+    
 
-RUN pip install --upgrade pytest
-RUN pip install black
-RUN pip install -U matplotlib pandas numpy
+RUN pip install --upgrade \
+    black -U \
+    ipykernel \
+    matplotlib \
+    nbconvert \
+    numpy \
+    pandas \
+    pytest
