@@ -1,6 +1,8 @@
 import datetime
 
-birthdate = input("Introduce tu fecha de nacimiento en formato dd-mm-yyyy: ")
+birthdate = input(
+    "Introduce la fecha en formato dd-mm-yyyy: "
+)
 date = datetime.datetime.strptime(birthdate, "%d-%m-%Y")
 
 day = int(date.day)
@@ -11,7 +13,14 @@ a = (14 - monthh) // 12
 y = year - a
 m = monthh + 12 * a - 2
 
-d = (day + y + (y // 4) - (y // 100) + (y // 400) + (31 * m) // 12) % 7
+d = (
+    day
+    + y
+    + (y // 4)
+    - (y // 100)
+    + (y // 400)
+    + (31 * m) // 12
+) % 7
 
 weekday = {
     0: "domingo",
