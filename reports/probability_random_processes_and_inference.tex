@@ -117,19 +117,24 @@ indica la suma sobre todos los posibles valores del mismo.
 
 \subsection{Producto punto de dos vectores}
 \begin{equation}
-    \abs{\vec(A)}
+    \overrightarrow{A} \cdot \overrightarrow{B}= \overrightarrow{\abs{A}} \overrightarrow{\abs{B}} \cos \theta
 \end{equation}
 
+\subsection{Producto escalar de dos vectores}
+
+\begin{equation}
+    \overrightarrow{A} \times \overrightarrow{B}= \overrightarrow{\abs{A}} \overrightarrow{\abs{B}} \sin \theta
+\end{equation}
 
 \subsection{Tensor Levi-Civita}
 Está definido por:
 
 \begin{equation}
     \epsilon_{ijk}=
-    \left\lbrace\begin{array}{llllr} 
-        +1 & ijk, & kji, & jki & \text{Permutación cíclica}\\ 
-        -1 & ikj, & kji, & jik & \text{Permutación anticíclica}\\
-        0  & iii, & jjj, & kkk & \text{si se repiten}
+    \left\lbrace\begin{array}{clllr} 
+        +1 & ijk, & kji, & jki & \text{Permutación cíclica o par}\\ 
+        -1 & ikj, & kji, & jik & \text{Permutación anticíclica o impar}\\
+        0  & iii, & jjj, & kkk & \text{Si se repiten}
     \end{array}\right.
 \end{equation}
 
