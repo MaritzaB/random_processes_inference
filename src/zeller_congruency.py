@@ -29,9 +29,9 @@ weekday = {
     3: "miercoles",
     4: "jueves",
     5: "viernes",
-    6: "s'abado",
+    6: "sabado",
 }
 
 value = weekday[d]
 
-print(f"El d'ia {date} cae en ", value)
+print(f"El dia {date} cae en ", value)
