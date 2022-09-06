@@ -66,7 +66,7 @@ clean:
 	rm --recursive --force reports/tables/
 
 format:
-	black --line-length 100 src/*.py
+	black --line-length 60 src/*.py
 
 linter:
 	$(call lint, src)
