@@ -2,7 +2,16 @@
 \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
 \usepackage{tikz}
 \usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{listings} 
+\usepackage{color} 
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amssymb}
 
+\providecommand{\abs}[1]{\lvert#1\rvert}
+
+\input{specifications.tex}
 
 \begin{document}
 \title{Probabilidad, procesos aleatorios e inferencia}
@@ -77,6 +86,55 @@ La fórmula matemática del binomio de Newton es la siguiente:
 %Fig.(\reference{gatito})
 %Tab.()
 %Ec.()
+
+
+\section{Convenio de suma de Einstein}
+
+Se denomina notación de Einstein o notación indexada a la convención utilizada
+para abreviar la escritura de las sumatorias, donde se suprime el término de la
+sumatoria $(\sum)$. Este convenio fue introducido por Albert Einstein en 1916.
+
+Dada una expresión lineal en 
+$\mathbb{R^n}$ en la que se escriban todos sus términos en forma explícita:
+
+\begin{equation}
+    u = u_1 + u_2 + ... = u_n
+\end{equation}
+
+Se puede escribir de la forma:
+
+\begin{equation}
+    u = \sum_{i=1}^{n} u_ix_i
+\end{equation}
+
+La notación de Einstein obtiene una expresión aún más condensada eliminando el
+signo de la sumatoria y entendiendo que la expresión resultante en un índice
+indica la suma sobre todos los posibles valores del mismo.
+
+\begin{equation}
+    u = u_ix_i
+\end{equation}
+
+\subsection{Producto punto de dos vectores}
+\begin{equation}
+    \abs{\vec(A)}
+\end{equation}
+
+
+\subsection{Tensor Levi-Civita}
+Está definido por:
+
+\begin{equation}
+    \epsilon_{ijk}=
+    \left\lbrace\begin{array}{llllr} 
+        +1 & ijk, & kji, & jki & \text{Permutación cíclica}\\ 
+        -1 & ikj, & kji, & jik & \text{Permutación anticíclica}\\
+        0  & iii, & jjj, & kkk & \text{si se repiten}
+    \end{array}\right.
+\end{equation}
+
+
+
 \section{Tri\'angulo de Sierpinski}
 
 El matem\'atico polaco Waclav Sierpinski (1882-1969), construy\'o este fractal en
@@ -85,7 +143,9 @@ los lados y form\'o cuatro tri\'angulos interiores: tres tri\'angulos equil\'ate
 sombreados y un hueco que es otro tri\'angulo equil\'atero. Repiti\'o el proceso en
 cada uno de los tri\'angulos sombreados, y sigui\'o hasta el infinito el proceso en
 los tres tri\'angulos restantes como el primero.
-\begin{figure}[htp]
+
+
+\begin{figure}[h]
     \centering
     \usetikzlibrary{lindenmayersystems}
     \def\trianglewidth{3cm}
@@ -135,19 +195,20 @@ y entonces podr\'iamos llamar a todo el espacio. -tiempo nuestro hogar.
 El descubrimiento simult\'aneo ha ocurrido a menudo en la historia de las
 matem\'aticas.
 
-En 1858 el matem\'atico alem\'an August Möbius (1790–1868) descubri\'o de forma simult\'anea e independiente
-la cinta de Möbius (un maravilloso objeto retorcido de un solo lado) junto con
-un erudito contempor\'aneo, el matem\'atico alem\'an Johann Benedict Listado
-(1808–1882). Este descubrimiento simult\'aneo de la banda de Möbius por parte de
-Möbius y Listing, al igual que el del c\'alculo del erudito ingl\'es Isaac Newton
-(1643-1727) y el matem\'atico alem\'an Gottfried Wilhelm Leibniz (1646-1716), nos
-hacen preguntarnos por qu\'e se hicieron tantos descubrimientos cient\'ificos en al
-mismo tiempo por personas que trabajan de forma independiente. Para dar otro
-ejemplo, los naturalistas brit\'anicos Charles Darwin (1809–1882) y Alfred Wallace
-(1823–1913) desarrollaron la teor\'ia de la evoluci\'on de manera independiente y
-simult\'anea. De manera similar, el matem\'atico h\'ungaro J\'anos Bolyai (1802–1860) y
-el matem\'atico ruso Nikolai Lobachevsky (1793–1856) parec\'ian haber desarrollado
-la geometr\'ia hiperb\'olica de forma independiente y al mismo tiempo. \\
+En 1858 el matem\'atico alem\'an August Möbius (1790–1868) descubri\'o de forma
+simult\'anea e independiente la cinta de Möbius (un maravilloso objeto retorcido
+de un solo lado) junto con un erudito contempor\'aneo, el matem\'atico alem\'an
+Johann Benedict Listado (1808–1882). Este descubrimiento simult\'aneo de la
+banda de Möbius por parte de Möbius y Listing, al igual que el del c\'alculo del
+erudito ingl\'es Isaac Newton (1643-1727) y el matem\'atico alem\'an Gottfried
+Wilhelm Leibniz (1646-1716), nos hacen preguntarnos por qu\'e se hicieron tantos
+descubrimientos cient\'ificos en al mismo tiempo por personas que trabajan de
+forma independiente. Para dar otro ejemplo, los naturalistas brit\'anicos
+Charles Darwin (1809–1882) y Alfred Wallace (1823–1913) desarrollaron la
+teor\'ia de la evoluci\'on de manera independiente y simult\'anea. De manera
+similar, el matem\'atico h\'ungaro J\'anos Bolyai (1802–1860) y el matem\'atico
+ruso Nikolai Lobachevsky (1793–1856) parec\'ian haber desarrollado la
+geometr\'ia hiperb\'olica de forma independiente y al mismo tiempo.
 
 Lo m\'as probable es que tales descubrimientos simult\'aneos hayan ocurrido porque
 el momento era propicio para tales descubrimientos, dado el conocimiento
@@ -240,11 +301,20 @@ alg\'un d\'ia no pueda aplicarse a los fen\'omenos del mundo real”.
 %Buscar 10 problemas de las matem\'aticas
 % Problemas en los que usamos el residuo de una divisi\'on
 % Investigar que es congruencia zeller
+% Buscar propiedades del triángulo de Pascal
+
+\subsection{Congruencia de Zeller}
+
+%\begin{lstlisting}
+%    \lstinputlisting[language=Python]{../src/zeller_congruency.py}
+%\end{lstlisting}
+
+
 
 
 
 \pagebreak
 \bibliography{../references/references.bib} 
-\bibliographystyle{apalike}
+\bibliographystyle{unsrt}
 
 \end{document}
