@@ -12,7 +12,7 @@
 
 \providecommand{\abs}[1]{\lvert#1\rvert}
 
-\input{specifications.tex}
+\input{specifications}
 
 \begin{document}
 \title{Probabilidad, procesos aleatorios e inferencia}
@@ -27,8 +27,8 @@
 
 \subsection{Definici\'on cl\'asica}
 
-La definici\'on cl\'asica de la probabilidad \cite{faber2012statistics} de un evento $A$, puede ser formulada
-de la siguiente manera:
+La definici\'on cl\'asica de la probabilidad \cite{faber2012statistics} de un
+evento $A$, puede ser formulada de la siguiente manera:
 
 \begin{equation}
     P(A)= \frac{n_A}{n_(total)}
@@ -38,23 +38,24 @@ Donde $n_A$ es el n\'umero de formas igualmente probables por las cuales un
 experimento puede conducir a A; $n_(total)$ n\'umero total de formas igualmente
 probables en el experimento.
 
-- En la definici\'on cl\'asica el experimento no necesariamente se lleva a cabo ya que
-la respuesta es conocida de antemano.
+- En la definici\'on cl\'asica el experimento no necesariamente se lleva a cabo
+ya que la respuesta es conocida de antemano.
 
-- La teor\'ia cl\'asica no da soluci\'on a menos de que todas las formas igualmente
-posibles puedan ser derivadas anal\'iticamente.
+- La teor\'ia cl\'asica no da soluci\'on a menos de que todas las formas
+igualmente posibles puedan ser derivadas anal\'iticamente.
 
 \section{Experimentos deterministas vs aleatorios}
 
 \subsection{Definici\'on: Observaci\'on}
 
 Cualquier registro de informaci\'on, ya sea num\'erico o categ\'orico. Por
-consiguiente, los n\'umeros 2, 0, 1 y 2, que representan el n\'umero de accidentes
-que ocurrieron cada mes, de enero a abril, durante el a\~no pasado en la
-intersecci\'on de Driftwood Lane y Royal Oak Drive, constituyen un conjunto de
-observaciones. Lo mismo ocurre con los datos categ\'oricos N, D, N, N y D, que
-representan los art\'iculos defectuosos o no defectuosos cuando se inspeccionan
-cinco art\'iculos y se registran como observaciones \cite{walpole2012probabilidad}.
+consiguiente, los n\'umeros 2, 0, 1 y 2, que representan el n\'umero de
+accidentes que ocurrieron cada mes, de enero a abril, durante el a\~no pasado en
+la intersecci\'on de Driftwood Lane y Royal Oak Drive, constituyen un conjunto
+de observaciones. Lo mismo ocurre con los datos categ\'oricos N, D, N, N y D,
+que representan los art\'iculos defectuosos o no defectuosos cuando se
+inspeccionan cinco art\'iculos y se registran como observaciones
+\cite{walpole2012probabilidad}.
 
 \subsection{Definici\'on: Experimento}
 
@@ -84,19 +85,14 @@ La fórmula matemática del binomio de Newton es la siguiente:
 
 
 
-%Fig.(\reference{gatito})
-%Tab.()
-%Ec.()
-
-
 \section{Convenio de suma de Einstein}
 
 Se denomina notación de Einstein o notación indexada a la convención utilizada
 para abreviar la escritura de las sumatorias, donde se suprime el término de la
 sumatoria $(\sum)$. Este convenio fue introducido por Albert Einstein en 1916.
 
-Dada una expresión lineal en 
-$\mathbb{R^n}$ en la que se escriban todos sus términos en forma explícita:
+Dada una expresión lineal en $\mathbb{R^n}$ en la que se escriban todos sus
+términos en forma explícita:
 
 \begin{equation}
     u = u_1 + u_2 + ... = u_n
@@ -158,8 +154,7 @@ Está definido de la siguiente manera:
 \end{equation}
 
 Donde $\hat{r}$ es el vector unitario y ortogonal a los vectores $\bar{A}$ y
-$\bar{B}$, y $\theta$ el ángulo entre $\bar{A}$ y
-$\bar{B}$.
+$\bar{B}$, y $\theta$ el ángulo entre $\bar{A}$ y $\bar{B}$.
 
 Qué mediante determinantes tenemos:
 
@@ -199,35 +194,32 @@ Desarrollando:
 
 \section{Tri\'angulo de Sierpinski}
 
-El matem\'atico polaco Waclav Sierpinski (1882-1969), construy\'o este fractal en
-1919 del modo siguiente: tom\'o un tri\'angulo equil\'atero, uni\'o los puntos medios de
-los lados y form\'o cuatro tri\'angulos interiores: tres tri\'angulos equil\'ateros
-sombreados y un hueco que es otro tri\'angulo equil\'atero. Repiti\'o el proceso en
-cada uno de los tri\'angulos sombreados, y sigui\'o hasta el infinito el proceso en
-los tres tri\'angulos restantes como el primero.
+El matem\'atico polaco Waclav Sierpinski (1882-1969), construy\'o este fractal
+en 1919 del modo siguiente: tom\'o un tri\'angulo equil\'atero, uni\'o los
+puntos medios de los lados y form\'o cuatro tri\'angulos interiores: tres
+tri\'angulos equil\'ateros sombreados y un hueco que es otro tri\'angulo
+equil\'atero. Repiti\'o el proceso en cada uno de los tri\'angulos sombreados, y
+sigui\'o hasta el infinito el proceso en los tres tri\'angulos restantes como el
+primero.
 
 
 \begin{figure}[h]
     \centering
     \usetikzlibrary{lindenmayersystems}
-    \def\trianglewidth{3cm}
-    \pgfdeclarelindenmayersystem{Sierpinski triangle}{
+\def\trianglewidth{3cm} \pgfdeclarelindenmayersystem{Sierpinski triangle}{
         \symbol{X}{\pgflsystemdrawforward}
         \symbol{Y}{\pgflsystemdrawforward}
         \rule{X -> X-Y+X+Y-X}
         \rule{Y -> YY}
-    }
-    \foreach \level in {1,3,5}{
-        \tikzset{
-            l-system={step=\trianglewidth/(2^\level), order=\level, angle=-120}
-        }
+} \foreach \level in {1,3,5}{ \tikzset{
+l-system={step=\trianglewidth/(2^\level), order=\level, angle=-120} }
 
         \begin{tikzpicture}
-            \fill [black] (0,0) -- ++(0:\trianglewidth) -- ++(120:\trianglewidth) -- cycle;
-            \draw [draw=none] (0,0) l-system
-            [l-system={Sierpinski triangle, axiom=X},fill=white];
+\fill [black] (0,0) -- ++(0:\trianglewidth) -- ++(120:\trianglewidth) -- cycle;
+\draw [draw=none] (0,0) l-system [l-system={Sierpinski triangle,
+axiom=X},fill=white];
         \end{tikzpicture}
-    }
+}
     \caption{Tri\'angulo de Sierpinski para los niveles 1,3 y 5.}
     \label{fig:sierpinski}
 \end{figure}
@@ -237,139 +229,53 @@ Como se muestra en la Fig.(\ref{fig:sierpinski})
 \section{La belleza y utilidad de las matem\'aticas}
 
 Las matem\'aticas han impregnado todos los campos de la actividad cient\'ifica y
-desempe\~nan un papel inestimable en la biolog\'ia, la f\'isica, la qu\'imica, la
-econom\'ia, la sociolog\'ia y la ingenier\'ia. Las matem\'aticas se pueden utilizar para
-ayudar a explicar los colores de una puesta de sol o la arquitectura de nuestro
-cerebro. Las matem\'aticas nos ayudan a construir aviones supers\'onicos y monta\~nas
-rusas, simular el flujo de los recursos naturales de la Tierra, explorar
-realidades cu\'anticas subat\'omicas y obtener im\'agenes de galaxias lejanas.
+desempe\~nan un papel inestimable en la biolog\'ia, la f\'isica, la qu\'imica,
+la econom\'ia, la sociolog\'ia y la ingenier\'ia.
 
-Las matem\'aticas han cambiado la forma en que vemos el cosmos.
-
-La utilidad de las matem\'aticas nos permite construir naves espaciales e
-investigar la geometr\'ia de nuestro universo. Los n\'umeros pueden ser nuestro
-primer medio de comunicaci\'on con razas alien\'igenas inteligentes. Algunos f\'isicos
-incluso han especulado que una comprensi\'on de las dimensiones superiores y de la
-topolog\'ia, el estudio de las formas y sus interrelaciones, podr\'ia alg\'un d\'ia
-permitirnos escapar de nuestro universo, cuando termine en un gran calor o fr\'io,
-y entonces podr\'iamos llamar a todo el espacio. -tiempo nuestro hogar.
 
 El descubrimiento simult\'aneo ha ocurrido a menudo en la historia de las
 matem\'aticas.
 
-En 1858 el matem\'atico alem\'an August Möbius (1790–1868) descubri\'o de forma
-simult\'anea e independiente la cinta de Möbius (un maravilloso objeto retorcido
-de un solo lado) junto con un erudito contempor\'aneo, el matem\'atico alem\'an
-Johann Benedict Listado (1808–1882). Este descubrimiento simult\'aneo de la
-banda de Möbius por parte de Möbius y Listing, al igual que el del c\'alculo del
-erudito ingl\'es Isaac Newton (1643-1727) y el matem\'atico alem\'an Gottfried
-Wilhelm Leibniz (1646-1716), nos hacen preguntarnos por qu\'e se hicieron tantos
-descubrimientos cient\'ificos en al mismo tiempo por personas que trabajan de
-forma independiente. Para dar otro ejemplo, los naturalistas brit\'anicos
-Charles Darwin (1809–1882) y Alfred Wallace (1823–1913) desarrollaron la
-teor\'ia de la evoluci\'on de manera independiente y simult\'anea. De manera
-similar, el matem\'atico h\'ungaro J\'anos Bolyai (1802–1860) y el matem\'atico
-ruso Nikolai Lobachevsky (1793–1856) parec\'ian haber desarrollado la
-geometr\'ia hiperb\'olica de forma independiente y al mismo tiempo.
+Por ejemplo el del c\'alculo del erudito ingl\'es Isaac Newton (1643-1727) y el
+matem\'atico alem\'an Gottfried Wilhelm Leibniz (1646-1716). Esto nos hacen
+preguntarnos por qu\'e se hicieron estos descubrimientos cient\'ificos en al
+mismo tiempo por personas que trabajan de forma independiente. Para dar otro
+ejemplo, los naturalistas brit\'anicos Charles Darwin (1809–1882) y Alfred
+Wallace (1823–1913) desarrollaron la teor\'ia de la evoluci\'on de manera
+independiente y simult\'anea. De manera similar, el matem\'atico h\'ungaro
+J\'anos Bolyai (1802–1860) y el matem\'atico ruso Nikolai Lobachevsky
+(1793–1856) parec\'ian haber desarrollado la geometr\'ia hiperb\'olica de forma
+independiente y al mismo tiempo.
 
-Lo m\'as probable es que tales descubrimientos simult\'aneos hayan ocurrido porque
-el momento era propicio para tales descubrimientos, dado el conocimiento
+Lo m\'as probable es que tales descubrimientos simult\'aneos hayan ocurrido
+porque el momento era propicio para tales descubrimientos, dado el conocimiento
 acumulado por la humanidad en el momento en que se realizaron los
 descubrimientos. A veces, dos cient\'ificos se sienten estimulados al leer la
-misma investigaci\'on preliminar de uno de sus contempor\'aneos. Por otro lado, los
-m\'isticos han sugerido que existe un significado m\'as profundo para tales
-coincidencias. El bi\'ologo austriaco Paul Kammerer (1880-1926) escribi\'o:
-\textit{“Llegamos as\'i a la imagen de un mosaico mundial o caleidoscopio c\'osmico que, a
-pesar de las constantes reorganizaciones y reorganizaciones, tambi\'en se ocupa de
-unir lo similar”}. Compar\'o los eventos en nuestro mundo con la parte superior de
-las olas del oc\'eano que parecen aisladas y sin relaci\'on. De acuerdo con su
-controvertida teor\'ia, notamos la parte superior de las olas, pero debajo de la
-superficie puede existir alg\'un tipo de mecanismo sincr\'onico que misteriosamente
-conecta eventos en nuestro mundo y hace que se agrupen.
+misma investigaci\'on preliminar de uno de sus contempor\'aneos. Por otro lado,
+los m\'isticos han sugerido que existe un significado m\'as profundo para tales
+coincidencias.
 
-Georges Ifrah en The Universal History of Numbers analiza la simultaneidad al
-escribir sobre las matem\'aticas mayas:
+En ocasiones, se han utilizado teor\'ias matem\'aticas para predecir fen\'omenos
+que no se confirmaron hasta a\~nos despu\'es. Por ejemplo, las ecuaciones de
+Maxwell, llamadas as\'i por el f\'isico James Clerk Maxwell, predijeron las
+ondas de radio. Las ecuaciones de campo de Einstein sugirieron que la gravedad
+doblar\'ia la luz y que el universo se est\'a expandiendo. El f\'isico Paul
+Dirac se\~nal\'o una vez que las matem\'aticas abstractas que estudiamos ahora
+nos dan una idea de la f\'isica en el futuro. De hecho, sus ecuaciones
+predijeron la existencia de antimateria, que posteriormente fue descubierta. De
+manera similar, el matem\'atico Nikolai Lobachevsky dijo que “no hay rama de las
+matem\'aticas, por abstracta que sea, que alg\'un d\'ia no pueda aplicarse a los
+fen\'omenos del mundo real”.
 
-\textit{Por lo tanto, vemos una vez m\'as c\'omo las personas que han estado muy separadas
-en el tiempo o en el espacio han... llegado a resultados muy similares, si no
-id\'enticos... En algunos casos, la explicaci\'on de esto se puede encontrar en los
-contactos e influencias entre diferentes grupos de personas... La verdadera
-explicaci\'on est\'a en lo que antes hemos llamado la unidad profunda de la cultura:
-la inteligencia del Homo sapiens es universal y su potencial es notablemente
-uniforme en todas partes del mundo.}
-
-Los pueblos antiguos, como los griegos, ten\'ian una profunda fascinaci\'on por los
-n\'umeros. ¿Podr\'ia ser que en tiempos dif\'iciles los n\'umeros fueran lo \'unico
-constante en un mundo en constante cambio? Para los pitag\'oricos, una antigua
-secta griega, los n\'umeros eran tangibles, inmutables, c\'omodos, eternos, m\'as
-confiables que los amigos, menos amenazantes que Apolo y Zeus.
-
-Muchos aspectos del universo se pueden expresar con n\'umeros enteros. Los
-patrones num\'ericos describen la disposici\'on de los p\'etalos en una margarita, la
-reproducci\'on de los conejos, la \'orbita de los planetas, las armon\'ias de la
-m\'usica y las relaciones entre los elementos de la tabla peri\'odica.
-
-Desde la \'epoca de Pit\'agoras, el papel de las proporciones de n\'umeros enteros en
-las escalas musicales ha sido ampliamente apreciado. M\'as importante a\'un, los
-n\'umeros enteros han sido cruciales en la evoluci\'on de la comprensi\'on cient\'ifica
-de la humanidad. Por ejemplo, el qu\'imico franc\'es Antoine Lavoisier (1743–1794)
-descubri\'o que los compuestos qu\'imicos se componen de proporciones fijas de
-elementos que corresponden a las proporciones de n\'umeros enteros peque\~nos. Esta
-fue una evidencia muy fuerte de la existencia de los \'atomos. En 1925, ciertas
-relaciones enteras entre las longitudes de onda de las l\'ineas espectrales
-emitidas por los \'atomos excitados dieron las primeras pistas sobre la estructura
-de los \'atomos. Las proporciones casi enteras de los pesos at\'omicos fueron
-evidencia de que el n\'ucleo at\'omico est\'a formado por un n\'umero entero de
-nucleones similares (protones y neutrones).
-
-Las desviaciones de las proporciones de enteros condujeron al descubrimiento de
-is\'otopos elementales (variantes con un comportamiento qu\'imico casi id\'entico pero
-con diferente n\'umero de neutrones). Peque\~nas divergencias en las masas at\'omicas
-de los is\'otopos puros de los n\'umeros enteros exactos confirmaron la famosa
-ecuaci\'on de Einstein $E = mc^2$ y tambi\'en la posibilidad de bombas at\'omicas. Los
-n\'umeros enteros est\'an en todas partes en la f\'isica at\'omica. Las relaciones
-enteras son hebras fundamentales en el entramado matem\'atico, o como dijo el
-matem\'atico alem\'an Carl Friedrich Gauss (1777-1855): "Las matem\'aticas son la
-reina de las ciencias, y la teor\'ia de n\'umeros es la reina de las matem\'aticas".
-
-Nuestra descripci\'on matem\'atica del universo crece para siempre, pero nuestros
-cerebros y habilidades lingü\'isticas permanecen arraigados. Se est\'an descubriendo
-o creando nuevos tipos de matem\'aticas todo el tiempo, pero necesitamos nuevas
-formas de pensar y comprender. 
-
-Cuando Werner Heisenberg se preocup\'o de que los seres humanos nunca llegaran a
-entender verdaderamente los \'atomos, Niels Bohr fue un poco m\'as optimista. \'el
-respondi\'o a principios de la d\'ecada de 1920: \textit{"Creo que a\'un podemos
-hacerlo, pero en el proceso es posible que tengamos que aprender qu\'e significa
-realmente la palabra comprensi\'on"}. Hoy, usamos computadoras para ayudarnos a
-razonar m\'as all\'a de las limitaciones de nuestra propia intuici\'on. De hecho, los
-experimentos con computadoras est\'an llevando a los matem\'aticos a descubrimientos
-e ideas nunca antes so\~nados antes de la ubicuidad de estos dispositivos. Las
-computadoras y los gr\'aficos por computadora permiten a los matem\'aticos descubrir
-resultados mucho antes de que puedan probarlos formalmente y abren campos
-matem\'aticos completamente nuevos. 
-
-En ocasiones, se han utilizado teor\'ias matem\'aticas para predecir fen\'omenos que
-no se confirmaron hasta a\~nos despu\'es. Por ejemplo, las ecuaciones de Maxwell,
-llamadas as\'i por el f\'isico James Clerk Maxwell, predijeron las ondas de radio.
-Las ecuaciones de campo de Einstein sugirieron que la gravedad doblar\'ia la luz y
-que el universo se est\'a expandiendo. El f\'isico Paul Dirac se\~nal\'o una vez que las
-matem\'aticas abstractas que estudiamos ahora nos dan una idea de la f\'isica en el
-futuro. De hecho, sus ecuaciones predijeron la existencia de antimateria, que
-posteriormente fue descubierta. De manera similar, el matem\'atico Nikolai
-Lobachevsky dijo que “no hay rama de las matem\'aticas, por abstracta que sea, que
-alg\'un d\'ia no pueda aplicarse a los fen\'omenos del mundo real”.
-
-%Buscar 10 problemas de las matem\'aticas
-% Problemas en los que usamos el residuo de una divisi\'on
-% Investigar que es congruencia zeller
-% Buscar propiedades del triángulo de Pascal
+% Buscar 10 problemas de las matem\'aticas Problemas en los que usamos el
+% residuo de una divisi\'on Investigar que es congruencia zeller Buscar
+% propiedades del triángulo de Pascal
 
 \subsection{Congruencia de Zeller}
 
-%\begin{lstlisting}
-%    \lstinputlisting[language=Python]{../src/zeller_congruency.py}
-%\end{lstlisting}
+% \begin{lstlisting}
+% \lstinputlisting[language=Python]{../src/zeller_congruency.py}
+% \end{lstlisting}
 
 
 
