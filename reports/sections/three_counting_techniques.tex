@@ -1,12 +1,12 @@
-% \chapter{T\'ecnicas de conteo}
+\chapter{T\'ecnicas de conteo}
+
 \section*{Principio de multiplicaci\'on}
-\section*{Permutaciones}
-\begin{tcolorbox}
-	% \begin{mydef}
-Una \textbf{permutaci\'on} de un conjunto es un arreglo de dichos elementos en
-alg\'un orden sin repeticiones ni omisiones.
-		% \label{Permutaciones_definition}
-	% \end{mydef}
+\subsection*{Permutaciones}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Definición: Permutación]
+	Una \textbf{permutaci\'on} de un conjunto es un arreglo de dichos elementos en
+	alg\'un orden sin repeticiones ni omisiones.
+		\label{Permutaciones_definition}
 \end{tcolorbox}
 
 Para saber el n\'umero de permutaciones que existen de un conjunto se debe
@@ -22,10 +22,12 @@ posici\'on $n-1$. Así sucesivamente hasta las \'ultimas posiciones, donde se
 pueden colocar $3, 2$ y $1$ elementos. De esta manera, se dice que el n\'umero
 de permutaciones es:
 
-\begin{equation}
-	P_n=n*(n-1)*(n-2)*...*3*2*1=n!
-	\label{permutaciones_totales}
-\end{equation}
+\begin{theorem}{El teorema del binomio de Newton}{binomioNewton}
+	\begin{equation}
+		P_n=n*(n-1)*(n-2)*...*3*2*1=n!
+		\label{permutaciones_totales}
+	\end{equation}
+\end{theorem}
 
 Otra forma de ver la cantidad de permutaciones de un conjunto es realizando un
 diagrama de \'arbol como el de la fig.(\ref{permutaciones_tree}).
@@ -74,12 +76,14 @@ Primer elemento: $5$; menores a la derecha: $2$; n\'umero de inversiones:
 \textbf{1}\\
 
 Total de inversiones: \textbf{8}
-%\begin{tcolorbox}
-	% \begin{mydef}
-		\begin{itemize}
-		\item Permutaci\'on par: aquella en la que el total de inversiones es un entero par.
-		\item permutaci\'on impar: aquella en la que el total de inversiones es un entero impar. 
-		\end{itemize}
-	% \end{mydef} 
-%\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Definición: Tipos de permutaciones]
+	\textbf{Permutaci\'on par:} aquella en la que el total de inversiones es un
+	entero par.
+	
+	\tcblower
+
+	\textbf{permutaci\'on impar}: aquella en la que el total de inversiones es un
+	entero impar.
+	
+\end{tcolorbox}
 
