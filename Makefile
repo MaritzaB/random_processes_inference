@@ -37,11 +37,6 @@ slides/presentation.pdf: slides/presentation.tex
 reports/probability_random_processes_and_inference.pdf: reports/probability_random_processes_and_inference.tex
 	$(renderLatex)
 
-figures:
-	mkdir --parents reports/tables
-	mkdir --parents reports/figures
-	python3 src/plotter.py
-
 clean:
 	rm --force --recursive reports/pythontex*
 	rm --force reports/*.aux
