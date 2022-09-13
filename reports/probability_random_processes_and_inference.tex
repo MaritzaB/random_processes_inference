@@ -1,18 +1,29 @@
-\documentclass{article}
+\documentclass[12pt]{book}
 \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
 \usepackage{tikz}
-\usepackage{amsmath}
-\usepackage[hidelinks]{hyperref}
-\usepackage{listings}
+\usepackage{amsmath}    %Caracteres especiales de matematicas
+\usepackage[hidelinks]{hyperref}    % Vinculos [que no estén subrayados]
+\usepackage{listings}   %Introducir codigo
 \usepackage{setspace}
 \usepackage{color}
 \usepackage{amssymb}
 \usepackage[makeroom]{cancel}
-\usepackage{pdflscape}
-\usepackage{tcolorbox}
-%\usepackage{mydef}
+\usepackage{pdflscape}  %Voltear la página
+\usepackage{tcolorbox}  %Cuadros de teoremas
+\usepackage{fancyhdr, lastpage}
+\usepgflibrary{fpu}
+\usepackage{ifthen}
 
+\tcbuselibrary{listings,theorems}
+
+\pagestyle{fancy}   %Encabezado en las páginas
+\chead{Probabilidad, procesos aleatorios e inferencia}  %Encabezado central
+\lhead{}    %Encabezado izquiero vacio
+\rhead{}    %Encabezado derecho vacio
 %% Cambiar letra a tamaño 12
+
+\usepackage[Glenn]{fncychap}
+% Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
 
 \providecommand{\abs}[1]{\lvert#1\rvert}
 
@@ -25,17 +36,28 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       Caja del teorema                            %
+%                                                                   %
+\newtcbtheorem{theorem}{Teorema}             %
+{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{th}   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \tableofcontents
 
-\input{s01_probabilidad}
-\input{s02_experiments}
-\input{s03_binomio_de_newton}
-%\input{s08_pascal_triangle}
-\input{s05_resumen}
-\input{s04_levi_civita}
-\input{s07_zeller}
+\input{sections/s01_probabilidad}
+
+\input{sections/s02_experiments}
+
+\input{sections/three_counting_techniques}
+
+\input{sections/s03_binomio_de_newton}
+\input{sections/s08_pascal_triangle}
+\input{sections/s05_resumen}
+\input{sections/s04_levi_civita}
+\input{sections/s07_zeller}
 %\input{s06_sierpinski}
-\input{three_counting_techniques}
+
 
 
 \pagebreak
