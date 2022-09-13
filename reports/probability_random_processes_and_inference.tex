@@ -9,12 +9,14 @@
 \usepackage{amssymb}
 \usepackage[makeroom]{cancel}
 \usepackage{pdflscape}
+\usepackage{tcolorbox}
+%\usepackage{mydef}
 
 %% Cambiar letra a tamaño 12
 
 \providecommand{\abs}[1]{\lvert#1\rvert}
 
-\input{specifications}
+\input{custom/specifications}
 
 \begin{document}
 \title{Probabilidad, procesos aleatorios e inferencia}
@@ -25,277 +27,15 @@
 
 \tableofcontents
 
-\section{Probabilidad y conteo}
-
-\subsection{Definici\'on cl\'asica}
-
-La definici\'on cl\'asica de la probabilidad \cite{faber2012statistics} de un
-evento $A$, puede ser formulada de la siguiente manera:
-
-\begin{equation}
-    P(A)= \frac{n_A}{n_(total)}
-\end{equation}
-
-Donde $n_A$ es el n\'umero de formas igualmente probables por las cuales un
-experimento puede conducir a A; $n_(total)$ n\'umero total de formas igualmente
-probables en el experimento.
-
-- En la definici\'on cl\'asica el experimento no necesariamente se lleva a cabo
-ya que la respuesta es conocida de antemano.
-
-- La teor\'ia cl\'asica no da soluci\'on a menos de que todas las formas
-igualmente posibles puedan ser derivadas anal\'iticamente.
-
-\section{Experimentos deterministas vs aleatorios}
-
-\subsection{Definici\'on: Observaci\'on}
-
-Cualquier registro de informaci\'on, ya sea num\'erico o categ\'orico. Por
-consiguiente, los n\'umeros 2, 0, 1 y 2, que representan el n\'umero de
-accidentes que ocurrieron cada mes, de enero a abril, durante el a\~no pasado en
-la intersecci\'on de Driftwood Lane y Royal Oak Drive, constituyen un conjunto
-de observaciones. Lo mismo ocurre con los datos categ\'oricos N, D, N, N y D,
-que representan los art\'iculos defectuosos o no defectuosos cuando se
-inspeccionan cinco art\'iculos y se registran como observaciones
-\cite{walpole2012probabilidad}.
-
-\subsection{Definici\'on: Experimento}
-
-Cualquier proceso que genere un conjunto de datos. Un ejemplo simple de
-experimento estad\'istico es el lanzamiento de una moneda al aire. En tal
-experimento s\'olo hay dos resultados posibles: cara o cruz
-\cite{walpole2012probabilidad}.
-
-\subsection{Experimento determinista}
-Un experimento determinista es aquel que produce el mismo resultado cuando se le
-repite bajo las mismas condiciones.
-
-\subsection{Experimento aleatorio}
-Un experimento aleatorio es aquel que, cuando se le repite bajo las mismas
-condiciones, el resultado que se observa no siempre es el mismo y tampoco es
-predecible.
-
-\section{Binomio de Newton}
-
-La fórmula matemática del binomio de Newton es la siguiente:
-
-\begin{equation}
-    (a+b)^n = \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k
-\end{equation}
-
-\subsection{Desarrollo del binomio de Newton de la potencia 1 a la 10}
-
-\begin{landscape}
-	\begin{equation}
-		\begin{split}
-			(a+b)^0 &   = 1 \\
-			(a+b)^1 &   = a+b \\
-			(a+b)^2 &   = a^2+2ab+b^2 \\
-			(a+b)^3 &   = a^3+3a^2b+3ab^2+b^3 \\
-			(a+b)^4 &   = a^4+4a^3b+6a^2b^2+4ab^3+b^4 \\
-			(a+b)^5 &   = a^5+5a^4b+10a^3b^2+10a^2b^3+5ab^4+b^5\\
-			(a+b)^6 &   = a^6+6a^5b+15a^4b^2+20a^3b^3+15a^2b^4+6ab^5+b^6\\
-			(a+b)^7 &   = a^7+7a^6b+21a^5b^2+35a^4b^3+35a^3b^4+21ba^2b^5+21ab^6+b^7 \\
-			(a+b)^8 &   = a^8+8a^7b+28a^6b^2+56a^5b^3+70a^4b^4+56a^3b^5+28a^2b^6+8ab^7+b^8 \\
-			(a+b)^9 &   = a^9+9a^8b+36a^7b^2+84a^6b^3+126a^5b^4+126a^4b^5+84a^3b^6+36a^2b^7+9ab^8+b \\
-			(a+b)^{10} &    = a^{10}+10a^9b+45a^8b^2+120a^7b^3+210a^6b^4+252a^5b^5+210a^4b^6+120a^3b^7+45a^2b^8+10ab^9+b^{10} \\
-		\end{split}
-	\end{equation}
-\end{landscape}
-
-\section{Convenio de suma de Einstein}
-
-Se denomina notación de Einstein o notación indexada a la convención utilizada
-para abreviar la escritura de las sumatorias, donde se suprime el término de la
-sumatoria $(\sum)$. Este convenio fue introducido por Albert Einstein en 1916.
-
-Dada una expresión lineal en $\mathbb{R^n}$ en la que se escriban todos sus
-términos en forma explícita:
-
-\begin{equation}
-    u = u_1 + u_2 + ... = u_n
-\end{equation}
-
-Se puede escribir de la forma:
-
-\begin{equation}
-    u = \sum_{i=1}^{n} u_ix_i
-\end{equation}
-
-La notación de Einstein obtiene una expresión aún más condensada eliminando el
-signo de la sumatoria y entendiendo que la expresión resultante en un índice
-indica la suma sobre todos los posibles valores del mismo.
-
-\begin{equation}
-    u = u_ix_i
-\end{equation}
-
-\subsection{Tensor Levi-Civita}
-Está definido por:
-
-\begin{equation}
-    \epsilon_{ijk}=
-    \left\lbrace\begin{array}{clllr} 
-        +1 & ijk, & kji, & jki & \text{Permutación cíclica o par}\\ 
-        -1 & ikj, & kji, & jik & \text{Permutación anticíclica o impar}\\
-        0  & iii, & jjj, & kkk & \text{Si se repiten}
-    \end{array}\right.
-\end{equation}
-
-\subsection{Producto escalar de dos vectores}
-
-También conocido como producto punto, es una operación algebraíca que toma dos
-vectores y retorna un escalar. esta definido de la siguiente manera:
-
-\begin{equation}
-    \bar{A} \cdot \bar{B}= \bar{\abs{A}} \bar{\abs{B}} \cos \theta
-    = \sum_{i=1}^{n} a_i b_i
-\end{equation}
-
-Que de acuerdo al convenio de suma de Einstein podemos escribir como:
-
-\begin{equation}
-    \bar{A} \cdot \bar{B} = a_i b_i
-\end{equation}
-
-\subsection{Producto vectorial de dos vectores}
-
-EL producto vectorial o producto cruz de dos vectores es una operación binaria
-entre dos vectores en un espacio tridimensional. El resultado es un vector
-perpendicular a los vectores que se multiplican, y por lo tanto normal al plano
-que los contiene.
-
-Está definido de la siguiente manera:
-
-\begin{equation}
-    \bar{A} \times \bar{B}= \bar{\abs{A}} \bar{\abs{B}} \sin \theta \hat{r}
-\end{equation}
-
-Donde $\hat{r}$ es el vector unitario y ortogonal a los vectores $\bar{A}$ y
-$\bar{B}$, y $\theta$ el ángulo entre $\bar{A}$ y $\bar{B}$.
-
-Que mediante determinantes tenemos:
-
-\begin{equation}
-    \bar{A} \times \bar{B}=
-    \begin{bmatrix}
-        \hat{i} & \hat{j} & \hat{k}\\ 
-         a_1 & a_1 & a_1\\ 
-         b_1 & b_1 & b_1
-    \end{bmatrix}
-\end{equation}
-
-Desarrollamos:
-
-\begin{equation}
-    \bar{A} \times \bar{B}= \hat{i}(a_2 b_3 - a_3 b_2) - \hat{j}(a_1 b_3 - a_3 b_1) + \hat{k}(a_1 b_2 - a_2 b_1)
-\end{equation}
-
-Desde un punto de vista tensorial el producto generalizado de $n$ vectores vendrá
-dado por:
-
-\begin{equation}
-    (\bar{A} \times \bar{B})_{i} = \epsilon_{ijk} a_{j} b_{k}
-\end{equation}
-
-Desarrollando:
-
-\begin{equation}
-    \epsilon_{ijk} a_{jbk} =
-    \begin{array}{ccccc}
-        \cancel{\epsilon_{111} a_1 b_1} & + & \cancel{\epsilon_{112} a_1 b_2}   & + & \cancel{\epsilon_{112} a_1 b_3}   \\
-        \cancel{\epsilon_{121} a_2 b_1} & + & \cancel{\epsilon_{122} a_2 b_2}   & + & \epsilon_{123} a_2 b_3            \\
-        \cancel{\epsilon_{131} a_3 b_1} & + & \epsilon_{132} a_3 b_2            & + & \cancel{\epsilon_{133} a_3 b_3}
-    \end{array}
-    = a_2 b_3 - a_3 b_2
-\end{equation}
-
-\section{Tri\'angulo de Sierpinski}
-
-El matem\'atico polaco Waclav Sierpinski (1882-1969), construy\'o este fractal
-en 1919 del modo siguiente: tom\'o un tri\'angulo equil\'atero, uni\'o los
-puntos medios de los lados y form\'o cuatro tri\'angulos interiores: tres
-tri\'angulos equil\'ateros sombreados y un hueco que es otro tri\'angulo
-equil\'atero. Repiti\'o el proceso en cada uno de los tri\'angulos sombreados, y
-sigui\'o hasta el infinito el proceso en los tres tri\'angulos restantes como el
-primero.
-
-
-\begin{figure}[h]
-    \centering
-    \usetikzlibrary{lindenmayersystems}
-\def\trianglewidth{3cm} \pgfdeclarelindenmayersystem{Sierpinski triangle}{
-        \symbol{X}{\pgflsystemdrawforward}
-        \symbol{Y}{\pgflsystemdrawforward}
-        \rule{X -> X-Y+X+Y-X}
-        \rule{Y -> YY}
-} \foreach \level in {1,3,5}{ \tikzset{
-l-system={step=\trianglewidth/(2^\level), order=\level, angle=-120} }
-
-        \begin{tikzpicture}
-\fill [black] (0,0) -- ++(0:\trianglewidth) -- ++(120:\trianglewidth) -- cycle;
-\draw [draw=none] (0,0) l-system [l-system={Sierpinski triangle,
-axiom=X},fill=white];
-        \end{tikzpicture}
-}
-    \caption{Tri\'angulo de Sierpinski para los niveles 1,3 y 5.}
-    \label{fig:sierpinski}
-\end{figure}
-
-Como se muestra en la Fig.(\ref{fig:sierpinski})
-
-\section{Resumen: La belleza y utilidad de las matem\'aticas}
-
-Las matem\'aticas han impregnado todos los campos de la actividad cient\'ifica y
-desempe\~nan un papel inestimable en la biolog\'ia, la f\'isica, la qu\'imica,
-la econom\'ia, la sociolog\'ia y la ingenier\'ia.
-
-
-El descubrimiento simult\'aneo ha ocurrido a menudo en la historia de las
-matem\'aticas.
-
-Por ejemplo el del c\'alculo del erudito ingl\'es Isaac Newton (1643-1727) y el
-matem\'atico alem\'an Gottfried Wilhelm Leibniz (1646-1716). Esto nos hacen
-preguntarnos por qu\'e se hicieron estos descubrimientos cient\'ificos en al
-mismo tiempo por personas que trabajan de forma independiente. Para dar otro
-ejemplo, los naturalistas brit\'anicos Charles Darwin (1809–1882) y Alfred
-Wallace (1823–1913) desarrollaron la teor\'ia de la evoluci\'on de manera
-independiente y simult\'anea. De manera similar, el matem\'atico h\'ungaro
-J\'anos Bolyai (1802–1860) y el matem\'atico ruso Nikolai Lobachevsky
-(1793–1856) parec\'ian haber desarrollado la geometr\'ia hiperb\'olica de forma
-independiente y al mismo tiempo.
-
-Lo m\'as probable es que tales descubrimientos simult\'aneos hayan ocurrido
-porque el momento era propicio para tales descubrimientos, dado el conocimiento
-acumulado por la humanidad en el momento en que se realizaron los
-descubrimientos. A veces, dos cient\'ificos se sienten estimulados al leer la
-misma investigaci\'on preliminar de uno de sus contempor\'aneos. Por otro lado,
-los m\'isticos han sugerido que existe un significado m\'as profundo para tales
-coincidencias.
-
-En ocasiones, se han utilizado teor\'ias matem\'aticas para predecir fen\'omenos
-que no se confirmaron hasta a\~nos despu\'es. Por ejemplo, las ecuaciones de
-Maxwell, llamadas as\'i por el f\'isico James Clerk Maxwell, predijeron las
-ondas de radio. Las ecuaciones de campo de Einstein sugirieron que la gravedad
-doblar\'ia la luz y que el universo se est\'a expandiendo. El f\'isico Paul
-Dirac se\~nal\'o una vez que las matem\'aticas abstractas que estudiamos ahora
-nos dan una idea de la f\'isica en el futuro. De hecho, sus ecuaciones
-predijeron la existencia de antimateria, que posteriormente fue descubierta. De
-manera similar, el matem\'atico Nikolai Lobachevsky dijo que “no hay rama de las
-matem\'aticas, por abstracta que sea, que alg\'un d\'ia no pueda aplicarse a los
-fen\'omenos del mundo real”.
-
-% Buscar 10 problemas de las matem\'aticas Problemas en los que usamos el
-% residuo de una divisi\'on Investigar que es congruencia zeller Buscar
-% propiedades del triángulo de Pascal
-
-\subsection{Congruencia de Zeller}
-
-\lstinputlisting[language=Python]{../src/zeller_congruency.py}
-
-
-
-
+\input{s01_probabilidad}
+\input{s02_experiments}
+\input{s03_binomio_de_newton}
+%\input{s08_pascal_triangle}
+\input{s05_resumen}
+\input{s04_levi_civita}
+\input{s07_zeller}
+%\input{s06_sierpinski}
+\input{three_counting_techniques}
 
 
 \pagebreak
