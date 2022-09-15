@@ -57,7 +57,6 @@ clean:
 	rm --recursive --force __pycache__
 	rm --recursive --force .pytest_cache
 	rm --recursive --force */__pycache__
-	rm --recursive --force reports/figures/
 	rm --recursive --force reports/tables/
 
 format:
