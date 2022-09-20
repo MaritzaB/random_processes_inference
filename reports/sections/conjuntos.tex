@@ -119,3 +119,129 @@ $A$ y se representa por $|A|$.
 \subsection{Conjunto potencia}
 Sea $A$ un conjunto finito, llamaremos conjunto potencia al conjunto formado por todos los
 subconjuntos de $A$. El conjunto potencia se denota como $P(A)$ o bien $2^A$.
+
+\subsection{Operaciones entre conjuntos}
+
+% Definition of circles
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\setlength{\parskip}{5mm}
+
+\subsubsection{Unión}
+
+La unión La unión (o reunión) de dos conjuntos $A$ y $B$, denotada por $ A \cup
+B $ (que se lee “A unión B”) es un nuevo conjunto formado por los elementos que
+pertenecen a A o a B o a ambos conjuntos.
+
+\begin{equation}
+    A \cup B = {x | x \in A \vee x \in B}
+\end{equation}
+
+Si $x \in A \cup B $ entonces $x \in A $ ó $x \in B$ o $x$ pertenece a ambos
+conjuntos.
+
+% Set A or B
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \draw[filled] \firstcircle node {$A$}
+                      \secondcircle node {$B$};
+        \node[anchor=south] at (current bounding box.north) {$A \cup B$};
+    \end{tikzpicture}
+\end{figure}
+
+\subsubsection{Intersección}
+
+La intersección de dos conjuntos $A$ y $B$, denotada por $A \cap B$ (que se lee “ A intersección B”),
+es un nuevo conjunto formado por los elementos que pertenecen a A y a B al mismo tiempo, es
+decir, por los elementos comunes a ambos conjuntos.
+
+\begin{equation}
+    A \cap B={x | x \in A \wedge x \in B}
+\end{equation}
+
+% Set A and B
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \begin{scope}
+            \clip \firstcircle;
+            \fill[filled] \secondcircle;
+        \end{scope}
+        \draw[outline] \firstcircle node {$A$};
+        \draw[outline] \secondcircle node {$B$};
+        \node[anchor=south] at (current bounding box.north) {$A \cap B$};
+    \end{tikzpicture}
+\end{figure}
+
+\subsubsection{Complemento}
+
+Sea $A \subseteq U$ un conjunto. El complemento de A denotado por $A'$, $A^C$ ó $U-A$, se define
+como el conjunto de todos los elementos que están en $U$ pero no están en $A$.
+Simbólicamente:
+
+\begin{equation}
+    \bar{A}= {x | x \in U \wedge x \notin A}
+\end{equation}
+
+Es decir, el complemento de $A$ es el conjunto de los todos los elementos que no
+están en el conjunto $A$. Simbólicamente: $ \bar{A}={x | x \notin A}$.
+
+\subsubsection{Diferencia}
+
+% Set A but not B
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{scope}
+                \clip \firstcircle;
+                \draw[filled, even odd rule] \firstcircle node {$A$}
+                                             \secondcircle;
+            \end{scope}
+            \draw[outline] \firstcircle
+                           \secondcircle node {$B$};
+            \node[anchor=south] at (current bounding box.north) {$A - B$};
+        \end{tikzpicture}
+    \end{subfigure}
+\hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        % Set B but not A
+        \begin{tikzpicture}
+            \begin{scope}
+                \clip \secondcircle;
+                \draw[filled, even odd rule] \firstcircle
+                                             \secondcircle node {$B$};
+            \end{scope}
+            \draw[outline] \firstcircle node {$A$}
+                           \secondcircle;
+            \node[anchor=south] at (current bounding box.north) {$B - A$};
+        \end{tikzpicture}
+\end{subfigure}
+\end{figure}
+
+\subsubsection{Diferencia simétrica}
+
+
+
+%Set A or B but not (A and B) also known a A xor B
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \draw[filled, even odd rule] \firstcircle node {$A$}
+                                     \secondcircle node{$B$};
+        \node[anchor=south] at (current bounding box.north) {$\overline{A \cap B}$};
+    \end{tikzpicture}
+\end{figure}
+
+
+
