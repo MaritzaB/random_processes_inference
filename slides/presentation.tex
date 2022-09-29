@@ -2,6 +2,7 @@
 \documentclass{beamer}
 \usepackage{tcolorbox}  %Cuadros de teoremas
 
+
 % This file is a solution template for:
 
 % - Giving a talk on some subject.
@@ -38,6 +39,9 @@
 \usepackage{enumerate}
 \usepackage{graphicx}
 \usepackage{array}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{hyperref}    % Vinculos [que no estén subrayados]
 
 \title[ \hspace{21mm} \insertframenumber \ de \inserttotalframenumber ]
 {Técnicas de conteo}
@@ -324,140 +328,266 @@
 
 \end{frame}
 
-\begin{frame}{Permutación}
+\begin{frame}{Recapitulación}
+  \onslide<1->
+  \begin{block}{Regla de la multiplicación}
+    \begin{equation}
+      n_1*n_2*n_3*...*n_k
+    \end{equation}
+  \end{block}
 
-  \textbf{Definición}
+  \onslide<2->
+  \begin{block}{Permutación. Muestreo con reemplazo}
+    \begin{equation}
+      \underbrace{n*n*n*...*n}_{r \ \text{veces}} = n^r
+    \end{equation}
+  \end{block}
 
-
-  Una \textbf{permutaci\'on} de un conjunto o lista es un arreglo de dichos
-  elementos en alg\'un orden sin repeticiones ni omisiones.
+  \onslide<3->
+  \begin{block}{Permutación. Muestreo sin reemplazo.}
+    \begin{equation}
+      n(n-1)(n-2)...(n-r+1) = \frac {n!}{(n-r)!}
+    \end{equation}
+  \end{block}
 
 \end{frame}
 
-\begin{frame}{Permutación}
-  Considerando la lista de números
+\begin{frame}{Permutación. Muestreo sin reemplazo.}
+  
+  \onslide<1->
+  \begin{block}{Definición}
+    El total de permutaciones de $n$ objetos distintos tomados de $r$ formas a la
+    vez está dado por:
+    \begin{equation}
+        P(n,r) =  \frac{n !}{(n - r)!}
+    \end{equation}
+    Con el caso especial donde $n=r$, donde tenemos $n!$.
+  \end{block}
+  \onslide<2->
+    Para deducirla a partir de la regla de la multiplicación, podemos suponer que
+    $n=5$ y $r=3$, entonces observamos lo siguiente:
+  
+  \onslide<3->
+  \begin{block}{}
+    \centering
+    $\overbrace{\underbrace{5*4*3}_{\text{Regla de la multiplicación}} *
+    \underbrace{2*1}_{\text{lo quitamos con } (n-r)!}}^{n \ \text{factorial}}$
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}{Permutación. Muestreo sin reemplazo.}
+  
+  Sustituyendo $n=5$ y $r=3$ en la fórmula:
+  
+  \begin{block}{}
+    \centering
+    $P(n,r) =  \frac{5 !}{(5 - 3)!} = \frac{5 !}{2!} 
+            = \frac{5*4*3* \cancel{2*1}}{\cancel{2*1}} $
+  \end{block}
+  
+\end{frame}
+
+\begin{frame}{Permutaciones con elementos repetidos}
+  \onslide<1->
+  \begin{block}{Definición}
+    El total de permutaciones de un conjunto de $n$ objetos, de los cuales, los
+    subconjuntos $n_1$, $n_2$ y $n_k$ son elementos repetidos, está dado por:
   \begin{equation}
-    A = {1,2,3}
+    \frac{n!}{n_{1}!*n_{2}!*...*n_{k}!}
+    \label{eq:permutar}
   \end{equation}
+  \end{block}
 
-  Tenemos 6 arreglos distintos que podemos calcular con la regla de
-  multiplicación.
-    
-  Hay 
-  \vfill
-  $n_1 = 3$ opciones para la primera posición, 
-  \vfill
-  $n_2 = 2$ para la segunda posición y para la última opción hay 
-  \vfill
-  $n_3 = 1$ opción.
+  \onslide<2->
+  Ejemplo:
+  \begin{figure}
+    \includegraphics[width=2cm,angle=0,trim={1mm 216mm 1mm 200mm},clip]{figures/example-finger.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Ejemplo de permutación con elementos repetidos}
+  \onslide<1->
+  \begin{exampleblock}{Ejemplo}
+    ¿Cuántas palabras diferentes se pueden formar con las letras de la palabra
+    \textbf{M A T E M A T I C A S}?\\
+    \onslide<2->
+    \textbf{Observación}:
+    \begin{itemize}
+      \item En total son 11 letras
+      \onslide<2-> \item La letra \textbf{M} se repite 2 veces
+      \onslide<3-> \item La letra \textbf{A} se repite 3 veces
+      \onslide<4-> \item La letra \textbf{T} se repite 2 veces
+      \onslide<5-> \item Si hacemos una permutación solo en los elementos de \textbf{M}, la palabra
+      seguiría siendo la misma
+      \onslide<6-> \item Lo mismo con los otros elementos que se repiten
+      \onslide<7-> \item Los elementos \textbf{E, I, C, S} no se repiten
+    \end{itemize}
+  \end{exampleblock}
 
 \end{frame}
 
-\begin{frame}{Permutación}
-  Entonces tenemos $n_1 * n_2 * n_3 = 6$ permutaciones.
-  \vfill
-  Por lo que $n$ objetos distintos se pueden arreglar en
-  $n(n-1)(n-2)...(3)(2)(1)$ formas.
-  \vfill
-  Con lo anterior podemos decir que para cualquier entero no negativo $n,n!$
-  denominado "$n$ factorial"se define como:
-  \vfill
-  $N! = n(n-1)...(2)(1)$
-  \vfill
-  Con el caso especial de cero, que está dado por:
-  $0!=1$
+\begin{frame}{Solución}
+  De acuerdo a la ecuación (8), tenemos:  %CORREGIR
+  \begin{exampleblock}{}
+    \centering
+$\frac{11!}{\underbrace{2!}_{\textbf{M}}*\underbrace{3!}_{\textbf{A}}*\underbrace{2!}_{\textbf{T}}}
+    = \frac{39916800}{2*6*2}=1663200$
+  \end{exampleblock}
 \end{frame}
 
-
-\begin{frame}{Permutación}
-\textbf{Teorema}
-\vfill
-El número de permutaciones de $n$ objetos es $n!$.
-
+\begin{frame}{Coeficientes binomiales}
+  \onslide<1->
+  \begin{block}{Definición}
+    Para cualquier entero positivo $k$ y $n$, el coeficiente binomial
+    $\binom{n}{k}$, que se lee \textit{n combinación k}, es el número de
+    subconjuntos de tamaño $k$ de un conjunto de tamaño $n$. Se puede calcular de la
+    siguiente manera:
+    \onslide<2->
+  \begin{equation}
+    \binom{n}{k} = \frac{n(n-1)...(n-k+1)}{k!} = \frac{n!}{(n-k)!k!}
+    \label{eq:binomial}
+  \end{equation}
+  \onslide<3->
+  Para $k>n$, $\binom{n}{k}=0$ \\
+  \onslide<4->
+  \textbf{Observación}\\
+  \begin{itemize}
+    \item $\frac{n!}{(n-k)}$ es la permutación sin reemplazo.
+    \onslide<5-> \item Ya que no nos importa que los elementos estén ordenados,
+    podemos quitar aquellos subconjuntos cuyos elementos se repitan. Esto lo hacemos
+    dividiendo entre $k!$.
+  \end{itemize}
+\end{block}
 \end{frame}
 
+\begin{frame}{Ejemplo de uso del coeficiente binomial}
+  \onslide<1->
+  \begin{exampleblock}{Conjunto potencia}
+    ¿Cuántos subconjuntos tiene el conjunto $A =\{a,b,c,d\}$?
+  \end{exampleblock}
+  \onslide<2->
+  Podemos calcular los subconjuntos de 0, 1, 2, 3 y 4 elementos de la siguiente
+  forma:
+  \onslide<3->
+  \begin{exampleblock}{}
+    \centering
+    $ P(A) = \binom{4}{0} + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} + \binom{4}{4} $
+  \end{exampleblock}
+  \onslide<4->
+  Que de acuerdo con la ecuación (9): %CORREGIR
 
-\begin{frame}{Paridad de una permutación}
-La paridad o signatura de una permutación vale 1 si esta es par y -1 si es
-impar.
-\vfill
-Sea una permutación $\sigma$. La definición de la signatura de $\sigma$ se hace contando las inversiones.
-
-\vfill
-
-Sean $i < j$ dos elementos distintos comprendidos entre $1$ y $n$. Se dice que
-se tiene una inversión del par ${i, j}$ para $\sigma$ cuando $\sigma(i) > \sigma(j)$. 
-\vfill
-Se dice que una permutación es par cuando presenta un número par de inversiones.
-\vfill
-Se dice impar cuando la cantidad de inversiones es impar.
-
-\end{frame}
-
-
-\begin{frame}{Ejemplo de paridad de una permutación}
-  Sea una lista de elementos $A={1,2,3}$
-  \vfill
-  Permutación par $A'={2,3,1}$
-  \vfill
-  Permutación impar $A''={3,2,1}$
-  \vfill
-  ¿Como saber si la permutación es par o impar?
-\end{frame}
-
-\begin{frame}{Ejemplo de paridad de una permutación}
-
-  Para la permutación par $A'={2,3,1}$ calculamos las inversiones.
-  \vfill
-  Tomamos todos los pares $i,j$ del conjunto que cumplan la condición $i < j$.
-  \vfill
-  Para $i=(1)$ y $j=(2,3)$
-  
-  \vfill
-  $(1,2)$ Tenemos $\sigma(1)=2$ y $\sigma(2)=3$ Por lo que $\sigma(1) < \sigma(2)$ \\
-  $(1,3)$ Tenemos $\sigma(1)=2$ y $\sigma(3)=1$ Por lo que $\sigma(1) > \sigma(3)$
-  \vfill
-  
-  La inversión cumple que $\sigma(i) > \sigma(j)$.
-  
-  \vfill
-  
-  Para $i=(2)$ y $j=(3)$
-  \vfill
-  $(2,3)$ Tenemos $\sigma(2)=3$ y $\sigma(3)=1$ Por lo que $\sigma(2) > \sigma(3)$\\
-  Es inversión
-  \vfill
-  Total de inversiones = 2
+  \begin{exampleblock}{}
+    \centering
+  $ P(A) = \frac{4!}{(4-0)!0!} + \frac{4!}{(4-1)!1!} + \frac{4!}{(4-2)!2!} + \frac{4!}{(4-3)!3!} + \frac{4!}{(4-4)!4!} $
+  \end{exampleblock}
+  \onslide<5->
+  \begin{exampleblock}{}
+    \centering
+  $ P(A) = \frac{4!}{(4)!0!} + \frac{4!}{(3)!1!} + \frac{4!}{(2)!2!} + \frac{4!}{(1)!3!} + \frac{4!}{(0)!4!} $
+  \end{exampleblock}
 
 \end{frame}
 
+\begin{frame}{Ejemplo de uso del coeficiente binomial}
 
-\begin{frame}{Ejemplo de paridad de una permutación}
+  \begin{exampleblock}{Conjunto potencia}
+    ¿Cuántos subconjuntos tiene el conjunto $A =\{a,b,c,d\}$?
+  \end{exampleblock}
+  
+  Podemos calcular los subconjuntos de 0, 1, 2, 3 y 4 elementos de la siguiente
+  forma:
 
-  Para la permutación impar $A'={3,2,1}$ calculamos las inversiones.
-  \vfill
-  Tomamos todos los pares $i,j$ del conjunto que cumplan la condición $i < j$.
-  \vfill
-  Para $i=(1)$ y $j=(2,3)$
-  
-  \vfill
-  $(1,2)$ Tenemos $\sigma(1)=3$ y $\sigma(2)=2$ Por lo que $\sigma(1) > \sigma(2)$ \\
-  $(1,3)$ Tenemos $\sigma(1)=3$ y $\sigma(3)=1$ Por lo que $\sigma(1) > \sigma(3)$
-  \vfill
-  
-  Son inversiones porque cumplen que $\sigma(i) > \sigma(j)$.
-  
-  \vfill
-  
-  Para $i=(2)$ y $j=(3)$
-  \vfill
-  $(2,3)$ Tenemos $\sigma(2)=2$ y $\sigma(3)=1$ Por lo que $\sigma(2) > \sigma(3)$\\
-  También es inversión
-  \vfill
-  Total de inversiones = 3
+  \begin{exampleblock}{}
+    \centering
+    $ P(A) = \binom{4}{0} + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} + \binom{4}{4} $
+  \end{exampleblock}
+  \onslide<1->
+  \begin{exampleblock}{}
+    \centering
+    $ P(A) = 1 + 4 + 6 + 4 + 1 $
+  \end{exampleblock}
+  \onslide<2->
+  Por lo que tenemos un total de:
+  \begin{exampleblock}{}
+    \centering
+    $ P(A) = 16 \text{ subconjuntos de } A$
+  \end{exampleblock}
 
 \end{frame}
 
+\begin{frame}
+  \onslide<1->
+  \begin{exampleblock}{Observación}
+    De acuerdo a: 
+    \centering
+    $ P(A) = \binom{4}{0} + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} +
+    \binom{4}{4} $ \\
+    \ \\
+    De donde obtenemos:
+    $ P(A) = 1 + 4 + 6 + 4 + 1 $
+  \end{exampleblock}
+  \onslide<2->
+  Observamos que:
+  
+  \begin{exampleblock}{}
+    \centering
+    $\binom{4}{1} = \binom{4}{3}$
+  \end{exampleblock}
+  
+  \onslide<3->
+  Sin embargo, computacionalmente:
+
+  \begin{exampleblock}{}
+    \centering
+
+    $\binom{4}{1} = \frac{4}{1}$\\
+    \ \\
+
+    $\binom{4}{3} = \frac{4*3*2}{3*2*1}$
+  \end{exampleblock}
+  \onslide<4->
+  Por lo que:
+  \begin{exampleblock}{}
+    \centering
+    $\binom{4}{1}$ ahorra tiempo y espacio.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \begin{block}{De lo anterior, podemos concluir que:}
+    \begin{equation}
+      \binom{n}{n-r} = \binom{n}{r}
+    \end{equation}
+  \end{block}
+  En otras palabras:
+  \begin{block}{}
+    Si $a+b=n$, entonces $\binom{n}{a} = \binom{n}{b}$
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \onslide<1->
+    Retomemos $\binom{4}{3}$ del conjunto $A=\{a,b,c,d\}$, tendremos las
+    siguientes permutaciones y combinaciones: \\
+\ \\
+
+\begin{center}
+\begin{tabular}{cc}
+  \onslide<2-> \textbf{Combinaciones } & \textbf{Permutaciones }\\
+  \hline
+  \onslide<3-> abc & abc,acb,bac,bca,cab,cba \\
+  \hline
+  \onslide<4-> abd & abd,adb,bad,bda,dab,dba \\
+  \hline
+  \onslide<5-> acd & acd,adc,cad,cda,dac,dca \\
+  \hline
+  \onslide<6-> bcd & bcd,bdc,cbd,cdb,dbc,dcb
+
+\end{tabular}
+\end{center}
+
+\end{frame}
 
 \end{document}
 
