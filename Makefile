@@ -1,9 +1,8 @@
 reports: \
-	clean \
 	reports/probability_random_processes_and_inference.pdf
 
 presentation: \
-	slides/presentation.pdf
+	slides/counting_techniques_slides.pdf
 
 .PHONY: \
 	all \
@@ -32,7 +31,7 @@ define lint
         ${1}
 endef
 
-slides/presentation.pdf: slides/presentation.tex
+slides/counting_techniques_slides.pdf: slides/counting_techniques_slides.tex
 	$(renderPresentation)
 
 reports/probability_random_processes_and_inference.pdf: reports/probability_random_processes_and_inference.tex
