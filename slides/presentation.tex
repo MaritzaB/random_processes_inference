@@ -1,34 +1,7 @@
-% $Header$
 \documentclass{beamer}
-\usepackage{tcolorbox}  %Cuadros de teoremas
-
-
-% This file is a solution template for:
-
-% - Giving a talk on some subject.
-% - The talk is between 15min and 45min long.
-% - Style is ornate.
-
-
-
-% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
-%
-% In principle, this file can be redistributed and/or modified under
-% the terms of the GNU Public License, version 2.
-%
-% However, this file is supposed to be a template to be modified
-% for your own needs. For this reason, if you use this file as a
-% template and not specifically distribute it as part of a another
-% package/program, I grant the extra permission to freely copy and
-% modify this file as you see fit and even to delete this copyright
-% notice. 
 
 \mode<presentation>{
   \usetheme{Warsaw}
-%  % or ...
-%
-%  \setbeamercovered{transparent}
-%  % or whatever (possibly just delete it)
 }
 
 
@@ -41,10 +14,12 @@
 \usepackage{array}
 \usepackage{cancel}
 \usepackage{amssymb}
-\usepackage{hyperref}    % Vinculos [que no estén subrayados]
+\usepackage{hyperref}    % Vinculos [que no est\'en subrayados]
+\usepackage{tcolorbox}  %Cuadros de teoremas
+
 
 \title[ \hspace{21mm} \insertframenumber \ de \inserttotalframenumber ]
-{Técnicas de conteo}
+{T\'ecnicas de conteo}
 
 \subtitle
 {Probabilidad, procesos aleatorios e inferencia} % (optional)
@@ -54,22 +29,16 @@
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
 
-\institute[Instituto Politécnico Nacional] % (optional, but mostly needed)
+\institute[Instituto Polit\'ecnico Nacional]
 {
-  \inst{1}%
-  Centro de Investigación en Computación
-%  \and
-%  \inst{2}%
-%  Department of Theoretical Philosophy\\
-%  University of Elsewhere
+  \inst{1}
+  Centro de Investigaci\'on en Computaci\'on
   }
-% - Use the \inst command only if there are several affiliations.
-% - Keep it simple, no one is interested in your street address.
 
-\date[Short Occasion] % (optional)
+\date[Short Occasion]
 {\today}
 
-\keywords{conteo, permutación, combinación, variación, factorial}
+\keywords{conteo, permutaci\'on, combinaci\'on, variaci\'on, factorial}
 
 \begin{document}
 
@@ -77,22 +46,14 @@
   \titlepage
 \end{frame}
 
-%\section*{Regla de multiplicación}
-%\section*{Permutaciones}
-%\section*{Combinaciones}
-%\section*{Variaciones}
-%\section*{Diagrama de árbol}
 
 \begin{frame}{Regla de multiplicaci\'on}
   \onslide <1->
   \begin{block}{}
-    Si queremos contar el número de formas en las que pueden ocurrir dos eventos
-    simultáneos, podemos hacerlo usando la regla de la multiplicación.
+    Si queremos contar el n\'umero de formas en las que pueden ocurrir dos eventos
+    simult\'aneos, podemos hacerlo usando la regla de la multiplicaci\'on.
   \end{block}
-%\end{frame}
-%
-%
-%\begin{frame}
+
   \onslide <2->
   \begin{block}{Regla}
     Si un evento puede ocurrir de $n_1$ formas diferentes, y para cada una de
@@ -100,8 +61,8 @@
     dos eventos pueden ocurrir de $n_1*n_2$ formas diferentes.
   \end{block}
 
-  \onslide <2->
-  Así, para una serie de $k$ eventos tenemos:
+  \onslide <3->
+  As\'i, para una serie de $k$ eventos tenemos:
 
   \begin{block}{}
     \begin{equation}
@@ -109,7 +70,7 @@
     \end{equation}
   \end{block}
 
-  \onslide <3->
+  \onslide <4->
   Ejemplo:
   
   \begin{figure}
@@ -145,15 +106,15 @@
   
 \end{frame}
 
-\begin{frame}{Diagrama de árbol}
+\begin{frame}{Diagrama de \'arbol}
   \begin{columns}
     \column{.5\textwidth}
       \begin{block}{}
         \begin{itemize}
-          \onslide <1-> \item Los diagramas de árbol muestran todos los resultados posibles de un
+          \onslide <1-> \item Los diagramas de \'arbol muestran todos los resultados posibles de un
           evento.
-          \onslide <2-> \item Cada rama en un diagrama de árbol representa un posible resultado. 
-          \onslide <3-> \item Los diagramas de árbol pueden usarse para encontrar el número de
+          \onslide <2-> \item Cada rama en un diagrama de \'arbol representa un posible resultado. 
+          \onslide <3-> \item Los diagramas de \'arbol pueden usarse para encontrar el n\'umero de
           resultados posibles y calcular la probabilidad de los posibles resultados.
         \end{itemize}
       \end{block}
@@ -167,19 +128,19 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Ejemplo del diagrama de árbol}
+\begin{frame}{Ejemplo del diagrama de \'arbol}
 
   \begin{exampleblock}{Por ejemplo...}
     {Supongamos que vamos a comprar un helado. Entonces podemos escoger entre 3
-    sabores, fresa (f), chocolate (ch) y limón(l). También, podemos escoger entre
+    sabores, fresa (f), chocolate (ch) y lim\'on(l). Tambi\'en, podemos escoger entre
     cono o vaso.}
   \end{exampleblock}
 
 \end{frame}
 
-\begin{frame}{Ejemplo del diagrama de árbol}
+\begin{frame}{Ejemplo del diagrama de \'arbol}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % Se pueden poner primero los conos y después los sabores?  %
+  % Se pueden poner primero los conos y despu\'es los sabores?  %
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{figure}[h]
     \begin{center}		
@@ -205,39 +166,41 @@
         };
         \end{tikzpicture}
       \end{center}
-      \caption{Representación en el diagrama de árbol}
+      \caption{Representaci\'on en el diagrama de \'arbol}
       \label{permutaciones_tree}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Permutación, variación y combinación}
+\begin{frame}{Permutaci\'on, variaci\'on y combinaci\'on}
 
-  \begin{block}{Definición}
-    % DECIR QUE IMPORTA EL ORDEN
+  \begin{block}{Definici\'on}
+
     \onslide <1->Las \textbf{permutaciones y combinaciones} son maneras de representar grupos de objetos
     al seleccionarlos de un conjunto y formar subconjuntos.
     \vfill
-    \onslide <2-> Las \textbf{permutaciones} se refieren a la acción de ordenar u organizar los miembros de
-    un conjunto en algún tipo de orden o secuencia. Si un conjunto está ordenado, el
+    \onslide <2-> Las \textbf{permutaciones} se refieren a la acci\'on de ordenar u organizar los miembros de
+    un conjunto en alg\'un tipo de orden o secuencia. Si un conjunto est\'a ordenado, el
     proceso de reodenar sus elementos se llama permutar.
     \vfill
-    \onslide <3-> La \textbf{variación} es la disposición de una parte del total de los elementos en un
+    \onslide <3-> La \textbf{variaci\'on} es la disposici\'on de una parte del total de los elementos en un
     orden determinado.
     \vfill
-    \onslide <4-> A diferencia de las permutaciones y variaciones, en la \textbf{combinación} no importa el orden de la
-    selección de los subconjuntos.
+    \onslide <4-> A diferencia de las permutaciones y variaciones, en la \textbf{combinaci\'on} no importa el orden de la
+    selecci\'on de los subconjuntos.
 
   \end{block}
 
 \end{frame}
 
-\begin{frame}{Permutación, variación y combinación}
+\begin{frame}{Permutaci\'on, variaci\'on y combinaci\'on}
 
   \begin{tabular}{lcc}
     \onslide <1-> & ¿Importa el orden?  & ¿Entran todos los elementos? \\
-    \onslide <2-> Permutación & Si                  &   Si    \\
-    \onslide <3-> Variación   & Si                  &   No    \\
-    \onslide <4-> Combinación & No                  &   No
+    \hline
+    \hline
+    \onslide <2-> Permutaci\'on & Si                  &   Si    \\
+    \onslide <3-> Variaci\'on   & Si                  &   No    \\
+    \onslide <4-> Combinaci\'on & No                  &   No
   \end{tabular}
 
 \end{frame}
@@ -245,9 +208,9 @@
 \begin{frame}{Teorema de permutaciones}
 
   \onslide<1->
-  \begin{block}{Definición}
+  \begin{block}{Definici\'on}
     El total de permutaciones de $n$ objetos distintos tomados de $r$ formas a la
-    vez está dado por:
+    vez est\'a dado por:
     \begin{equation}
         P(n,r) =  \frac{n !}{(n - r)!}
     \end{equation}
@@ -262,25 +225,24 @@
 
 \end{frame}
 
-\begin{frame}{Ejemplo de permutación} 
-  % Problema de monti hol? 
-  % Problema del cumpleaños  
+\begin{frame}{Ejemplo de permutaci\'on} 
+
   \onslide<1->
   \begin{exampleblock}{Ejemplo}
-    Encuentre el número de permutaciones del conjunto de letras $A =
-    \{a,b,c,d,e,f\}$, tomando 3 al mismo tiempo y sin que se repitan. Es decir,
-    ¿Cuantas palabras de 3 letras podemos formar a partir de las 6 anteriores?
+    Encuentre el n\'umero de permutaciones del conjunto de letras $A =
+    \{a,b,c,d,e,f\}$, tomando 3 al mismo tiempo. Es decir, ¿Cuantas palabras de 3
+    letras podemos formar a partir de las 6 anteriores sin que se repitan?
   \end{exampleblock}
   
   \onslide<2->
-  Solución:
+  Soluci\'on:
 
   \begin{itemize}
     \item La primera letra podemos escogerla de 6 maneras diferentes.
     \onslide<3->\item La segunda letra podemos escogerla de 5 maneras diferentes.
     \onslide<4->\item La tercera letra podemos escogerla de 4 maneras diferentes.
   \end{itemize}
-  De acuerdo a la regla de la multiplicación tenemos:
+  De acuerdo a la regla de la multiplicaci\'on tenemos:
   \begin{exampleblock}{}
     \centering
     $6*5*4 = 120$
@@ -288,8 +250,8 @@
 
 \end{frame}
 
-\begin{frame}{Ejemplo de permutación}
-  También podemos sustituir en la fórmula y el resultado será el mismo:
+\begin{frame}{Ejemplo de permutaci\'on}
+  Tambi\'en podemos sustituir en la f\'ormula y el resultado ser\'a el mismo:
   \begin{exampleblock}{}
     \begin{equation}
         P(n,r) =  \frac{6 !}{(6 - 3)!} = \frac{720}{6} = 120
@@ -297,7 +259,7 @@
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}{Permutación con reemplazo y sin reemplazo}
+\begin{frame}{Permutaci\'on con reemplazo y sin reemplazo}
   \onslide<1->
   \begin{exampleblock}{Ejemplo}
     \begin{figure}
@@ -320,7 +282,7 @@
     $52*52*52 = 52^{3} = 140 608$
   \end{exampleblock}
 
-  \onslide<2->
+  \onslide<3->
   \begin{exampleblock}{Sin reemplazo}
     \centering
     $52*51*50 = 132,600$
@@ -328,23 +290,23 @@
 
 \end{frame}
 
-\begin{frame}{Recapitulación}
+\begin{frame}{Recapitulando...}
   \onslide<1->
-  \begin{block}{Regla de la multiplicación}
+  \begin{block}{Regla de la multiplicaci\'on}
     \begin{equation}
       n_1*n_2*n_3*...*n_k
     \end{equation}
   \end{block}
 
   \onslide<2->
-  \begin{block}{Permutación. Muestreo con reemplazo}
+  \begin{block}{Permutaci\'on. Muestreo con reemplazo}
     \begin{equation}
       \underbrace{n*n*n*...*n}_{r \ \text{veces}} = n^r
     \end{equation}
   \end{block}
 
   \onslide<3->
-  \begin{block}{Permutación. Muestreo sin reemplazo.}
+  \begin{block}{Permutaci\'on. Muestreo sin reemplazo.}
     \begin{equation}
       n(n-1)(n-2)...(n-r+1) = \frac {n!}{(n-r)!}
     \end{equation}
@@ -352,33 +314,33 @@
 
 \end{frame}
 
-\begin{frame}{Permutación. Muestreo sin reemplazo.}
+\begin{frame}{Permutaci\'on. Muestreo sin reemplazo.}
   
   \onslide<1->
-  \begin{block}{Definición}
+  \begin{block}{Definici\'on}
     El total de permutaciones de $n$ objetos distintos tomados de $r$ formas a la
-    vez está dado por:
+    vez est\'a dado por:
     \begin{equation}
         P(n,r) =  \frac{n !}{(n - r)!}
     \end{equation}
     Con el caso especial donde $n=r$, donde tenemos $n!$.
   \end{block}
   \onslide<2->
-    Para deducirla a partir de la regla de la multiplicación, podemos suponer que
+    Para deducirla a partir de la regla de la multiplicaci\'on, podemos suponer que
     $n=5$ y $r=3$, entonces observamos lo siguiente:
   
   \onslide<3->
   \begin{block}{}
     \centering
-    $\overbrace{\underbrace{5*4*3}_{\text{Regla de la multiplicación}} *
+    $\overbrace{\underbrace{5*4*3}_{\text{Regla de la multiplicaci\'on}} *
     \underbrace{2*1}_{\text{lo quitamos con } (n-r)!}}^{n \ \text{factorial}}$
   \end{block}
   
 \end{frame}
 
-\begin{frame}{Permutación. Muestreo sin reemplazo.}
+\begin{frame}{Permutaci\'on. Muestreo sin reemplazo.}
   
-  Sustituyendo $n=5$ y $r=3$ en la fórmula:
+  Sustituyendo $n=5$ y $r=3$ en la f\'ormula:
   
   \begin{block}{}
     \centering
@@ -390,12 +352,12 @@
 
 \begin{frame}{Permutaciones con elementos repetidos}
   \onslide<1->
-  \begin{block}{Definición}
+  \begin{block}{Definici\'on}
     El total de permutaciones de un conjunto de $n$ objetos, de los cuales, los
-    subconjuntos $n_1$, $n_2$ y $n_k$ son elementos repetidos, está dado por:
+    subconjuntos $n_1$, $n_2$ y $n_k$ son elementos repetidos, est\'a dado por:
   \begin{equation}
-    \frac{n!}{n_{1}!*n_{2}!*...*n_{k}!}
     \label{eq:permutar}
+    \frac{n!}{n_{1}!*n_{2}!*...*n_{k}!}
   \end{equation}
   \end{block}
 
@@ -406,20 +368,20 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Ejemplo de permutación con elementos repetidos}
+\begin{frame}{Ejemplo de permutaci\'on con elementos repetidos}
   \onslide<1->
   \begin{exampleblock}{Ejemplo}
-    ¿Cuántas palabras diferentes se pueden formar con las letras de la palabra
+    ¿Cu\'antas palabras diferentes se pueden formar con las letras de la palabra
     \textbf{M A T E M A T I C A S}?\\
     \onslide<2->
-    \textbf{Observación}:
+    \textbf{Observaci\'on}:
     \begin{itemize}
       \item En total son 11 letras
       \onslide<2-> \item La letra \textbf{M} se repite 2 veces
       \onslide<3-> \item La letra \textbf{A} se repite 3 veces
       \onslide<4-> \item La letra \textbf{T} se repite 2 veces
-      \onslide<5-> \item Si hacemos una permutación solo en los elementos de \textbf{M}, la palabra
-      seguiría siendo la misma
+      \onslide<5-> \item Si hacemos una permutaci\'on solo en los elementos de \textbf{M}, la palabra
+      seguir\'ia siendo la misma
       \onslide<6-> \item Lo mismo con los otros elementos que se repiten
       \onslide<7-> \item Los elementos \textbf{E, I, C, S} no se repiten
     \end{itemize}
@@ -427,8 +389,8 @@
 
 \end{frame}
 
-\begin{frame}{Solución}
-  De acuerdo a la ecuación (8), tenemos:  %CORREGIR
+\begin{frame}{Soluci\'on}
+  De acuerdo a la Ec. (\ref{eq:permutar}), tenemos:
   \begin{exampleblock}{}
     \centering
 $\frac{11!}{\underbrace{2!}_{\textbf{M}}*\underbrace{3!}_{\textbf{A}}*\underbrace{2!}_{\textbf{T}}}
@@ -438,9 +400,9 @@ $\frac{11!}{\underbrace{2!}_{\textbf{M}}*\underbrace{3!}_{\textbf{A}}*\underbrac
 
 \begin{frame}{Coeficientes binomiales}
   \onslide<1->
-  \begin{block}{Definición}
+  \begin{block}{Definici\'on}
     Para cualquier entero positivo $k$ y $n$, el coeficiente binomial
-    $\binom{n}{k}$, que se lee \textit{n combinación k}, es el número de
+    $\binom{n}{k}$, que se lee \textit{n combinaci\'on k}, es el n\'umero de
     subconjuntos de tamaño $k$ de un conjunto de tamaño $n$. Se puede calcular de la
     siguiente manera:
     \onslide<2->
@@ -451,10 +413,10 @@ $\frac{11!}{\underbrace{2!}_{\textbf{M}}*\underbrace{3!}_{\textbf{A}}*\underbrac
   \onslide<3->
   Para $k>n$, $\binom{n}{k}=0$ \\
   \onslide<4->
-  \textbf{Observación}\\
+  \textbf{Observaci\'on}\\
   \begin{itemize}
-    \item $\frac{n!}{(n-k)}$ es la permutación sin reemplazo.
-    \onslide<5-> \item Ya que no nos importa que los elementos estén ordenados,
+    \item $\frac{n!}{(n-k)}$ es la permutaci\'on sin reemplazo.
+    \onslide<5-> \item Ya que no nos importa que los elementos est\'en ordenados,
     podemos quitar aquellos subconjuntos cuyos elementos se repitan. Esto lo hacemos
     dividiendo entre $k!$.
   \end{itemize}
@@ -464,18 +426,16 @@ $\frac{11!}{\underbrace{2!}_{\textbf{M}}*\underbrace{3!}_{\textbf{A}}*\underbrac
 \begin{frame}{Ejemplo de uso del coeficiente binomial}
   \onslide<1->
   \begin{exampleblock}{Conjunto potencia}
-    ¿Cuántos subconjuntos tiene el conjunto $A =\{a,b,c,d\}$?
+Dado el conjunto $A =\{a,b,c,d\}$, ¿Cu\'antos subconjuntos podemos formar con
+0, 1, 2, 3, y 4 elementos?
   \end{exampleblock}
   \onslide<2->
-  Podemos calcular los subconjuntos de 0, 1, 2, 3 y 4 elementos de la siguiente
-  forma:
-  \onslide<3->
   \begin{exampleblock}{}
     \centering
     $ P(A) = \binom{4}{0} + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} + \binom{4}{4} $
   \end{exampleblock}
-  \onslide<4->
-  Que de acuerdo con la ecuación (9): %CORREGIR
+  \onslide<3->
+  Que de acuerdo con la Ec. (\ref{eq:binomial}):
 
   \begin{exampleblock}{}
     \centering
@@ -492,7 +452,8 @@ $\frac{11!}{\underbrace{2!}_{\textbf{M}}*\underbrace{3!}_{\textbf{A}}*\underbrac
 \begin{frame}{Ejemplo de uso del coeficiente binomial}
 
   \begin{exampleblock}{Conjunto potencia}
-    ¿Cuántos subconjuntos tiene el conjunto $A =\{a,b,c,d\}$?
+    Dado el conjunto $A =\{a,b,c,d\}$, ¿Cu\'antos subconjuntos podemos formar con 0,
+    1, 2, 3, y 4 elementos?
   \end{exampleblock}
   
   Podemos calcular los subconjuntos de 0, 1, 2, 3 y 4 elementos de la siguiente
@@ -518,7 +479,7 @@ $\frac{11!}{\underbrace{2!}_{\textbf{M}}*\underbrace{3!}_{\textbf{A}}*\underbrac
 
 \begin{frame}
   \onslide<1->
-  \begin{exampleblock}{Observación}
+  \begin{exampleblock}{Observaci\'on}
     De acuerdo a: 
     \centering
     $ P(A) = \binom{4}{0} + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} +

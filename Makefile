@@ -20,6 +20,7 @@ endef
 
 define renderPresentation
     cd $(<D) && pdflatex $(<F)
+	cd $(<D) && pdflatex $(<F)
 endef
 
 define lint
