@@ -1,0 +1,35 @@
+
+\section*{Tri\'angulo de Sierpinski}
+
+El matem\'atico polaco Waclav Sierpinski (1882-1969), construy\'o este fractal
+en 1919 del modo siguiente: tom\'o un tri\'angulo equil\'atero, uni\'o los
+puntos medios de los lados y form\'o cuatro tri\'angulos interiores: tres
+tri\'angulos equil\'ateros sombreados y un hueco que es otro tri\'angulo
+equil\'atero. Repiti\'o el proceso en cada uno de los tri\'angulos sombreados, y
+sigui\'o hasta el infinito el proceso en los tres tri\'angulos restantes como el
+primero.
+
+
+\begin{figure}[h]
+    \centering
+    \usetikzlibrary{lindenmayersystems}
+\def\trianglewidth{3cm} \pgfdeclarelindenmayersystem{Sierpinski triangle}{
+        \symbol{X}{\pgflsystemdrawforward}
+        \symbol{Y}{\pgflsystemdrawforward}
+        \rule{X -> X-Y+X+Y-X}
+        \rule{Y -> YY}
+} \foreach \level in {1,3,5}{ \tikzset{
+l-system={step=\trianglewidth/(2^\level), order=\level, angle=-120} }
+
+        \begin{tikzpicture}
+\fill [black] (0,0) -- ++(0:\trianglewidth) -- ++(120:\trianglewidth) -- cycle;
+\draw [draw=none] (0,0) l-system [l-system={Sierpinski triangle,
+axiom=X},fill=white];
+        \end{tikzpicture}
+}
+    \caption{Tri\'angulo de Sierpinski para los niveles 1,3 y 5.}
+    \label{fig:sierpinski}
+\end{figure}
+
+Como se muestra en la Fig.(\ref{fig:sierpinski})
+

@@ -1,0 +1,118 @@
+
+\section*{Convenio de suma de Einstein}
+
+Se denomina notación de Einstein o notación indexada a la convención utilizada
+para abreviar la escritura de las sumatorias, donde se suprime el término de la
+sumatoria $(\sum)$. Este convenio fue introducido por Albert Einstein en 1916.
+
+Dada una expresión lineal en $\mathbb{R^{n}}$ en la que se escriban todos sus
+términos en forma explícita:
+
+\begin{equation}
+    u = u_1 x_1 + u_2 x_2 + ...u_n x_n
+\end{equation}
+
+Se puede escribir de la forma:
+
+\begin{equation}
+    u = \sum_{i=1}^{n} u_ix_i
+\end{equation}
+
+La notación de Einstein obtiene una expresión aún más condensada eliminando el
+signo de la sumatoria y entendiendo que la expresión resultante en un índice
+indica la suma sobre todos los posibles valores del mismo.
+
+\begin{theorem}{Convenio de la suma de Einstein}{convenioSuma}
+    \begin{equation}
+        u = u_ix_i
+    \end{equation}
+\end{theorem}
+
+\subsection*{Tensor Levi-Civita}
+
+Está definido por:
+
+\begin{theorem}{Tensor de Levi-Civita}{leviCivita}
+\begin{equation}
+    \epsilon_{ijk}=
+    \left\lbrace\begin{array}{ccccl} 
+        +1 & ijk, & kji, & jki & \text{Permutación cíclica o par}\\ 
+        -1 & ikj, & kji, & jik & \text{Permutación anticíclica o impar}\\
+        0  & iii, & jjj, & kkk & \text{Si se repiten}
+    \end{array}\right.
+\end{equation}
+\end{theorem}
+
+\subsection*{Producto escalar de dos vectores}
+
+También conocido como producto punto, es una operación algebraíca que toma dos
+vectores y retorna un escalar. esta definido de la siguiente manera:
+
+\begin{theorem}{Producto escalar de dos vectores}{productoEscalar}
+    \begin{equation}
+        \bar{A} \cdot \bar{B}= \bar{\abs{A}} \bar{\abs{B}} \cos \theta
+        = \sum_{i=1}^{n} a_i b_i
+    \end{equation}
+\end{theorem}
+
+Que de acuerdo al convenio de suma de Einstein podemos escribir como:
+
+\begin{equation}
+    \bar{A} \cdot \bar{B} = a_i b_i
+\end{equation}
+
+\subsection*{Producto vectorial de dos vectores}
+
+EL producto vectorial o producto cruz de dos vectores es una operación binaria
+entre dos vectores en un espacio tridimensional. El resultado es un vector
+perpendicular a los vectores que se multiplican, y por lo tanto normal al plano
+que los contiene.
+
+Está definido de la siguiente manera:
+
+\begin{theorem}{Producto Vectorial de dos vectores}{productoVectorial}
+\begin{equation}
+    \bar{A} \times \bar{B}= \bar{\abs{A}} \bar{\abs{B}} \sin \theta \  \hat{r}
+\end{equation}
+\end{theorem}
+
+Donde $\hat{r}$ es el vector unitario y ortogonal a los vectores $\bar{A}$ y
+$\bar{B}$, y $\theta$ el ángulo entre $\bar{A}$ y $\bar{B}$.
+
+Que mediante determinantes tenemos:
+
+\begin{equation}
+    \bar{A} \times \bar{B}=
+    \begin{bmatrix}
+        \hat{i} & \hat{j} & \hat{k}\\ 
+         a_1 & a_1 & a_1\\ 
+         b_1 & b_1 & b_1
+    \end{bmatrix}
+\end{equation}
+
+Desarrollamos:
+
+\begin{equation}
+    \bar{A} \times \bar{B}= \hat{i}(a_2 b_3 - a_3 b_2) - \hat{j}(a_1 b_3 - a_3 b_1) + \hat{k}(a_1 b_2 - a_2 b_1)
+\end{equation}
+
+Desde un punto de vista tensorial el producto generalizado de $n$ vectores vendrá
+dado por:
+
+\begin{theorem}{Generalización del producto vectorial desde el punto de vista tensorial}{productoTensorial}
+    \begin{equation}
+        (\bar{A} \times \bar{B})_{i} = \epsilon_{ijk} a_{j} b_{k}
+    \end{equation}
+\end{theorem}
+
+Desarrollando:
+
+\begin{equation}
+    \epsilon_{ijk} a_{jbk} =
+    \begin{array}{ccccc}
+        \cancel{\epsilon_{111} a_1 b_1} & + & \cancel{\epsilon_{112} a_1 b_2}   & + & \cancel{\epsilon_{112} a_1 b_3}   \\
+        \cancel{\epsilon_{121} a_2 b_1} & + & \cancel{\epsilon_{122} a_2 b_2}   & + & \epsilon_{123} a_2 b_3            \\
+        \cancel{\epsilon_{131} a_3 b_1} & + & \epsilon_{132} a_3 b_2            & + & \cancel{\epsilon_{133} a_3 b_3}
+    \end{array}
+    = a_2 b_3 - a_3 b_2
+\end{equation}

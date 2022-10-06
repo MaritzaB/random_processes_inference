@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{tikz}
+\usepackage{amsmath}    %Caracteres especiales de matematicas
+\usepackage[hidelinks]{hyperref}    % Vinculos [que no estén subrayados]
+\usepackage{listings}   %Introducir codigo
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage[makeroom]{cancel}
+\usepackage{pdflscape}  %Voltear la página
+\usepackage{tcolorbox}  %Cuadros de teoremas
+\usepackage{fancyhdr, lastpage}
+\usepgflibrary{fpu}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+
+\tcbuselibrary{listings,theorems}
+
+\pagestyle{fancy}   %Encabezado en las páginas
+\chead{Probabilidad, procesos aleatorios e inferencia}  %Encabezado central
+\lhead{}    %Encabezado izquiero vacio
+\rhead{}    %Encabezado derecho vacio
+%% Cambiar letra a tamaño 12
+
+\usepackage[Glenn]{fncychap}
+% Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+
+\input{custom/specifications}
+
+\begin{document}
+\title{Probabilidad, procesos aleatorios e inferencia}
+\author{Ana Maritza Bello Ya\~nez}
+\maketitle
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       Caja del teorema                            %
+%                                                                   %
+\newtcbtheorem{theorem}{Teorema}             %
+{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{th}   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+\pagebreak
+\input{sections/s05_resumen}
+\input{sections/s01_probabilidad}
+
+\input{sections/s02_experiments}
+
+\input{sections/conjuntos}
+
+\input{sections/counting_techniques}
+
+\input{sections/s03_binomio_de_newton}
+\input{sections/s08_pascal_triangle}
+
+\input{sections/s04_levi_civita}
+
+\input{sections/s07_zeller}
+%\input{s06_sierpinski}
+
+\input{sections/rotation_matrix}
+
+\input{sections/matrices_de_rotacion}
+
+\input{sections/euler_angles}
+
+
+
+\pagebreak
+\bibliography{../references/references.bib} 
+\bibliographystyle{unsrt}
+
+\end{document}

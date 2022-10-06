@@ -1,0 +1,82 @@
+
+\section*{Matrices de rotaci\'on}
+Una matriz de rotaci\'on es una matriz que representa una rotaci\'on en el
+espacio euclidiano. Las matrices de rotaci\'on pueden ser en dos o tres
+dimensiones.
+	
+Por ejemplo, si la matriz de rotaci\'on es de dos dimensiones y se busca rotar
+en sentido horario, la matriz tendrá la siguiente forma:
+
+\begin{equation}
+	R(\theta)=
+	\begin{bmatrix}
+		\cos \theta & -\sin \theta\\
+		\sin \theta & \cos \theta
+	\end{bmatrix}
+\end{equation}
+
+De esta manera, las nuevas coordenadas, una vez aplicando la rotación son de la
+siguiente manera:
+
+\begin{eqnarray}
+	\left(
+	\begin{matrix}
+		x'\\
+		y'
+	\end{matrix}
+	\right)
+	=
+	\begin{bmatrix}
+		\cos \theta & -\sin \theta\\
+		\sin \theta & \cos \theta
+	\end{bmatrix}
+	\left(
+	\begin{matrix}
+		x\\
+		y
+	\end{matrix}
+	\right)\\
+	x'=x\cos \theta -y\sin \theta\\
+	y'=x\sin \theta + y \cos \theta
+\end{eqnarray}
+
+En caso de querer que la rotación sea antihoraria, se utiliza la siguiente
+matriz:
+
+\begin{equation}
+	R(-\theta)=
+	\begin{bmatrix}
+		\cos \theta & \sin \theta\\
+		-\sin \theta & \cos \theta
+	\end{bmatrix}
+\end{equation}
+
+Si lo que se busca es realizar rotaciones en el espacio tridimensional, se deben
+modificar las matrices de la siguiente manera:
+
+\begin{equation}
+	R_x(\theta)=
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		0 & \cos \theta & \sin \theta\\
+		0 & -\sin \theta & \cos \theta
+	\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+	R_y(\theta)=
+	\begin{bmatrix}
+		\cos \theta & 0 & \sin \theta\\
+		0 & 1 & 0\\
+		-\sin \theta & 0 & \cos \theta
+	\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+	R_z(\theta)=
+	\begin{bmatrix}
+		\cos \theta & -\sin \theta & 0\\
+		\sin \theta & \cos \theta & 0\\
+		0 & 0 & 1
+	\end{bmatrix}
+\end{equation}
