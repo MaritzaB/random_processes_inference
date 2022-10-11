@@ -276,7 +276,7 @@ pierde todo su dinero o si gana tres dólares, es decir, si tiene cuatro dólare
 Encuentre el número de formas en que pueden ocurrir las apuestas.
 
 
-El diagrama de árbol a la derecha describe la forma en que se pueden realizar
+El diagrama de árbol describe la forma en que se pueden realizar
 las apuestas. Cada número en el diagrama denota la cantidad de dólares que tiene
 el hombre en ese momento. Observe que las apuestas pueden ocurrir de 11 maneras
 diferentes. Tenga en cuenta que dejará de apostar antes de que se cumplan los
@@ -293,6 +293,8 @@ cinco tiempos en solo tres de los casos.
 \tikzstyle{bag} = [text width=1em, text centered]
 \tikzstyle{end} = [circle, minimum width=0.5pt,fill, inner sep=0pt]
 
+\begin{figure}[h]
+    \centering
 \begin{tikzpicture}[grow=right, sloped]
     \node[bag] {1}
     child {
@@ -351,9 +353,11 @@ cinco tiempos en solo tres de los casos.
             }
     }
             }
-    }
-    ;
-    \end{tikzpicture}
+    };
+\end{tikzpicture}
+\caption{Diagrama de árbol que describe las formas en ls que se pueden realizar
+las apuestas.}
+\end{figure}
 
 \begin{landscape}
 
@@ -361,6 +365,8 @@ cinco tiempos en solo tres de los casos.
 Construye el diagrama de árbol para el número de permutaciones de $\{ a,b,c,d
 \}$
 
+\begin{figure}[h!]
+    \centering
 \begin{tikzpicture}[
     auto,
     level 1/.style={sibling distance=58mm},
@@ -563,22 +569,169 @@ Construye el diagrama de árbol para el número de permutaciones de $\{ a,b,c,d
         
         ;
 \end{tikzpicture}
+\caption{Permutaciones para 4 elementos}
+\end{figure}
 
 
 \end{landscape}
 
-\subsection*{Problema 2.69}
+%\subsection*{Problema 2.69}
 
 
-\subsection*{Problema 2.70}
+%\subsection*{Problema 2.70}
 
 
-\subsection*{Problema 2.71}
+%\subsection*{Problema 2.71}
 
-\subsection*{Problema 2.72}
+%\subsection*{Problema 2.72}
 
-\subsection*{Problema 2.73}
+%\subsection*{Problema 2.73}
 
 \subsection*{Problema 2.74}
+
+Considere el diagrama adyacente con nueve puntos $A, B, C, R, S, T, X, Y, Z$.
+Una persona comienza en $X$ y se le permite moverse horizontal o verticalmente,
+un paso a la vez. Se detiene cuando no puede seguir caminando. sin llegar al
+mismo punto más de una vez. Encuentra el número de maneras en que puede tomar su
+caminata, si primero se mueve de $X$ a $R$. (Por simétrica, el número total de
+vías es el doble).
+
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=1.3cm, sibling distance=1cm]
+\tikzstyle{level 2}=[level distance=2cm, sibling distance=7cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=3cm]
+\tikzstyle{level 4}=[level distance=1.5cm, sibling distance=2.5cm]
+\tikzstyle{level 5}=[level distance=1.5cm, sibling distance=1cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+\begin{figure}[h!]
+\begin{tikzpicture}[grow=right, sloped]
+    \node[bag] {X}
+    child {
+        node[bag] {R}
+    child {
+        node[bag] {S}
+                                         child {
+                    node[bag] {Y}
+                                                     child {
+                    node[bag] {Z}
+                                                     child {
+                    node[bag] {T}
+                                                     child {
+                    node[bag] {C}
+                                                     child {
+                    node[bag] {B}
+                                                     child {
+                    node[bag] {A}
+                }
+                }
+                }
+                }
+                }
+                }
+                                                 child {
+                    node[bag] {T}
+                                                     child {
+                    node[bag] {Z}
+                                                     child {
+                    node[bag] {Y}
+                }
+                }
+                                                 child {
+                    node[bag] {C}
+                                                     child {
+                    node[bag] {B}
+                                                     child {
+                    node[bag] {A}
+                }
+                }
+                }
+                }
+        child {
+                node[bag] {B}
+                                                 child {
+                    node[bag] {C}
+                                                     child {
+                    node[bag] {T}
+                                                     child {
+                    node[bag] {Z}
+                                                     child {
+                    node[bag] {Y}
+                }
+                }
+                }
+                }
+                                                 child {
+                    node[bag] {A}
+                }
+    }
+    }
+    child {
+        node[bag] {A}
+            child {
+                node[bag] {B}
+                            child {
+                node[bag] {S}
+                                                 child {
+                    node[bag] {Y}
+                                                     child {
+                    node[bag] {Z}
+                                                     child {
+                    node[bag] {T}
+                                                     child {
+                    node[bag] {C}
+                }
+                }
+                }
+                }
+                                                 child {
+                    node[bag] {T}
+                                                     child {
+                    node[bag] {Z}
+                                                     child {
+                    node[bag] {Y}
+                }
+                }
+                                                 child {
+                    node[bag] {C}
+                }
+                }
+            }
+                            child {
+                node[bag] {C}
+                                 child {
+                    node[bag] {T}
+                                    child {
+                    node[bag] {Z}
+                                                     child {
+                    node[bag] {Y}
+                                                     child {
+                    node[bag] {S}
+                }
+                }
+                }
+                                                 child {
+                    node[bag] {S}
+                                                     child {
+                    node[bag] {Y}
+                                                     child {
+                    node[bag] {Z}
+                }
+                }
+                }
+                }
+            }
+            }
+            }
+    };
+\end{tikzpicture}
+\caption{Diagrama de árbol con las diferentes maneras en las que se puede tomar el camino}
+\end{figure}
+
+
 
 \end{document}
