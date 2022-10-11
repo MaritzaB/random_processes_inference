@@ -26,6 +26,8 @@
 Demostrar que un número palindrómico (decimal) de longitud par es divisible por
 11.
 
+\textbf{Solución}
+
 La prueba inductiva explota el hecho de que cuando se quitan el primer y el
 último carácter de un palíndromo, queda un palíndromo. Así, sea $N$ un número
 palindrómico de longitud $2k$. Si $k = 1$, el teorema obviamente se cumple. Si
@@ -55,7 +57,9 @@ divisible por 11 y la demostración está completa.
 En un palíndromo binario, el primer dígito es 1 y cada dígito subsiguiente puede
 ser 0 o 1. Cuente los palíndromos binarios de longitud $n$.
 
-Tenemos $[(n + 1)/21- 1 ]= [(n - 1)/2]$ posiciones libres, por lo tanto el número
+\textbf{Solución}
+
+Tenemos $[(n + 1)/2] - 1 = [(n - 1)/2]$ posiciones libres, por lo tanto el número
 deseado es:
 
 $2^{[(n-1)/2]}$
@@ -84,26 +88,484 @@ $= 1-(1 - \frac{1}{365})(1 - \frac{2}{365})...(1 - \frac{n-1}{365})$
 
 Puede verificarse que $p_n \geq 1/2 $ cuando $n>25$.
 
-\subsection*{Problema 1.39}
+\subsection*{Ejercicio 1.39}
+Pruebe que 
+\begin{enumerate}
+	\item 
+    \begin{equation*}
+		\Sigma_{r=0}^nC(n,r)=2^n
+    \end{equation*}
 
-\subsection*{Problema 1.40}
+\textbf{Solución}
 
-\subsection*{Problema 1.77}
+\begin{eqnarray*}
+	\Sigma_{r=0}^{n} \binom{n}{r}=\Sigma_{r=0}^{n} \binom{n}{r}(1^{n-r})(1^r)=(1+1)^n=2^n
+\end{eqnarray*}
+	
+    \item 
+    \begin{equation*}
+		\Sigma_{r=0}^n(-1)^rC(n,r)=0
+	\end{equation*}
+
+\textbf{Solución}
+
+\begin{eqnarray*}
+	\Sigma_{r=0}^{n} (-1)^r \binom{n}{r}=\Sigma_{r=0}^{n} \binom{n}{r}(1^{n-r})(-1^r)=(1-1)^n=0
+\end{eqnarray*}
+
+\item
+\begin{equation*}
+	\Sigma_{r=even}^nC(n,r)=\Sigma_{r=odd}^nC(n,r)=2^{n-1}
+\end{equation*}
+
+\textbf{Solución}
+
+\begin{eqnarray*}
+	\Sigma_{r=even}^nC(n,r)=\frac{\Sigma_{r=0}^{n} \binom{n}{r}}{2}=\frac{2^n}{2}=2^{n-1}\\
+	\Sigma_{r=odd}^nC(n,r)=\frac{\Sigma_{r=0}^{n} \binom{n}{r}}{2}=\frac{2^n}{2}=2^{n-1}
+\end{eqnarray*}
+	
+\end{enumerate}
+
+\subsection*{Ejercicio 1.39}
+Obtenga nuevamente los resultados del ejercicio 1.39 con argumentos combinatorios.
+
+\textbf{Solución}
+
+\begin{enumerate}
+	
+\item Si se considera un conjunto de $n$ elementos, se pueden formar $2^n$
+subconjuntos (conjunto potencia). El conjunto potencia incluye los subconjuntos
+que se pueden formar con r elementos. Así:
+
+\begin{equation*}
+	|\mathcal{P}|=2^n=\binom{n}{0}+\binom{n}{1}+...+\binom{n}{n-1}+\binom{n}{n}=\Sigma_{r=0}^{n} \binom{n}{r}
+\end{equation*} 
+
+\item Se establece que X tiene tantos subconjuntos con $r$ elementos pares como
+$r$ elementos impares.
+
+Caso 1: Esto se cumple si n es impar.
+	
+Caso 2: Cuando $n$ es par.
+
+Se descompone $X=X'\cup \{j\}$. Donde $j$ es un elemento de $X$\\
+	
+Ahora $X'$ está compuesto por un n\'umero impar de elementos, por lo que tiene
+la misma cantidad de subconjuntos formados con $r$ par ($X_p$) o impar ($X_i$),
+pero como se había eliminado un elemento $|X_p|=|X_i|=2^{n-1}$
+
+\end{enumerate}
+
+\subsection*{Ejercicio 1.77}
+
+Muestre que en un grupo de n personas, al menos 2 personas conocen al mismo
+n\'umero de personas.
+
+\textbf{Solución}
+
+Sea $k$ el n\'umero de personas que no conoce a nadie del grupo
+
+\begin{itemize}
+\item Caso $k>1$: Hay m\'as de una persona que no conoce a nadie y entonces se
+cumple el enunciado.
+	
+\item Caso $k=0$: Como no hay persona que no conozca a nadie. Todas las personas
+pueden conocer al menos a 1 persona o hasta $n-1$ personas. 
+	
+Con el principio del palomar (principio de Dirichlet), supongamos que las cajas
+(pichoneras) están de acuerdo al n\'umero de personas conocidas. Es decir, que
+puede haber hasta $n-1$ pichoneras y que le han preguntado a las $n-1$ personas
+a cuántos de los otros conocen. En el caso extremo, uno a uno se ir\'an
+colocando en las cajas correspondientes a sus n\'umeros.
+	
+Cuando le pregunten a la persona $n$, forsozamente tendr\'a que elegir un
+n\'umero que alguien m\'as haya elegido y entonces el enunciado se cumple. 
+	
+\item Caso $k=1$: Se puede despreciar a esa persona que no conoce a nadie y
+entonces se hace el an\'alisis para el caso k=0 con un grupo de $n-1$ personas.
+
+\end{itemize}
 
 \subsection*{Problema 1.78}
 
+Considera un torneo in el cual cada uno de los $n$ jugadores juega contra cada
+uno de los otros jugadores y cada jugador gana al menos 1 juego. Prueba que hay
+al menos dos jugadores que tienen el mismo n\'umero de victorias.
+
+El n\'umero de victorias de cada jugador es al menos una y por mucho $n-1$
+victorias. Estos $n-1$ n\'umeros corresponde a las pichoneras para acomodar $n$
+palomas.
+
 \subsection*{Problema 1.87}
+Hay 12 computadoras y 8 impresoras l\'aser en una oficina. Encuentra el n\'umero
+m\'inimo de conexiones que se tienen que hacer para garantizar que si 8 o menos
+computadoras quieren imprimir al mismo tiempo, cada una de ellas ser\'a capaz de
+usar una impresora diferente.\\
+
+Suponemos que las impresoras se denotan por $P_{j} (j=1,2,...,8)$ y las
+computadoras por $C_{i} (i=1,2,..,12)$.\\
+
+Conectar la primera impresora a las primeras cinco computadoras. Despu\'es
+conectar la segunda impresora a las 5 impresoras consecutivas empezando por
+$C_{2}$. Despu\'es conectar la tercera impresora con las 5 computadoras
+consecutivas empezando por $C_{3}$ y as\'i consecutivamente para generar la
+matriz de conexiones.
+
+\begin{table}[h!]
+	\begin{tabular}{l|lllllllll}
+		       &$P_{1}$&$P_{2}$&$P_{3}$ &$P_{4}$&$P_{5}$&$P_{6}$&$P_{7}$&$P_{8}$&\\\hline
+		$C_{1}$&  1&  0&  0&   0& 	 0&   0&   0&  0&\\ 
+		$C_{2}$&  1&  1&  0&   0& 	 0&   0&   0&  0&\\
+		$C_{3}$&  1&  1&  1&   0& 	 0&   0&   0&  0&\\
+		$C_{4}$&  1&  1&  1&   1& 	 0&   0&   0&  0&\\
+		$C_{5}$&  1&  1&  1&   1& 	 1&   0&   0&  0&\\
+		$C_{6}$&  0&  1&  1&   1& 	 1&   1&   0&  0&\\
+		$C_{7}$&  0&  0&  1&   1& 	 1&   1&   1&  0&\\
+		$C_{8}$&  0&  0&  0&   1& 	 1&   1&   1&  1&\\
+		$C_{9}$&  0&  0&  0&   0& 	 1&   1&   1&  1&\\
+		$C_{10}$&  0&  0&  0&   0& 	 0&   1&   1&  1&\\
+		$C_{11}$&  0&  0&  0&   0& 	 0&   0&   1&  1&\\
+		$C_{12}$&  0&  0&  0&   0& 	 0&   0&   0&  1&\\
+	\end{tabular}
+\end{table}
+
+Sean las 8 computadoras que requieren una impresora $C_{i_{1}}, C_{i_{2}},...,
+C_{i_{8}}$ donde $i_{1} <i_{2}<...<i_{8} < $. Si 8 computadoras pueden ser
+acomodadas, entonces se puede acomodar cualquier n\'umero m\'as peque\~no. La
+observaci\'on crucial es:
+
+\begin{equation}
+	s \leq i_{s} \leq s+4   (s=1,2,...,8)
+\end{equation}
+
+En efecto, si $i_{s} < s$ existen $s$ enteros positivos menores que $s$ y si
+$i_{s} > s+5$, al menos $12-(s+6)+1=7-s$ valores estar\'ian disponibles para los
+$8-s$ indices restantes.\\
+
 
 \section*{Ejercicios de Probabilidad (Schaum)}
 % Problemas 2.29, 2.30, 2.68 al 2.74
 
 \subsection*{Problema 2.29}
+Construya el diagrama de árbol para las permutaciones de $\{ a,b,c \}$.
 
+\begin{figure}[h]
+	\begin{center}		
+	\begin{tikzpicture}[level distance=1cm, level 1/.style={sibling distance=3cm},
+		level 2/.style={sibling distance=2cm}, every node/.style={circle, draw,
+		align=center} ]
+				\centering
+				\node[circle,draw]{$P_n$}
+		child{node{a} child{node{b} child{node{c}} } child{node{c} child{node{b}}} }
+		child{node{b} child{node{a} child{node{c}} } child{node{c} child{node{a}}} }
+		child{node{c} child{node{a} child{node{b}} } child{node{b} child{node{a}}} };
+			\end{tikzpicture}
+		\end{center}
+		\caption{Permutaciones para 3 elementos}
+		\label{permutaciones_tree}
+\end{figure}
 
 \subsection*{Problema 2.30}
 
+Una persona tiene tiempo para jugar a la ruleta cinco veces como máximo. En cada
+jugada gana o pierde un dólar.
+
+La persona comienza con un dólar y dejará de jugar antes de las cinco veces si
+pierde todo su dinero o si gana tres dólares, es decir, si tiene cuatro dólares.
+Encuentre el número de formas en que pueden ocurrir las apuestas.
+
+
+El diagrama de árbol a la derecha describe la forma en que se pueden realizar
+las apuestas. Cada número en el diagrama denota la cantidad de dólares que tiene
+el hombre en ese momento. Observe que las apuestas pueden ocurrir de 11 maneras
+diferentes. Tenga en cuenta que dejará de apostar antes de que se cumplan los
+cinco tiempos en solo tres de los casos.
+
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=3cm]
+\tikzstyle{level 4}=[level distance=1.0cm, sibling distance=2.5cm]
+\tikzstyle{level 5}=[level distance=1.0cm, sibling distance=0.5cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=1em, text centered]
+\tikzstyle{end} = [circle, minimum width=0.5pt,fill, inner sep=0pt]
+
+\begin{tikzpicture}[grow=right, sloped]
+    \node[bag] {1}
+    child {
+        node[bag] {0}
+        }
+    child {
+        node[bag] {2}% This is the first of three "Bag 2"
+        child {
+                node[bag] {3}
+                child{
+                        node[bag] {2}
+                                                    child {
+                             node[bag] {3}
+                                                         child {
+                             node[bag] {4}
+                }
+                            child {
+                             node[bag] {2}
+                }
+                }
+                            child {
+                             node[bag] {1}
+                                                         child {
+                             node[bag] {2}
+                }
+                            child {
+                             node[bag] {0}
+                }
+                }
+                }
+                child{
+                        node[bag] {4}
+                }
+            }
+            child {
+                node[bag] {1}
+                child {
+        node[bag] {2}
+            child {% Here are three children, hence three end branches
+                node[bag] {3}
+                            child {
+                             node[bag] {2}
+                }
+                            child {
+                             node[bag] {0}
+                }
+            }
+            child {
+                node[bag] {1}
+                            child {
+                             node[bag] {2}
+                }
+                            child {
+                             node[bag] {0}
+                }
+            }
+    }
+            }
+    }
+    ;
+    \end{tikzpicture}
+
+\begin{landscape}
 
 \subsection*{Problema 2.68}
+Construye el diagrama de árbol para el número de permutaciones de $\{ a,b,c,d
+\}$
+
+\begin{tikzpicture}[
+    auto,
+    level 1/.style={sibling distance=58mm},
+    level 2/.style={sibling distance=18mm},
+    level 3/.style={sibling distance=8mm},
+    ]
+    \node [circle,draw] (z){}
+        child {
+            node[circle,draw] (b) {a}
+            child { 
+                node[circle,draw] (c) {b}
+                child {
+                    node[circle,draw] (d) {c}
+                    child {
+                        node[circle,draw] (e) {d}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {d}
+                    child {
+                        node[circle,draw] (e) {c}
+                    }
+                }               
+            }
+             child { 
+                node[circle,draw] (c) {c}
+                child {
+                    node[circle,draw] (d) {b}
+                    child {
+                        node[circle,draw] (e) {d}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {d}
+                    child {
+                        node[circle,draw] (e) {b}
+                    }
+                }               
+            } 
+            child { 
+                node[circle,draw] (c) {d}
+                child {
+                    node[circle,draw] (d) {b}
+                    child {
+                        node[circle,draw] (e) {c}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {c}
+                    child {
+                        node[circle,draw] (e) {b}
+                    }
+                }               
+            }  
+        }
+        child {
+            node[circle,draw] (b) {b}
+                        child { 
+                node[circle,draw] (c) {a}
+                child {
+                    node[circle,draw] (d) {c}
+                    child {
+                        node[circle,draw] (e) {d}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {d}
+                    child {
+                        node[circle,draw] (e) {c}
+                    }
+                }               
+            }
+                       child { 
+                node[circle,draw] (c) {c}
+                child {
+                    node[circle,draw] (d) {a}
+                    child {
+                        node[circle,draw] (e) {d}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {d}
+                    child {
+                        node[circle,draw] (e) {a}
+                    }
+                }               
+            }
+                       child { 
+                node[circle,draw] (c) {d}
+                child {
+                    node[circle,draw] (d) {a}
+                    child {
+                        node[circle,draw] (e) {c}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {c}
+                    child {
+                        node[circle,draw] (e) {a}
+                    }
+                }               
+            }
+        }
+        child {
+            node[circle,draw] (b) {c}
+                        child { 
+                node[circle,draw] (c) {a}
+                child {
+                    node[circle,draw] (d) {b}
+                    child {
+                        node[circle,draw] (e) {d}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {d}
+                    child {
+                        node[circle,draw] (e) {b}
+                    }
+                }               
+            }
+                        child { 
+                node[circle,draw] (c) {b}
+                child {
+                    node[circle,draw] (d) {a}
+                    child {
+                        node[circle,draw] (e) {d}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {d}
+                    child {
+                        node[circle,draw] (e) {a}
+                    }
+                }               
+            }
+                        child { 
+                node[circle,draw] (c) {d}
+                child {
+                    node[circle,draw] (d) {a}
+                    child {
+                        node[circle,draw] (e) {b}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {b}
+                    child {
+                        node[circle,draw] (e) {a}
+                    }
+                }               
+            }
+        }
+        child {
+            node[circle,draw] (b) {d}
+                       child { 
+                node[circle,draw] (c) {a}
+                child {
+                    node[circle,draw] (d) {b}
+                    child {
+                        node[circle,draw] (e) {c}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {c}
+                    child {
+                        node[circle,draw] (e) {b}
+                    }
+                }               
+            }
+                       child { 
+                node[circle,draw] (c) {b}
+                child {
+                    node[circle,draw] (d) {a}
+                    child {
+                        node[circle,draw] (e) {c}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {c}
+                    child {
+                        node[circle,draw] (e) {a}
+                    }
+                }               
+            }
+                        child { 
+                node[circle,draw] (c) {c}
+                child {
+                    node[circle,draw] (d) {a}
+                    child {
+                        node[circle,draw] (e) {b}
+                    }
+                }
+                child {
+                    node[circle,draw] (d) {b}
+                    child {
+                        node[circle,draw] (e) {a}
+                    }
+                }               
+            }
+        }
+        
+        ;
+\end{tikzpicture}
+
+
+\end{landscape}
 
 \subsection*{Problema 2.69}
 
