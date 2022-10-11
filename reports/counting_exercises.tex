@@ -1,12 +1,11 @@
 \documentclass[12pt]{article}
 \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
 \usepackage{tikz}
-\usepackage{amsmath}    %Caracteres especiales de matematicas
+\usepackage{amsmath, amssymb, amsbsy}    %Caracteres especiales de matematicas
 \usepackage[hidelinks]{hyperref}    % Vinculos [que no estén subrayados]
 \usepackage{listings}   %Introducir codigo
 \usepackage{setspace}
 \usepackage{color}
-\usepackage{amssymb}
 \usepackage{pdflscape}  %Voltear la página
 \usepackage{graphicx}
 \usepackage{caption}
@@ -53,8 +52,37 @@ divisible por 11 y la demostración está completa.
 
 \subsection*{Problema 1.8}
 
+En un palíndromo binario, el primer dígito es 1 y cada dígito subsiguiente puede
+ser 0 o 1. Cuente los palíndromos binarios de longitud $n$.
+
+Tenemos $[(n + 1)/21- 1 ]= [(n - 1)/2]$ posiciones libres, por lo tanto el número
+deseado es:
+
+$2^{[(n-1)/2]}$
+
 
 \subsection*{Problema 1.29}
+Encuentre la probabilidad $p_n$ de que un grupo de $n$ personas reunidas al azar
+incluya al menos 2 personas con el mismo cumpleaños (día del año).
+
+\textbf{Solución}
+
+Aquí no tratamos con una muestra de personas, sino con una muestra de
+cumpleaños, es decir, números enteros del 1 al 365 inclusivo. Nuestra noción de
+probabilidad es:
+
+$\text{Probabilidad} = \frac{\text{número de muestras favorables}}{\text{Número total de muestras}}$
+
+En este problema es simple considerar el evento complementario: todos los $n$
+cumpleaños son distintos. Este evento es realizado en $P(365,n)$ muestras; y el
+total de muestras es $365^n$. Por lo tanto, $1-p_n = P(365,n)/365^n$ o:
+
+$p_n = 1 - \frac{P(365,n)}{365^n} = 1 -
+\frac{(365)(365-1)(365-2)...[365-(n-1)]}{365^n} $
+
+$= 1-(1 - \frac{1}{365})(1 - \frac{2}{365})...(1 - \frac{n-1}{365})$
+
+Puede verificarse que $p_n \geq 1/2 $ cuando $n>25$.
 
 \subsection*{Problema 1.39}
 
