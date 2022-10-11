@@ -592,6 +592,82 @@ dólar en cada jugada. El hombre comienza con dos dólares y dejará de jugar an
 de las cinco veces si pierde todo su dinero o gana tres dólares (es decir, tiene
 cinco dólares). Encuentre el número de formas en que puede ocurrir el juego.
 
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=1.5cm, sibling distance=3.5cm]
+\tikzstyle{level 3}=[level distance=1.5cm, sibling distance=3cm]
+\tikzstyle{level 4}=[level distance=1.0cm, sibling distance=2.5cm]
+\tikzstyle{level 5}=[level distance=1.0cm, sibling distance=0.5cm]
+
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=1em, text centered]
+\tikzstyle{end} = [circle, minimum width=0.5pt,fill, inner sep=0pt]
+
+\begin{figure}[h]
+    \centering
+\begin{tikzpicture}[grow=right, sloped]
+    \node[bag] {2}
+    child {
+        node[bag] {0}
+        }
+    child {
+        node[bag] {2}% This is the first of three "Bag 2"
+        child {
+                node[bag] {3}
+                child{
+                        node[bag] {2}
+                                                    child {
+                             node[bag] {3}
+                                                         child {
+                             node[bag] {4}
+                }
+                            child {
+                             node[bag] {2}
+                }
+                }
+                            child {
+                             node[bag] {1}
+                                                         child {
+                             node[bag] {2}
+                }
+                            child {
+                             node[bag] {0}
+                }
+                }
+                }
+                child{
+                        node[bag] {4}
+                }
+            }
+            child {
+                node[bag] {1}
+                child {
+        node[bag] {2}
+            child {% Here are three children, hence three end branches
+                node[bag] {3}
+                            child {
+                             node[bag] {2}
+                }
+                            child {
+                             node[bag] {0}
+                }
+            }
+            child {
+                node[bag] {1}
+                            child {
+                             node[bag] {2}
+                }
+                            child {
+                             node[bag] {0}
+                }
+            }
+    }
+            }
+    };
+\end{tikzpicture}
+\caption{Diagrama de árbol que describe las formas en ls que se pueden realizar
+las apuestas.}
+\end{figure}
 
 
 
