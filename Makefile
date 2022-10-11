@@ -37,6 +37,9 @@ slides/counting_techniques_slides.pdf: slides/counting_techniques_slides.tex
 reports/probability_random_processes_and_inference.pdf: reports/probability_random_processes_and_inference.tex
 	$(renderLatex)
 
+reports/counting_exercises.pdf: reports/counting_exercises.tex
+	$(renderPresentation)
+
 clean:
 	rm --force --recursive reports/pythontex*
 	rm --force reports/*.aux

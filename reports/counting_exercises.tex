@@ -1,0 +1,134 @@
+\documentclass[12pt]{article}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{tikz}
+\usepackage{amsmath}    %Caracteres especiales de matematicas
+\usepackage[hidelinks]{hyperref}    % Vinculos [que no estén subrayados]
+\usepackage{listings}   %Introducir codigo
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{pdflscape}  %Voltear la página
+\usepackage{graphicx}
+\usepackage{caption}
+
+
+\begin{document}
+\title{Ejercicios de Técnicas de Conteo}
+\author{Ana Maritza Bello Ya\~nez}
+\maketitle
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\section*{Ejercicios de Probabilidad (Schaum)}
+% Problemas 1.7, 1.8, 1.29, 1.39, 1.40, 1.77, 1.78, 1.87
+% 5 ejemplos de muestras ordenadas
+
+\subsection*{Problema 1.7}
+
+\subsection*{Problema 1.8}
+
+\subsection*{Problema 1.29}
+
+\subsection*{Problema 1.39}
+
+\subsection*{Problema 1.40}
+
+\subsection*{Problema 1.77}
+
+\subsection*{Problema 1.78}
+
+\subsection*{Problema 1.87}
+
+\section*{Ejercicios de Combinatoria (Schaum)}
+% Problemas 2.29, 2.30, 2.68 al 2.74
+
+\subsection*{Problema 2.29}
+Sea $A$ un subconjunto $r$ de un $n$ conjunto $X$. ¿Cuántas permutaciones de $X$ inducen
+alteraciones de $A$?
+
+Sea $A_i (i = 1, 2,..., r)$ el subconjunto de permutaciones de $X$ que dejan fijo el
+$i$-ésimo elemento de $A$. Entonces 
+
+$n(X)=n!$
+
+$s_i = C(r,j)(n-j)!$
+
+$(j=1,2,...,r)$
+
+y el Teorema 2.5 da la respuesta como $n(X) -s_1 + ... + (-1)^r s_r .$
+
+
+\subsection*{Problema 2.30}
+
+Muestre que $D_n = (n - 1)(D_{n_ 1} + D_{n_2})$, donde $n \geq 3$. (Por supuesto,
+$D_2 = 1$ y $D_1 = 0$.)
+
+\textbf{Solución}
+
+Considere esos desarreglos de $X = {1, 2,..., n}$ en los que $r$ ocupa la primera
+posición. Entonces 1 no ocupa la $r$-ésima posición o la ocupa. Hay trastornos
+$D_{n-1}$ del primer tipo (con respecto a $X - \{r\}$, la posición $r$ funciona como la
+posición 1) y $D_{n-2}$ del último tipo. El elemento $r$ se puede elegir de $n-1$.
+maneras.
+
+\subsection*{Problema 2.68}
+
+\subsection*{Problema 2.69}
+De los 100 estudiantes del problema 2.20, ¿cuántos toman 
+
+\begin{itemize}
+    \item exactamente 1 curso? 
+    \item exactamente 2 cursos? 
+    \item exactamente 3 cursos? 
+    \item al menos 1 curso?
+    \item al menos 2 cursos? 
+    \item al menos 3 cursos?
+\end{itemize}
+
+Problema 20:
+
+En un dormitorio, hay 12 estudiantes que toman un curso de arte (A), 20 que
+toman un curso de biología (B), 20 que toman un curso de química (C) y 8 que
+toman un curso de teatro (D). Hay 5 estudiantes que toman A y B, 7 estudiantes
+que toman A y C, 4 estudiantes que toman A y D, 16 estudiantes que toman B y C,
+4 estudiantes que toman B y D, y 3 estudiantes que toman tanto C como D. Hay 3
+que toman A, B y C; 2 que toman A, B y D; 2 que toman B, C y D; 3 que toman A, C
+y D.
+
+Finalmente, hay 2 en los cuatro cursos. También se sabe que hay 71 estudiantes
+en la residencia que no se han apuntado a ninguno de estos cursos. Encuentra el
+número total de estudiantes en el dormitorio.
+
+\subsection*{Problema 2.70}
+
+Una función $w$ de un conjunto $X$ al conjunto de números reales se denomina
+\textbf{función de peso} en $X$. Si $X$ es finito y $A$ es un subconjunto de
+$X$, \textbf{el peso de $A$}, denotado $w(A)$, es la suma de todos los $w(x)$
+para $x \in A$. Si $\amalg$ es un conjunto de $m$ propiedades (cf. Problema
+2.65), sea $A_j (j = 0, 1, 2,..., m)$ el conjunto de todos los elementos en $X$
+que tienen \textit{exactamente} $j$ propiedades y $j$ sea $B_j (j = 1, 2,...,
+m)$ el conjunto de todos los elementos en $X$ que tienen al menos $j$
+propiedades. Para cada $j$, escribe $E_j \equiv w(A_j)$ y $F_j w(B_j)$. Si $Q$
+es un subconjunto de $\amalg$, $w(Q)$ se define como la suma de los pesos de
+todos los elementos en $X$ que tienen todas las propiedades de $Q$. Finalmente,
+en analogía con el $s_k$ del problema 2.65, defina
+
+\begin{equation}
+    \label{eq:aqui-le-mostramos-como-hacerle-la-llave-grande}
+    S_k = \left\{
+          \begin{array}{ll}
+        0      & \mathrm{si\ } k=0 \\
+        x - 30 & \mathrm{si\ } k=1,2,...,m
+          \end{array}
+        \right.
+  \end{equation}
+
+\subsection*{Problema 2.71}
+
+\subsection*{Problema 2.72}
+
+\subsection*{Problema 2.73}
+
+\subsection*{Problema 2.74}
+
+\end{document}

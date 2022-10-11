@@ -1,6 +1,52 @@
-\section*{T\'ecnicas de conteo}
+\section{T\'ecnicas de conteo}
+% ARREGLAR SALTOS DE PÁGINA
+% EIGENVALORES
+% VALORES PROPIOS
+\subsection{Principio de multiplicaci\'on}
 
-\subsection*{Principio de multiplicaci\'on}
+El principio de multiplicación lo utilizamos para contar el número de formas en
+las quepueden ocurrir dos eventos simultáneos. El principio de la multiplicación
+establece que si un evento puede ocurrir de $n_1$ formas diferentes, y para cada
+una de estas ppuede ocurrir un segundo evento simultáneo en $n_2$ formas
+diferentes, entonces los dos eventos pueden ocurrir de $n_1 * n_2$ formas
+diferentes.
+
+Así, para una serie de $k$ eventos, tenemos:
+\begin{theorem}{Principio de multiplicación}{multiplicación}
+	\begin{equation}
+		n_1*n_2*n_3*...*n_k
+		\label{eq:reglaMultiplicacion}
+	\end{equation}
+\end{theorem}
+
+
+\subsection{Diagrama de Árbol}
+
+Los diagramas de árbol muestran todos los resultados posibles de un evento. Cada
+rama en un diagrama de árbol representa un posible resultado.
+Los diagramas de \'arbol pueden usarse para encontrar el n\'umero de resultados
+posibles y calcular la probabilidad de los posibles resultados.
+
+%Por ejemplo,
+
+\begin{figure}[h]
+	\begin{center}		
+	\begin{tikzpicture}[level distance=1cm, level 1/.style={sibling distance=3cm},
+		level 2/.style={sibling distance=2cm}, every node/.style={circle, draw,
+		align=center} ]
+				\centering
+				\node[circle,draw]{$P_n$}
+		child{node{1} child{node{2} child{node{3}} } child{node{3} child{node{2}}} }
+		child{node{2} child{node{1} child{node{3}} } child{node{3} child{node{1}}} }
+		child{node{3} child{node{1} child{node{2}} } child{node{2} child{node{1}}} };
+			\end{tikzpicture}
+		\end{center}
+		\caption{Permutaciones para 3 elementos}
+		\label{permutaciones_tree}
+\end{figure}
+
+\subsection{Permutación}
+
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Definición: Permutación]
 	Una \textbf{permutaci\'on} de un conjunto es un arreglo de dichos elementos en
@@ -28,28 +74,7 @@ de permutaciones es:
 	\end{equation}
 \end{theorem}
 
-\subsection*{Diagrama de Árbol}
-Otra forma de ver la cantidad de permutaciones de un conjunto es realizando un
-diagrama de \'arbol como el de la Fig.(\ref{permutaciones_tree}).
-
-
-\begin{figure}[h]
-	\begin{center}		
-	\begin{tikzpicture}[level distance=1cm, level 1/.style={sibling distance=3cm},
-		level 2/.style={sibling distance=2cm}, every node/.style={circle, draw,
-		align=center} ]
-				\centering
-				\node[circle,draw]{$P_n$}
-		child{node{1} child{node{2} child{node{3}} } child{node{3} child{node{2}}} }
-		child{node{2} child{node{1} child{node{3}} } child{node{3} child{node{1}}} }
-		child{node{3} child{node{1} child{node{2}} } child{node{2} child{node{1}}} };
-			\end{tikzpicture}
-		\end{center}
-		\caption{Permutaciones para 3 elementos}
-		\label{permutaciones_tree}
-\end{figure}
-
-\subsection*{Permutación}
+\subsubsection{Paridad de una permutación}
 
 En una permutación, ocurre una \textbf{inversi\'on} cuando un elemento mayor
 precede a un elemento menor. Para conocer el n\'umero de inversiones se siguen
@@ -89,5 +114,10 @@ Total de inversiones: \textbf{8}
 	
 \end{tcolorbox}
 
-\subsection*{Combinación}
+\subsection{Combinación}
 
+\subsection{Problema de Monty Hall}
+
+\subsection{Problema del cumpleaños}
+
+\subsection{Principio del palomar}
