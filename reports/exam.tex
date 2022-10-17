@@ -1,0 +1,223 @@
+\documentclass[12pt]{article}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{tikz}
+\usepackage{amsmath, amssymb, amsbsy}    %Caracteres especiales de matematicas
+\usepackage[hidelinks]{hyperref}    % Vinculos [que no estén subrayados]
+\usepackage{listings}   %Introducir codigo
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{pdflscape}  %Voltear la página
+\usepackage{graphicx}
+\usepackage{caption}
+
+
+\begin{document}
+\title{Problemas de probabilidad}
+\author{Ana Maritza Bello Yañez}
+\maketitle
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\section{Problema}
+Una empresa de manufactura que emplea tres planos analíticos para el diseño y
+desarrollo de un productos específico. Por razones de costos los tres se
+utilizan en momentos diferentes. De hecho, los planos 1, 2 y 3 se utilizan para
+30\%, 20\% y 50\% de los productos respectivamente. La tasa de defectos difiere
+en los 3 procedimientos de la siguiente manera,\
+
+$P(D|P_1)=0.01 P(D|P_2)=0.03 P(D|P_3)=0.02 $ \
+
+En donde $P(D|P_j)$ es la probabilidad de que un producto esté defectuoso, dado
+el plano j.\
+
+Si se observa un producto al azar y se descubre que está defectuoso, ¿cuál de
+los planos tiene más probabilidades de haberse utilizado y, por lo tanto, de ser
+el responsable?\\
+
+\textbf{Solución} \
+
+A partir del planteamiento del problema \
+
+$P(P_1)=0.30, P(P_2)=0.20 y P(P_3)=0.50$ debemos calcular $P(P_j|D)$ para $j =
+1, 2, 3.$
+
+La regla de Bayes muestra que\
+
+$P(P_1|D)=\frac{(P(P_1)P(D|P1)}{P(P_1)P(P_1|D)+P(P_2)P(D|P_2)+P(P_3)P(D|P_3)} =
+\frac{(0.30)(0.01)}{(0.3)(0.01)+(0.20)(0.03)+(0.50)(0.02)}=\frac{0.003}{0.019}=0.158$\ 
+
+De igual manera,\
+
+$P(P_2|D) = \frac{(0.03)(0.20)}{0.019} = 0.316$ y
+$P(P_3|D)=\frac{(0.02)(0.50)}{0.019}=0.526.$\
+
+La probabilidad condicional de un defecto, dado el plano 3, es la mayor de las
+tres; por consiguiente, un defecto en un producto elegido al azar tiene más
+probabilidad de ser el resultado de haber usado el plano 3.
+
+\section{Problema}
+Un bit es 0 ó 1, un byte una secuencia de 8 bits. Encuentra (a) El número de
+bytes (b) El número de bytes que comienzan con 11 y no terminan con 11 (c) El
+número de bytes que comienzan con 11 o terminan con 11. (d) El número de bytes
+que comienzan con 11 o terminan con 11
+
+\textbf{Solución}\
+
+(a) $2^8 = 256$.
+
+(b) Si un byte tiene 8 bits, entonces las 4 posiciones de en medio pueden
+llenarse de $2^4 = 16$ maneras. 
+
+(c) $2^6 = 64$ bytes comienzan con 11; por lo tanto, menos los $2^4 = 16$
+espacios que no terminan en 11, tenemos $64 - 16 = 48$.
+
+(d) Si usamos (b), 64 bytes comienzan con 11; y de igual manera 64 bytes
+terminan con 11. Sumándolos, tenemos 64+64 = 128, y cada byte que empieza y
+termina con 11 se cuenta doble. Así, la respuesta es 128 - 16 = 112 bytes. 
+
+\section{Problema}
+Entre un grupo de programadores, 49 estudiaron Pascal. 37 estudiaron COBOL y 21
+estudiaron FORTRAN. Si 9 de esos programadores estudiaron Pascal y COBOL, 5
+estudiaron Pascal y FORTRAN, 4 estudiaron COBOL y FORTRAN, 3 estudiaron Pascal,
+cobol y FORTRAN, ¿cuanto programadores hay en este grupo?
+
+\textbf{Solución}
+
+Pascal = C, Cobol = C, Fortran = F, el número de programadores en el grupo está
+dado por: $|P \cup C \cup F|$.
+
+El total de estudiantes está dado por $n_1 = |P|+|C|+|F| = 49+37+21=107$ $n_2
+=|P \cap C| + |P \cap F| + |C \cap F| = 9+5+4 = 18$ $n_3 = |P \cap C \cap F| =
+3$
+
+Por lo tanto por el principio de inclusión-exclusión $|P \cup C \cup F| = n_1 - n_2 +
+n_3 = 107-18+3 = 92$
+
+\section{Problema}
+¿Cuál es la probabilidad de que un número entero positivo seleccionado de un
+conjunto de enteros positivos, que no excedan 100, sea divisible ya sea entre 2
+o 5. 
+
+\textbf{Solución}
+
+Sea el $E_1$ el evento en el que el entero seleccionado es divisible entre 2, y
+sea $E_2$ el evento en el que es divisible entre 5. Entonces $E_1 \cup E_2$ es
+el evento en el que el número seleccionado es divisible entre 2 y entre .
+
+Por otra parte $E_1 \cap E_2$ es el evento en el que el número seleccionado es
+divisible entre 2 y entre 6, o equivalentemente, que sea divisible entre 10.
+
+Tenemos que:
+$|E_1|=50, |E_2|=20,|E_1 \cap E_2|=10,$
+
+entonces
+
+$p(E_1 \cup E_2)=p(E_1)+p(E_2)-p(E_1 \cap E_2) = \frac{50}{100} + \frac{20}{100} - \frac{10}{100} = \frac{3}{5}$
+
+
+\section{Problema}
+
+Los alces moran en cierto bosque. Hay $N$ alces, de los cuales se captura y
+etiqueta una muestra aleatoria simple de tamaño $n$ ("muestra aleatoria simple"
+significa que todos los $\binom{n}{k}$ conjuntos de $n$ alces son igualmente
+probables). Los alces capturados se devuelven a la población y luego se extrae
+una nueva muestra, esta vez de tamaño $m$. Este es un método importante que se
+usa ampliamente en ecología, conocido como \textit{captura-recaptura}. ¿Cuál es
+la probabilidad de que exactamente $k$ de los $m$ alces en la nueva muestra
+hayan sido marcados previamente? (Suponga que un alce que fue capturado antes no
+tiene más o menos probabilidades de ser capturado nuevamente.
+
+\textbf{Solución}
+
+Asumimos que todas las muestras de tamaño $m$ son igualmente probables. Para
+tener exactamente k sea elk etiquetado, necesitamos elegir $k$ de los $n$ alces
+etiquetados, y luego $m-k$ de los $N-n$ elk no etiquetados. Entonces la
+probabilidad es
+
+$\frac{\binom{n}{k}*\binom{N-n}{m-k}}{\binom{N}{m}}$
+
+para $k$ tal que $0 \leq k \leq n$ y $0 \leq m-k \leq N-n$, y la probabilidad es
+0 para todos los demas valores de $k$ (por ejemplo, si $k > n$ la
+probabilidad es 0 ya que entonces ni siquiera hay $k$ alces etiquetados en toda
+la población).
+
+\section{Problema}
+
+Hay 100 pasajeros en fila para abordar un avión con 100 asientos (con cada
+asiento asignado a uno de los pasajeros). El primer pasajero en la fila decide
+locamente sentarse en un asiento elegido al azar (con todos los asientos
+igualmente probables). Cada pasajero subsiguiente toma su asiento asignado si
+está disponible y, de lo contrario, se sienta en un asiento disponible al azar.
+
+¿Cuál es la probabilidad de que el último pasajero de la fila se siente en su
+asiento asignado?
+
+\textbf{Solución}
+
+Observemos la situación cuando entra el $k$-ésimo pasajero. Ninguno de los
+pasajeros anteriores mostró preferencia por el $k$-ésimo asiento frente al
+asiento del primer pasajero. Esto en particular es cierto cuando $k=n$. Pero el
+$n$-ésimo pasajero solo puede ocupar su asiento o el del primer pasajero. Por lo
+tanto la probabilidad es $\frac{1}{2}$.
+
+\section{El problema de los dos mentirosos}
+
+Los sujetos $A$ y $B$ dicen la verdad con la probabilidad de $1/3$ y mienten con
+una probabilidad de $(2/3)$.
+
+$A$ dice una declaración, y $B$ confirma que la declaración hecha por $A$ es
+cierta.
+
+¿Cuál es la probabilidad que $A$ estuviera diciendo la verdad?
+
+\textbf{Solución}
+
+Sea $E$ el evento en el que $A$ hace una declaración y $B$ la confirma. Esto
+puede pasar de dos manetas:
+
+\begin{itemize}
+    \item $T$: $A$ y $B$, ambos dicen la verdad.
+    \item $L$: $A$ y $B$, ambos están mintiendo.
+\end{itemize}
+
+$P(E)=P(T)+P(L)=\frac{1}{3}*\frac{1}{3}+\frac{2}{3}*\frac{2}{3}-\frac{5}{9}$
+
+Dado que observamos $E$, estamos interesados en encontrar la probabilidad de que
+el proceso subyacente sea, de hecho, $T$, es decir, $P(T|E)$. De la fórmula de las
+probabilidades condicionales, tenemos que:
+
+$P(T|E)=\frac{P(T \cap E)}{P(E)}$  y $P(T \cap E) = P(T)$
+
+ya que $T \subset E$.
+
+En conclusión:
+
+$P(T|E) = \frac{P(T)}{P(E)} = \frac{1/9}{5/9} = \frac{1}{5}$
+
+\section{La ameba sobreviviente}
+
+Una población comienza con una sola ameba. Para esta y para las generaciones
+posteriores, existe una probabilidad de 3/4 de que una ameba individual se
+divida para crear dos amebas, y una probabilidad de 1/4 de que se extinga sin
+producir descendencia. ¿Cuál es la probabilidad de que el árbol genealógico de
+la ameba original continúe para siempre?
+
+\textbf{Solución}
+
+Esta es una caminata aleatoria sesgada disfrazada con un estado de absorción en
+0 que comienza en 1. Si esta caminata aleatoria está en $N$, considerar $N$
+movimientos corresponde a considerar el destino de $N$ amebas simultáneamente.
+Esto produce $1-\frac{1-p}{p}=1-\frac{1/4}{3/4}=\frac{2}{3}$ por los argumentos
+habituales.
+
+\section{Duelo justo}
+
+Pepe y Juan se han retado a un duelo. Tomarán turnos disparando uno al otro
+hasta que uno sea herido. Pepe, quien puede atinarle a Juan solamente el 40\% de
+las veces, es el disparador más débil, por lo que le será permitido disparar
+primero. Ellos han determinado que en el duelo no se favorezca a nadie.
+
+¿Cuál es la probabilidad de herir a Pepe?
+
+\end{document}
+

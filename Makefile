@@ -4,6 +4,9 @@ reports: \
 presentation: \
 	slides/counting_techniques_slides.pdf
 
+exam: \
+	reports/exam.pdf
+
 .PHONY: \
 	all \
 	clean \
@@ -38,6 +41,9 @@ reports/probability_random_processes_and_inference.pdf: reports/probability_rand
 	$(renderLatex)
 
 reports/counting_exercises.pdf: reports/counting_exercises.tex
+	$(renderPresentation)
+
+reports/exam.pdf: reports/exam.tex
 	$(renderPresentation)
 
 clean:
