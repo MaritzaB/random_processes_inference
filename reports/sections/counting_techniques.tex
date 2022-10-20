@@ -1,11 +1,15 @@
 \section{T\'ecnicas de conteo}
+
+Muchos problemas de combinatoria implican conteo. Ya que el número de objetos a
+contar podría ser muy grande, es importante ser capaz de conta el conjunto de
+objetos sin tener que enlistarlos a todos.
 % ARREGLAR SALTOS DE PÁGINA
 % EIGENVALORES
 % VALORES PROPIOS
 \subsection{Principio de multiplicaci\'on}
 
 El principio de multiplicación lo utilizamos para contar el número de formas en
-las quepueden ocurrir dos eventos simultáneos. El principio de la multiplicación
+las que pueden ocurrir dos eventos simultáneos. El principio de la multiplicación
 establece que si un evento puede ocurrir de $n_1$ formas diferentes, y para cada
 una de estas ppuede ocurrir un segundo evento simultáneo en $n_2$ formas
 diferentes, entonces los dos eventos pueden ocurrir de $n_1 * n_2$ formas
@@ -75,74 +79,9 @@ probabilidad de la unión es:
 
 \end{theorem}
 
-\subsection{Permutación}
+\input{sections/palomar_principle}
 
-
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Definición: Permutación]
-	Una \textbf{permutaci\'on} de un conjunto es un arreglo de dichos elementos en
-	alg\'un orden sin repeticiones ni omisiones.
-		\label{Permutaciones_definition}
-\end{tcolorbox}
-
-Para saber el n\'umero de permutaciones que existen de un conjunto se debe
-conocer su cardinalidad. Tomemos como ejemplo, el conjunto de n\'umeros enteros
-$A=\{1, 2, 3\}$. Para cualquier permutaci\'on, en la primera posici\'on pueden
-colocarse cualquiera de los tres elementos; en la segunda posición se pueden
-colocar dos posibles elementos; mientras que al final, se puede colocar una
-posibilidad.
-
-En general, para cualquier conjunto de elementos $X$ de cardinalidad $|n|$, en
-la primera posici\'on se pueden colocar $n$ elementos, para la siguiente
-posici\'on $n-1$. Así sucesivamente hasta las \'ultimas posiciones, donde se
-pueden colocar $3, 2$ y $1$ elementos. De esta manera, se dice que el n\'umero
-de permutaciones es:
-
-\begin{theorem}{Permutación}{permutacion}
-	\begin{equation}
-		P_n=n*(n-1)*(n-2)*...*3*2*1=n!
-		\label{permutaciones_totales}
-	\end{equation}
-\end{theorem}
-
-\subsubsection{Paridad de una permutación}
-
-En una permutación, ocurre una \textbf{inversi\'on} cuando un elemento mayor
-precede a un elemento menor. Para conocer el n\'umero de inversiones se siguen
-los siguientes pasos:
-
-\begin{itemize}
-\item Tomar el primer elemento de la permutaci\'on
-\item Contar los enteros menores a la derecha del elemento en cuesti\'on
-\item Realizar los dos pasos anteriores para cada elemento de la permutaci\'on
-\item Sumar el total de inversiones contadas para cada elemento
-\end{itemize}
-
-\textbf{Ejemplo}:
-
-Se toma la permutación \textbf{$A=\{6,1,3,4,5,2\}$}\\
-
-Primer elemento: $6$; menores a la derecha: $1,3,4,5,2$; n\'umero de
-inversiones: \textbf{5}
-Primer elemento: $1$; menores a la derecha: $\emptyset$; n\'umero de
-inversiones: \textbf{0}
-Primer elemento: $3$; menores a la derecha: $2$; n\'umero de inversiones:
-\textbf{1}\\
-Primer elemento: $4$; menores a la derecha: $2$; n\'umero de inversiones:
-\textbf{1}\\
-Primer elemento: $5$; menores a la derecha: $2$; n\'umero de inversiones:
-\textbf{1}\\
-
-Total de inversiones: \textbf{8}
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Definición: Tipos de permutaciones]
-	\textbf{Permutaci\'on par:} aquella en la que el total de inversiones es un
-	entero par.
-	
-	\tcblower
-
-	\textbf{Permutaci\'on impar}: aquella en la que el total de inversiones es un
-	entero impar.
-	
-\end{tcolorbox}
+\input{sections/permutaciones}
 
 \subsection{Combinación}
 
@@ -150,4 +89,32 @@ Total de inversiones: \textbf{8}
 
 \subsection{Problema del cumpleaños}
 
-\input{sections/palomar_principle}
+\subsection{Resumen de técnicas de conteo}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Resumen: Técnicas de conteo]
+
+	\begin{itemize}
+		\item \textbf{Permutaciones} de $n$ objetos:
+		\begin{center}
+		$n!$
+		\end{center}
+
+		\item \textbf{\textit{k}-Permutaciones} de $n$ objetos:
+		\begin{center}
+		$\frac{n!}{(n-k)!}$
+		\end{center}
+
+		\item \textbf{Combinaciones} de $k$ de $n$ objetos:
+		\begin{center}
+		$\binom{n}{k} = \frac{n!}{k!(n-k)!}$
+		\end{center}
+
+		\item \textbf{Particiones} de $n$ objetos en $r$ grupos, con el \textit{i}-ésimo
+		grupo con $n_i$ objetos:
+		\begin{center}
+			$\binom{n}{n_1,n_2,...,n_r} = \frac{n!}{n_1!,n_2!,...,n_r!}$
+		\end{center}
+
+	\end{itemize}
+	
+\end{tcolorbox}

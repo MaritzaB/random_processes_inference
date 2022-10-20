@@ -1,0 +1,111 @@
+
+\subsection{Permutaciones}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Definición: Permutación]
+	Una \textbf{permutaci\'on} de un conjunto es un arreglo u ordenamiento de sus
+	elementos sin repeticiones ni omisiones.
+	
+	Si el conjunto está ordenado, el proceso de reordenar sus elementos, es una permutación.
+	\label{Permutaciones_definition}
+\end{tcolorbox}
+
+Para saber el n\'umero de permutaciones que existen de un conjunto se debe
+conocer su cardinalidad. Tomemos como ejemplo, el conjunto de n\'umeros enteros
+$A=\{1, 2, 3\}$. Para cualquier permutaci\'on, en la primera posici\'on pueden
+colocarse cualquiera de los tres elementos; en la segunda posición se pueden
+colocar dos posibles elementos; mientras que al final, se puede colocar una
+posibilidad.
+
+En general, para cualquier conjunto de elementos $X$ de cardinalidad $|n|$, en
+la primera posici\'on se pueden colocar $n$ elementos, para la siguiente
+posici\'on $n-1$. Así sucesivamente hasta las \'ultimas posiciones, donde se
+pueden colocar $3, 2$ y $1$ elementos. De esta manera, se dice que el n\'umero
+de permutaciones es:
+
+\begin{theorem}{Permutación}{permutacion}
+	\begin{equation}
+		P_n=n*(n-1)*(n-2)*...*3*2*1=n!
+		\label{permutaciones_totales}
+	\end{equation}
+	
+	Remarcando el hecho de que $0! = 1$.
+
+\end{theorem}
+
+\subsubsection{Permutaciones de $k$-elementos}
+
+Sea un conjunto de elementos $X$ de cardinalidad $|n|$, como en el caso
+anterior. Supongamos que deseamos tomar $k$ elementos del conjunto y contar las
+diferentes formas en las que podríamos agarrarlos.
+
+De primera instancia, podemos tomar cualquiera de los $n$ objetos como el primer
+elemento. Posteriormente, solo hay $n-1$ elementos para la segunda opción y asi
+sucesivamente hasta que llegamos al $k$-ésimo elemento. Lo que nos deja
+$n-(k-1)$ opciones para la última opción.
+
+Podemos partir de la Ec. (\ref{permutaciones_totales}) para hacer la permutación
+de los $n$ elementos, sin embargo, tendríamos que ajustar la fórmula para que
+escojamos solo $k$ de los $n$ elementos ($n-k$).
+\begin{equation}
+n(n-1)(n-2)...(n-(k-1))\overbrace{(n-k)(n-(k+1))...1}^{(n-k)!}
+\end{equation}
+
+Para quitar los elementos repetidos, dividimos la ecuación anterior entre el
+número de elementos repetidos, de la siguiente manera:
+
+\begin{equation}
+ = \frac{ n (n-1) (n-2) ... (n-k+1) \overbrace{(n-k)(n-(k+1))...1}^{(n-k)!}}{\underbrace{(n-k)(n-k-1) ... 1}_{(n-k)!}}
+\end{equation}
+
+Lo que nos lleva a la Ec. (\ref{k-permutaciones}).
+
+\begin{theorem}{Permutación}{permutacion}
+El total de permutaciones de $n$ objetos distintos tomados de $k$ formas a la
+vez, está dado por:
+
+	\begin{equation}
+		P(n,r) = \frac{n!}{(n-k)!}
+		\label{k-permutaciones}
+	\end{equation}
+\end{theorem}
+
+
+\subsubsection{Paridad de una permutación}
+
+En una permutación, ocurre una \textbf{inversi\'on} cuando un elemento mayor
+precede a un elemento menor. Para conocer el n\'umero de inversiones se siguen
+los siguientes pasos:
+
+\begin{itemize}
+\item Tomar el primer elemento de la permutaci\'on
+\item Contar los enteros menores a la derecha del elemento en cuesti\'on
+\item Realizar los dos pasos anteriores para cada elemento de la permutaci\'on
+\item Sumar el total de inversiones contadas para cada elemento
+\end{itemize}
+
+\textbf{Ejemplo}:
+
+Se toma la permutación \textbf{$A=\{6,1,3,4,5,2\}$}\\
+
+Primer elemento: $6$; menores a la derecha: $1,3,4,5,2$; n\'umero de
+inversiones: \textbf{5}
+Primer elemento: $1$; menores a la derecha: $\emptyset$; n\'umero de
+inversiones: \textbf{0}
+Primer elemento: $3$; menores a la derecha: $2$; n\'umero de inversiones:
+\textbf{1}\\
+Primer elemento: $4$; menores a la derecha: $2$; n\'umero de inversiones:
+\textbf{1}\\
+Primer elemento: $5$; menores a la derecha: $2$; n\'umero de inversiones:
+\textbf{1}\\
+
+Total de inversiones: \textbf{8}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Definición: Tipos de permutaciones]
+	\textbf{Permutaci\'on par:} aquella en la que el total de inversiones es un
+	entero par.
+	
+	\tcblower
+
+	\textbf{Permutaci\'on impar}: aquella en la que el total de inversiones es un
+	entero impar.
+	
+\end{tcolorbox}

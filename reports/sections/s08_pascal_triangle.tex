@@ -3,7 +3,7 @@
 En las matemáticas, el triángulo de Pascal es una representación de los
 coeficientes binomiales ordenados en forma de triángulo. Es llamado así en honor
 al filósofo y matemático francés Blaise Pascal, quien introdujo esta notación en
-1654, en su Tratado del triángulo aritmético.
+1654, en su tratado del triángulo aritmético.
 
 \newcommand{\pasc}[2]{
 	\pgfkeys{/pgf/fpu}
@@ -18,12 +18,7 @@ al filósofo y matemático francés Blaise Pascal, quien introdujo esta notació
 	\pgfmathsetmacro{\N}{10};
 	\foreach \i in {0,...,\N}{
 		\foreach \j in {0,...,\i}{
-			%\pgfmathtruncatemacro{\var}{\pasc{\i}{\j}}
 			\node at ({-0.5*\i+\j-0.2},-\i){\pasc{\i}{\j}};
-			
-			%\ifthenelse{\pasc{\i}{\j}=}{then clause}{else clause}
-			% \draw ({-0.5*\i+\j-0.5},-\i+0.5) rectangle
-			% ({-0.5*\i+\j-0.5},-\i-0.5);
 			\draw ({-0.5*\i+\j},-\i) circle (0.5) ;
 		}
 	}
