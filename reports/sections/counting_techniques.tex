@@ -86,6 +86,29 @@ probabilidad de la unión es:
 
 \subsection{Combinación}
 
+Existe una estrecha relaci\'on entre el n\'umero de combinaciones y el
+coeficiente binomial ya que el n\'umero de combinaciones es igual al coeficiente
+binomial $\binom{n}{k}$.
+
+Para contar el n\'umero de combinaciones, tenga en cuenta que al seleccionar una
+$k$-permutación es lo mismo que seleccionar primero una combinación de $k$ elementos
+y luego ordenarlos. Ya que hay $k!$ formas de ordenar los $k$ elementos
+seleccionados, vemos que el número de $k$-permutaciones es igual al n\'umero de
+combinaciones por $k!$. Por lo tanto, la n\'umero de combinaciones posibles,
+viene dado por:
+
+\begin{equation}
+	\binom{n}{k} = \frac{n!}{k!(n-k)!}
+\end{equation}
+
+Ejemplo: El n\'umero de combinaciones de dos de las cuatro letras A, B, C, y D
+se encuentra haciendo que $n = 4$ y $ k = 2$, está dado por:
+
+\begin{center}
+	$\binom{4}{2} = \frac{4!}{2!(4-2)!}$
+\end{center}
+
+
 \input{sections/monty_hall_problem}
 
 \input{sections/birthday_problem}
