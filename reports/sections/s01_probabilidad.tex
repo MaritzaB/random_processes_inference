@@ -9,6 +9,7 @@ evento $A$, puede ser formulada de la siguiente manera:
     \begin{equation}
         P(A)= \frac{n_A}{n_(total)}
     \end{equation}
+    \label{eq:probabilidad}
 \end{theorem}
 
 Donde $n_A$ es el n\'umero de formas igualmente probables por las cuales un
@@ -23,6 +24,8 @@ igualmente posibles puedan ser derivadas anal\'iticamente.
 
 La definición clásica desprende una serie de propiedades:
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Axiomas de la probabilidad]
+
 \begin{itemize}
 \item $P(A) \geq 0$. La probabilida se he definido como el cociente del número
 de casos favorables al suceso $A$ y el número de casos posibles, por lo que el
@@ -32,8 +35,29 @@ número de casos favorables sea nulo.
 \item $P(A) \leq 1$. El número de casos favorables nunca puede ser mayor que el
 número total de casos, a lo sumo igual.
 
+
+Estas dos propiedade conducen  que la probabilidad de un suceso esté acotada, 
+\begin{equation}
+    0 \leq P(S) \leq 1
+    \label{eq:acotadaProb}
+\end{equation}
+
+\item Si $A$ y $B$ son conjuntos disjuntos, entonces:
+
+\begin{equation}
+    P(A \cup B) = P(A) + P(B)
+    \label{eq:probaAunionB}
+\end{equation}
+
+\item \textbf{Regla del complemento}
+
+Sea $S$ el espacio muestral de un experimento $E$. Si $A$ es un evento, es decir
+$A \subseteq S$, entonces:
+
+\begin{equation}
+    P(\bar{A}) = 1 - P(A)
+    \label{eq:complementRule}
+\end{equation}
+
 \end{itemize}
-
-Estas dos propiedade conducen  que la probabilidad de un suceso esté acotada, $0
-\leq P(S) \leq 1$
-
+\end{tcolorbox}

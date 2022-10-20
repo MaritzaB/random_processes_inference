@@ -1,0 +1,66 @@
+\subsection{El problema de Monty Hall}
+
+El problema de \textit{Monty Hall} o paradoja del presentador es un problema de
+probailidad condicional basado en el concurso de televisi\'on estadounidense
+\textit{Let's Make a Deal}. El problema fue bautizado as\'i por el nombre del
+presentador de dicho programa.
+
+En 1975, el matem\'atico Steve Selvin resuelve este problema y es publicado en
+la revista \textit{American Statistician}. Posteriormente fue popularizado por
+Marilyn vos Savant en la revista \textit{Parade Magazine}, en 1990. El problema
+dice as\'i:
+
+\textbf{Planteamiento del problema:}
+
+Hay tres puertas. Detr\'as de una de ellas, hay un premio. Detr\'as de cada una
+de las dos puertas restantes hay una cabra.
+
+Cada puerta tiene la misma probabilidad de contener el premio.
+
+Se te da a seleccionar una de las tres puertas como una oportunidad de ganar el
+premio. Sin embargo, una vez que se ha seleccionado la puerta, el presentador
+destapa una de ellas y te muestra que detrás hab\'ia una cabra.Una vez dada esa
+informaci\'on, el presentador te pregunta si deseas cambiar de puerta o
+conservar tu elecci\'on.
+
+La pregunta crucial es:
+
+Dado que el presentador ha destapado una puerta y mostrado que no estaba el
+premio, ¿es m\'as conveniente cambiar mi opci\'on o conservar mi elecci\'on de
+la puerta inicial?
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[scale=0.5]{Images/Monty Hall}
+%	\caption{Imagen ilustratuiva del problema de Monty Hall}
+%\end{figure}
+
+\subsection*{Soluci\'on:}
+Este problema es un ejercicios relativamente simple de probabilidad condicional.
+Sin embargo, se debe tener cuidado, pues es un problema particularmente confuso.
+Se abrodará desde dos enfoques.
+
+Dos observaciones son cruciales para entender el problema:
+
+\begin{itemize}
+\item El presentador conoce la puerta donde se encuentra el premio y obviamente
+no revelará esa puerta. 
+\item Monty revelar\'a cualquiera de las otras dos puertas de forma aleatoria y
+con con igual probabilidad de que esto ocurra.
+\end{itemize}
+Supongase que selecciona la puerta 1. Entonces pueden ocurrir tres casos:
+\begin{enumerate}
+\item El premio está en la puerta 1. Monty abre la puerta 2 o la 3. Si se cambia
+la elecci\'on, se pierde. Si se conserva la elecci\'on, ganas.
+\item El premio está en la puerta 2. Monty abre la puerta 3. Si se cambia de
+elecci\'on, se gana. Si se conserva la elecci\'on, pierdes.
+\item El premio está en la pierta 3. Monty abre la puerta 2. Si se cambia de
+elecci\'on, se gana. Si se conserva la elecci\'on, pierdes.
+\end{enumerate}
+Se debe notar que al cambiar de elecci\'on se gana en 2 de los 3 casos; mientras
+que al conservar la elecci\'on, se gana s\'olo en 1 de los 3 casos. Por lo
+tanto, la probabilidad de ganar si se cambia de puerta, es de $\frac{2}{3}$. Por
+otro lado, la probabilidad de ganar con la elecci\'on inicial es de
+$\frac{1}{3}$.
+
+Conclusi\'on: ¡Cambia de puerta!
