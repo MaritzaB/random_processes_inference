@@ -17,9 +17,117 @@ examen médico dió negativo?
 \end{itemize}
 
 En términos más precisos, dado un experimento, un espacio de muestreo y una ley
-de probabilidad, supongamos que sabemos que la salida está dentro de un evento
+de probabilidad, suponiendo que sabemos que la salida está dentro de un evento
 dado $B$. Deseamos cuantificar la probabilidad de que la salida pertenece a
 algún otro evento $A$. Así, podemos construir una nueva probabilidad que tome en
-cuenta el conocimiento disponiblw: una ley de probabilidad para cuaquier evento
+cuenta el conocimiento disponible: una ley de probabilidad para cuaquier evento
 $A$. Especificamente, la probabilidad condicional de $A$ dado $B$, denotado por
 $P(A|B)$.
+
+Para calcular $P(A|B)$ consideramos aquellos resultados del evento $A$ que están en
+el evento $B$. Esto nos da los resultados en el evento $A \cap B$ y nos lleva al
+teorema de la probabilidad condicional.
+
+\begin{theorem}{Probabilidad Condicional}{conditional_probability}
+Sea $S$ el espacio de muestro para un experimento $E$ y $A$, $B \subseteq S$,
+entonces la probabilidad condicional de $A$ dado $B$ está dada por:
+    \begin{equation}
+        P(A|B) = \frac{P(A \cap B)}{P(B)}
+        \label{eq:conditionalProbability}
+    \end{equation}
+
+Siempre que $P(B)>0$.
+
+Particularmente, todas las propiedades de las leyes de la probabilidad
+permanecen válidas para las leyes de la probabilidad condicional.
+
+\begin{itemize}
+    \item La probabilidad condicional puede verse también como una ley de
+    probabilidad en un nuevo universo $B$, ya que toda la probabilidad condicional
+    está concentrada en $B$.
+
+    \item Si todos los resultados son finitos e igualmente probables, entonces:
+        \begin{equation}
+            P(A|B)=\frac{\text{número de elementos de }A \cap B}{\text{número de elementos de }B}
+        \end{equation}
+\end{itemize}
+
+
+\end{theorem}
+
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+\def\rectangle{(-2,-2) rectangle (4,2)}
+
+\colorlet{circle edge}{black!50}
+\colorlet{circle area}{gray!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\setlength{\parskip}{5mm}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \draw \rectangle;
+        \begin{scope}
+            \clip \firstcircle;
+            \fill[filled] \secondcircle;
+        \end{scope}
+        \draw[outline] \firstcircle node {$A$};
+        \draw[outline] \secondcircle node {$B$};
+        \node[anchor=south] at (current bounding box.south) {$A \cap B$};
+        \node at (3.5,1.5){$\mathbb S$};
+    \end{tikzpicture}
+    \caption{Representación del concepto intuitivo de la probabilidad condicional.}
+    \label{fig:coditionalProbability}
+\end{figure}
+
+\textbf{Observaciones y consideraciones de la probabilidad condicional:}
+
+\begin{itemize}
+\item La probabilidad $P(B|A)$ es una actualización de $P(B)$, basada en el
+conocimiento de que ocurrió el evento $B$.
+
+\item De la Ec.(\ref{eq:conditionalProbability}), tanto $P(A \cap B)$ como
+$P(A)$ se calculan a partir del espacio muestral original.
+
+\item Las probabilidades tienen sutiles cambios dependiendo de la información
+exacta de la condición implicada en el evento A.
+\end{itemize}
+
+\subsection{Propiedades de las leyes de la probabilidad}
+
+Las leyes de la probabilidad tienen propiedades que pueden deducirse de los
+axiomas. Algunas de ellas, son las que se muestran a continuación.
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!60!black,title=Resumen: Propiedades de las leyes de la probabilidad]
+    Sean $A$, $B$ y $C$ eventos:
+
+    \begin{itemize}
+        \item Si $A \subset B$, entonces $P(A) \leq P(B)$.
+        
+        \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.
+
+        \item $P(A \cup B) \leq P(A) + P(B)$.
+
+    \item $P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B
+        \cap C) + P(A \cap B \cap C)$
+    \end{itemize}
+\end{tcolorbox}
+
+\subsection{Teorema de Bayes}
+
+\begin{theorem}{Teorema de Bayes}{BayesTheorem}
+Sean $A$ y $B$ dos eventos cuyas probabilidades son diferentes de cero,
+entonces:
+    \begin{equation}
+        P(B|A) = \frac{P(A|B) P(B)}{P(A)}
+        \label{eq:BayesTheorem}
+    \end{equation}
+
+La implicación más importante de la Ec. (\ref{eq:BayesTheorem}) es que permite
+encontrar probabilidades condicionadas $P(B|A)$ en términos de $P(A|B)$, cuando
+esta última resulta más fácil de calcular directamente.
+\end{theorem}
