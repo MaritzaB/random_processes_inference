@@ -1,24 +1,5 @@
-\documentclass[12pt]{article}
-\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
-\usepackage{tikz}
-\usepackage{amsmath, amssymb, amsbsy}    %Caracteres especiales de matematicas
-\usepackage[hidelinks]{hyperref}    % Vinculos [que no estén subrayados]
-\usepackage{listings}   %Introducir codigo
-\usepackage{setspace}
-\usepackage{color}
-\usepackage{pdflscape}  %Voltear la página
-\usepackage{graphicx}
-\usepackage{caption}
 
-
-\begin{document}
-\title{Ejercicios de Técnicas de Conteo}
-\author{Ana Maritza Bello Ya\~nez}
-\maketitle
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
-
-\section*{Ejercicios de Combinatoria (Schaum)}
+\section*{Ejercicios de Combinatoria}
 % Problemas 1.7, 1.8, 1.29, 1.39, 1.40, 1.77, 1.78, 1.87
 % 5 ejemplos de muestras ordenadas
 
@@ -33,17 +14,25 @@ La prueba inductiva explota el hecho de que cuando se quitan el primer y el
 palindrómico de longitud $2k$. Si $k = 1$, el teorema obviamente se cumple. Si
 $k \geq 2$, tenemos
 
+\begin{center}
 $ N = a_{2k-1} 10^{2k-1} + a_{2k-2} 10^{2k-2} + ... + a_{k} 10^{k} + ... +
 a_{2k-2} 10^{1} + a_{2k-1} 10^{0} $
+\end{center}
 
+\begin{center}
 $ = a_{2k-1}(10^{2k}+10^0) + (a_{2k-2}10^{2k-2}+...+ a_{2k-2}10^{1}) $
+\end{center}
 
+\begin{center}
 $ \equiv a_{2k-1} P + Q$
+\end{center}
 
 Donde:
 
+\begin{center}
 $P = \underbrace{100...001}_{\text{longitud } 2k} =
 \underbrace{9090...9091}_{\text{longitud } 2k-2}$
+\end{center}
 
 y ya sea $Q=0$ (divisible por 11) o, para algún $1 \leq r \leq k-1$,
 
@@ -62,8 +51,9 @@ ser 0 o 1. Cuente los palíndromos binarios de longitud $n$.
 Tenemos $[(n + 1)/2] - 1 = [(n - 1)/2]$ posiciones libres, por lo tanto el número
 deseado es:
 
+\begin{center}
 $2^{[(n-1)/2]}$
-
+\end{center}
 
 \subsection*{Problema 1.29}
 Encuentre la probabilidad $p_n$ de que un grupo de $n$ personas reunidas al azar
@@ -75,16 +65,23 @@ Aquí no tratamos con una muestra de personas, sino con una muestra de
 cumpleaños, es decir, números enteros del 1 al 365 inclusivo. Nuestra noción de
 probabilidad es:
 
-$\text{Probabilidad} = \frac{\text{número de muestras favorables}}{\text{Número total de muestras}}$
+\begin{center}
+$\text{Probabilidad} = \frac{\text{número de muestras favorables}}{\text{Número
+total de muestras}}$
+\end{center}
 
 En este problema es simple considerar el evento complementario: todos los $n$
 cumpleaños son distintos. Este evento es realizado en $P(365,n)$ muestras; y el
 total de muestras es $365^n$. Por lo tanto, $1-p_n = P(365,n)/365^n$ o:
 
+\begin{center}
 $p_n = 1 - \frac{P(365,n)}{365^n} = 1 -
 \frac{(365)(365-1)(365-2)...[365-(n-1)]}{365^n} $
+\end{center}
 
+\begin{center}
 $= 1-(1 - \frac{1}{365})(1 - \frac{2}{365})...(1 - \frac{n-1}{365})$
+\end{center}
 
 Puede verificarse que $p_n \geq 1/2 $ cuando $n>25$.
 
@@ -213,6 +210,7 @@ consecutivas empezando por $C_{3}$ y as\'i consecutivamente para generar la
 matriz de conexiones.
 
 \begin{table}[h!]
+    \centering
 	\begin{tabular}{l|lllllllll}
 		       &$P_{1}$&$P_{2}$&$P_{3}$ &$P_{4}$&$P_{5}$&$P_{6}$&$P_{7}$&$P_{8}$&\\\hline
 		$C_{1}$&  1&  0&  0&   0& 	 0&   0&   0&  0&\\ 
@@ -575,19 +573,19 @@ Construye el diagrama de árbol para el número de permutaciones de $\{ a,b,c,d
 
 \end{landscape}
 
-\subsection*{Problema 2.69}
-Encontrar el producto de los conjuntos $\{1,2,3\} x \{2,3,4\}$ construyendo el
-diagrama apropiadao.
-
-\subsection*{Problema 2.70}
-Los equipos A y B juegan en un torneo de baloncesto. El primer equipo que gana
-dos juegos seguidos o un total de cuatro juegos gana el torneo. Halla el número
-de formas en que puede ocurrir el torneo.
+% \subsection*{Problema 2.69}
+% Encontrar el producto de los conjuntos $\{1,2,3\} x \{2,3,4\}$ construyendo el
+% diagrama apropiado.
+% 
+% \subsection*{Problema 2.70}
+% Los equipos A y B juegan en un torneo de baloncesto. El primer equipo que gana
+% dos juegos seguidos o un total de cuatro juegos gana el torneo. Halla el número
+% de formas en que puede ocurrir el torneo.
 
 
 
 \subsection*{Problema 2.71}
-Un hombre tiene tiempo para jugar a la ruleta cinco veces. Gana o pierde un
+Una persona tiene tiempo para jugar a la ruleta cinco veces. Gana o pierde un
 dólar en cada jugada. El hombre comienza con dos dólares y dejará de jugar antes
 de las cinco veces si pierde todo su dinero o gana tres dólares (es decir, tiene
 cinco dólares). Encuentre el número de formas en que puede ocurrir el juego.
@@ -677,13 +675,137 @@ izquierda o hacia la derecha. Se detiene después de 5 pasos o si llega a 3 o -2
 Construya el diagrama de árbol para describir todos los caminos posibles que el
 hombre puede recorrer.
 
+\begin{figure}[h!]
+	\begin{tikzpicture}
+	[level distance=10mm,
+	every node/.style={fill=blue!60,circle,inner sep=1pt},
+	level 1/.style={sibling distance=80mm,nodes={fill=blue!45}},
+	level 2/.style={sibling distance=40mm,nodes={fill=blue!30}},
+	level 3/.style={sibling distance=20mm,nodes={fill=blue!25}},
+	level 4/.style={sibling distance=10mm,nodes={fill=blue!45}},
+	level 5/.style={sibling distance=5mm,nodes={fill=blue!30}},
+	level 6/.style={sibling distance=5mm,nodes={fill=blue!25}}
+	]
+	\node {2}
+		child {node {3}
+			child {node {4}
+				child {node {5}}
+				child {node {3}
+					child{node{4}
+						child{node{5}}
+						child{node{3}}
+					}
+					child{node{2}
+						child{node{3}}
+						child{node{1}}
+					}
+				}
+			}
+			child {node{2}
+				child {node{3}
+					child {node{4}
+						child {node{5}}
+						child {node{3}}	
+					}
+					child {node{2}
+						child {node{3}}
+						child {node{1}}
+					}
+				}
+				child {node {1}
+					child {node{2}
+						child {node{3}}
+						child {node{1}}
+					}
+					child {node{0}}
+				}
+			}
+		}
+		child {node{1}
+			child {node{2}
+				child {node{3}
+					child {node{4}
+						child {node{5}}
+						child {node{3}}
+					}
+					child {node{2}
+						child {node{3}}
+						child {node{1}}
+					}
+				}
+				child {node{1}
+					child {node{2}
+						child {node{3}}
+						child {node{1}}
+					}
+					child {node{0}}
+				}
+			}
+			child {node{0}}
+		};
+	\end{tikzpicture}
+\end{figure}
+
 \subsection*{Problema 2.73}
-En el siguiente diagrama, sean A , B , . . . , F denotan islas y las líneas que
+En el siguiente diagrama, sean $A , B , ... , F$ denotan islas y las líneas que
 las unen son puentes.
 
-Un hombre comienza en A y camina de isla en isla. Se detiene para almorzar
+Un hombre comienza en $A$ y camina de isla en isla. Se detiene para almorzar
 cuando no puede seguir caminando sin cruzar dos veces el mismo puente. Encuentra
 el número de maneras en que puede caminar antes de almorzar.
+
+\begin{figure}[h!]
+	\begin{tikzpicture}
+	[level distance=10mm,
+	every node/.style={fill=blue!60,circle,inner sep=1pt},
+	level 1/.style={sibling distance=20mm,nodes={fill=blue!45}},
+	level 2/.style={sibling distance=40mm,nodes={fill=blue!30}},
+	level 3/.style={sibling distance=15mm,nodes={fill=blue!25}},
+	level 4/.style={sibling distance=5mm,nodes={fill=blue!45}},
+	level 5/.style={sibling distance=5mm,nodes={fill=blue!30}},
+	level 6/.style={sibling distance=5mm,nodes={fill=blue!25}},
+	level 7/.style={sibling distance=5mm,nodes={fill=blue!45}}
+	]
+	\node {$A$}
+		child {node{$B$}
+			child {node{$C$}
+				child {node{$D$}}
+				child {node{$E$}
+					child {node{$B$}}
+					child {node{$F$}
+						child {node{$C$}
+							child {node{$D$}}
+						}
+					}
+				}
+				child {node{$F$}
+					child {node{$E$}
+						child {node{$B$}}
+						child {node{$C$}
+							child {node{$D$}}
+						}	
+					}
+				}
+			}
+			child {node{$E$}
+				child {node{$C$}
+					child {node{$B$}}
+					child {node{$D$}}
+					child {node{$F$}
+						child {node{$E$}}
+					}
+				}
+				child {node{$F$}
+					child {node{$C$}
+						child {node{$B$}}
+						child {node{$D$}}
+						child {node{$E$}}
+					}
+				}
+			}
+		};
+	\end{tikzpicture}
+\end{figure}
 
 \subsection*{Problema 2.74}
 
@@ -694,6 +816,89 @@ mismo punto más de una vez. Encuentra el número de maneras en que puede tomar 
 caminata, si primero se mueve de $X$ a $R$. (Por simétrica, el número total de
 vías es el doble).
 
+\begin{figure}[h!]
+	\begin{tikzpicture}
+	[level distance=10mm,
+	every node/.style={fill=blue!60,circle,inner sep=1pt},
+	level 1/.style={sibling distance=20mm,nodes={fill=blue!45}},
+	level 2/.style={sibling distance=80mm,nodes={fill=blue!30}},
+	level 3/.style={sibling distance=40mm,nodes={fill=blue!25}},
+	level 4/.style={sibling distance=30mm,nodes={fill=blue!45}},
+	level 5/.style={sibling distance=15mm,nodes={fill=blue!30}},
+	level 6/.style={sibling distance=10mm,nodes={fill=blue!25}},
+	level 7/.style={sibling distance=5mm,nodes={fill=blue!45}}
+	]
+	\node {X}
+		child {node{$R$}
+			child {node{$A$}
+				child {node{$B$}
+					child {node{$C$}
+						child {node{$T$}
+							child {node{$S$}
+								child {node{$Y$}
+									child {node{$Z$}}
+								}
+							}
+							child {node{$Z$}
+								child {node{$Y$}
+									child {node{$S$}}
+								}
+							}
+						}
+					}
+					child {node{$S$}
+						child {node{$T$}
+							child {node{$C$}}
+							child {node{$Z$}
+								child {node{$Y$}}
+							}
+						}
+						child {node{$Y$}
+							child {node{$Z$}
+								child {node{$T$}
+									child {node{$C$}}
+								}
+							}
+						}
+					}
+				}
+			}
+			child {node{$S$}
+				child {node{$B$}
+					child {node{$A$}}
+					child {node{$C$}
+						child {node{$T$}
+							child {node{$Z$}
+								child {node{$Y$}}
+							}
+						}	
+					}
+				}
+				child {node{$T$}
+					child {node{$C$}
+						child {node{$B$}
+							child {node{$A$}}
+						}
+					}
+					child {node{$Z$}
+						child {node{$Y$}}
+					}
+				}
+				child {node{$Y$}
+					child {node{$Z$}
+						child {node{$T$}
+							child {node{$C$}
+								child {node{$B$}
+									child {node{$A$}}
+								}
+							}
+						}
+					}
+				}
+			}
+		};	
+	\end{tikzpicture}
+\end{figure}
 
 % Set the overall layout of the tree
 \tikzstyle{level 1}=[level distance=1.3cm, sibling distance=1cm]
@@ -830,6 +1035,3 @@ vías es el doble).
 \caption{Diagrama de árbol con las diferentes maneras en las que se puede tomar el camino}
 \end{figure}
 
-
-
-\end{document}

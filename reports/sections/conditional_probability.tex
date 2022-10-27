@@ -51,9 +51,8 @@ permanecen válidas para las leyes de la probabilidad condicional.
             P(A|B)=\frac{\text{número de elementos de }A \cap B}{\text{número de elementos de }B}
         \end{equation}
 \end{itemize}
-
-
 \end{theorem}
+
 
 \def\firstcircle{(0,0) circle (1.5cm)}
 \def\secondcircle{(0:2cm) circle (1.5cm)}
@@ -84,10 +83,30 @@ permanecen válidas para las leyes de la probabilidad condicional.
     \label{fig:coditionalProbability}
 \end{figure}
 
+\def\firsttcircle{(90:1.75cm) circle (1.5cm)}
+\def\seconddcircle{(170:1.75cm) circle (1.5cm)}
+\def\thirddcircle{(-25:2cm) circle (1.5cm)}
+\begin{figure}
+    \centering
+\begin{tikzpicture}
+      \begin{scope}
+    \clip \seconddcircle;
+    \fill[cyan] \thirddcircle;
+      \end{scope}
+      \begin{scope}
+    \clip \firsttcircle;
+    \fill[cyan] \thirddcircle;
+      \end{scope}
+      \draw \firsttcircle node[text=black,above] {$A$};
+      \draw \seconddcircle node [text=black,below left] {$B$};
+      \draw \thirddcircle node [text=black,below right] {$C$};
+\end{tikzpicture}
+\end{figure}
+
 \textbf{Observaciones y consideraciones de la probabilidad condicional:}
 
 \begin{itemize}
-\item La probabilidad $P(B|A)$ es una actualización de $P(B)$, basada en el
+\item La probabilidad $P(A|B)$ es una actualización de $P(A)$, basada en el
 conocimiento de que ocurrió el evento $B$.
 
 \item De la Ec.(\ref{eq:conditionalProbability}), tanto $P(A \cap B)$ como
@@ -116,6 +135,45 @@ axiomas. Algunas de ellas, son las que se muestran a continuación.
         \cap C) + P(A \cap B \cap C)$
     \end{itemize}
 \end{tcolorbox}
+
+De la Ec.(\ref{eq:conditionalProbability}) podemos hacer que:
+
+\begin{center}
+$P(B \cap A) = P(A \cap B) = P(A)P(B|A)$, 
+\end{center}
+
+y cambiando los roles de $A$ y de $B$, tenemos que:
+
+\begin{center}
+    $P(A \cap B) = P(B \cap A) = P(B)P(A|B)$, 
+\end{center}
+
+esto resulta en:
+
+\begin{center}
+    $P(A)P(B|A) = P(A \cap B) = P(B)P(A|B)$,
+\end{center}
+
+Que comunmente llamamos \textit{regla de la multiplicación}.
+
+\begin{figure}
+% Set B but not A
+\centering
+\begin{tikzpicture}
+    \draw \rectangle;
+    \begin{scope}
+        \clip \secondcircle;
+        \draw[filled, even odd rule] \firstcircle
+                                     \secondcircle node {$B$};
+    \end{scope}
+    \draw[outline] \firstcircle node {$A$}
+                   \secondcircle;
+    \node[anchor=south] at (current bounding box.north) {$A^c \cap B$};
+    \node at (1,0){$A \cap B$};
+\end{tikzpicture}
+\caption{Representación gráfica de la diferencia de los conjuntos de $A-B$ y de $B-A$.}
+\label{fig:difer}
+\end{figure}
 
 \subsection{Teorema de Bayes}
 
