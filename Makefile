@@ -67,6 +67,12 @@ clean:
 	rm --recursive --force .pytest_cache
 	rm --recursive --force */__pycache__
 	rm --recursive --force reports/tables/
+	rm --force *.aux
+	rm --force *.bbl
+	rm --force *.blg
+	rm --force *.log
+	rm --force *.out
+	rm --force *.pdf
 
 format:
 	black --line-length 60 src/*.py

@@ -1,9 +1,5 @@
 \subsection{Ángulos de Euler}
-% CAMBIAR EJES MINÚSCULAS A EJES PRIMADOS
-% PONER PARA QUÉ ES EL ÁNGULO N. ESTABLECEN EL ANGULO DE ROTACIÓN.
-% TROMPO DESCRIBIENDO LOS MOVIMIENTOS DE LAS ROTACIONES
-%ANGULO DEL PLANO DE ROTACIÓN
-%
+
 
 Los ángulos de Euler constituyen un conjunto de tres coordenadas angulares que
 sirven para especificar la orientación de un sistema de referencia de ejes
@@ -22,7 +18,7 @@ son no-homogéneos (por ejemplo $xy$ y $XY$ son homogéneos, mientras $xy$ y $XZ
 son).
 
 La intersección de los planos coordenados $xy$ y $XY$ escogidos se llama línea de
-nodos, y se usa para definir los tres ángulos:
+nodos, y se usa para definir los tres ángulos, Fig. :
 
 \begin{itemize}
     \item $\alpha$ es el ángulo entre el eje x y la línea de nodos.
@@ -30,7 +26,7 @@ nodos, y se usa para definir los tres ángulos:
     \item $\gamma$  es el ángulo entre la línea de nodos y el eje X.
 \end{itemize}
 
-más adelante se establecerá que los tres ángulos de Euler descritos son los
+Más adelante se establecerá que los tres ángulos de Euler descritos son los
 valores de las tres rotaciones intrínsecas que describen el sistema.
 
 Notar que también se considera la notación: $\alpha =\phi$, $\gamma =\psi$,
@@ -72,9 +68,15 @@ entre ellas:
 lo que también podría verse intuitivamente usando la analogía entre los ángulos
 de Euler y los de un soporte Cardán.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=1]{figures/euler_angles.png}
-    \caption{Dos sistemas de coordenadas ortogonales en el que se muestran los ángulos de Euler.}
-    \label{fig:eulerAngles}
+
+
+\begin{figure}[h!]
+	\begin{center}
+		\threedalphabetagamma
+	\end{center}
+	\caption{Posicionamiento del marco de coordenadas girado $(x', y', z')$ 
+	usando ángulos de Euler $(\alpha, \beta, \gamma)$.}
+	\label{fig:euler_angles}
 \end{figure}
+
+
