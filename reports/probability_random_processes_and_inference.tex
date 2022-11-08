@@ -17,6 +17,9 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{multirow}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\usepgfplotslibrary{external}
 
 \tcbuselibrary{listings,theorems}
 
@@ -32,13 +35,13 @@
 \providecommand{\abs}[1]{\lvert#1\rvert}
 
 \input{custom/specifications}
+\input{custom/tikz-3dplot_documentation_figures.tex}
 
 \begin{document}
 \title{Probabilidad, procesos aleatorios e inferencia}
 \author{Ana Maritza Bello Ya\~nez}
 \maketitle
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                       Caja del teorema                            %
@@ -48,6 +51,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \tableofcontents
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0em}
 \pagebreak
 \input{sections/s05_resumen}
 
@@ -72,10 +78,9 @@
 \input{sections/s07_zeller}
 %\input{s06_sierpinski}
 
+
 \input{sections/rotation_matrix}
-
 \input{sections/matrices_de_rotacion}
-
 \input{sections/euler_angles}
 
 
@@ -85,3 +90,6 @@
 \bibliographystyle{unsrt}
 
 \end{document}
+
+%poner alef 1 y alef2
+% Axiomas de peano
