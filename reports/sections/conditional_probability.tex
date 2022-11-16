@@ -83,25 +83,38 @@ permanecen válidas para las leyes de la probabilidad condicional.
     \label{fig:coditionalProbability}
 \end{figure}
 
-\def\firsttcircle{(90:1.75cm) circle (1.5cm)}
-\def\seconddcircle{(170:1.75cm) circle (1.5cm)}
-\def\thirddcircle{(-25:2cm) circle (1.5cm)}
-\begin{figure}
+\begin{figure}[h]
     \centering
-\begin{tikzpicture}
-      \begin{scope}
-    \clip \seconddcircle;
-    \fill[cyan] \thirddcircle;
-      \end{scope}
-      \begin{scope}
-    \clip \firsttcircle;
-    \fill[cyan] \thirddcircle;
-      \end{scope}
-      \draw \firsttcircle node[text=black,above] {$A$};
-      \draw \seconddcircle node [text=black,below left] {$B$};
-      \draw \thirddcircle node [text=black,below right] {$C$};
+\begin{tikzpicture}[scale = 0.8]
+    \begin{scope}
+    %\clip (-1,0) circle (2);
+    \clip (1,0) circle (2);
+    \clip (0,2) circle (2);
+    \fill[gray!50] (0,0) circle (5);
+    \end{scope}
+    \begin{scope}
+    \clip (-1,0) circle (2);
+    %\clip (1,0) circle (2);
+    \clip (0,2) circle (2);
+    \fill[gray!50] (0,0) circle (3);
+    \end{scope}
+    \begin{scope}
+    \clip (-1,0) circle (2);
+    \clip (1,0) circle (2);
+    %\clip (0,2) circle (2);
+    \fill[gray!50] (0,0) circle (3);
+    \end{scope}
+    \draw (-1,0) circle (2);
+    \node at (-1.2,0){$A$};
+    \draw (1,0) circle (2);
+    \node at (1.2,0){$B$};
+    \draw (0,2) circle (2);
+    \node at (0,2){$C$};
 \end{tikzpicture}
+\caption{Representación de la unión de las intersecciones de tres conjuntos diferentes.}
+\label{fig:unionIntersection}
 \end{figure}
+
 
 \textbf{Observaciones y consideraciones de la probabilidad condicional:}
 
