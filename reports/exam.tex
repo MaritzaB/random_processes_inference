@@ -1,24 +1,6 @@
-\documentclass[12pt]{article}
-\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
-\usepackage{tikz}
-\usepackage{amsmath, amssymb, amsbsy}    %Caracteres especiales de matematicas
-\usepackage[hidelinks]{hyperref}    % Vinculos [que no estén subrayados]
-\usepackage{listings}   %Introducir codigo
-\usepackage{setspace}
-\usepackage{color}
-\usepackage{pdflscape}  %Voltear la página
-\usepackage{graphicx}
-\usepackage{caption}
+\section{Examen}
 
-
-\begin{document}
-\title{Problemas de probabilidad}
-\author{Ana Maritza Bello Yañez}
-\maketitle
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{1em}
-
-\section{Problema}
+\textbf{Problema}
 Una empresa de manufactura que emplea tres planos analíticos para el diseño y
 desarrollo de un productos específico. Por razones de costos los tres se
 utilizan en momentos diferentes. De hecho, los planos 1, 2 y 3 se utilizan para
@@ -55,7 +37,7 @@ La probabilidad condicional de un defecto, dado el plano 3, es la mayor de las
 tres; por consiguiente, un defecto en un producto elegido al azar tiene más
 probabilidad de ser el resultado de haber usado el plano 3.
 
-\section{Problema}
+\textbf{Problema}
 Un bit es 0 ó 1, un byte una secuencia de 8 bits. Encuentra (a) El número de
 bytes (b) El número de bytes que comienzan con 11 y no terminan con 11 (c) El
 número de bytes que comienzan con 11 o terminan con 11. (d) El número de bytes
@@ -75,7 +57,7 @@ espacios que no terminan en 11, tenemos $64 - 16 = 48$.
 terminan con 11. Sumándolos, tenemos 64+64 = 128, y cada byte que empieza y
 termina con 11 se cuenta doble. Así, la respuesta es 128 - 16 = 112 bytes. 
 
-\section{Problema}
+\textbf{Problema}
 Entre un grupo de programadores, 49 estudiaron Pascal. 37 estudiaron COBOL y 21
 estudiaron FORTRAN. Si 9 de esos programadores estudiaron Pascal y COBOL, 5
 estudiaron Pascal y FORTRAN, 4 estudiaron COBOL y FORTRAN, 3 estudiaron Pascal,
@@ -93,7 +75,7 @@ El total de estudiantes está dado por $n_1 = |P|+|C|+|F| = 49+37+21=107$ $n_2
 Por lo tanto por el principio de inclusión-exclusión $|P \cup C \cup F| = n_1 - n_2 +
 n_3 = 107-18+3 = 92$
 
-\section{Problema}
+\textbf{Problema}
 ¿Cuál es la probabilidad de que un número entero positivo seleccionado de un
 conjunto de enteros positivos, que no excedan 100, sea divisible ya sea entre 2
 o 5. 
@@ -115,7 +97,7 @@ entonces
 $p(E_1 \cup E_2)=p(E_1)+p(E_2)-p(E_1 \cap E_2) = \frac{50}{100} + \frac{20}{100} - \frac{10}{100} = \frac{3}{5}$
 
 
-\section{Problema}
+\textbf{Problema}
 
 Los alces moran en cierto bosque. Hay $N$ alces, de los cuales se captura y
 etiqueta una muestra aleatoria simple de tamaño $n$ ("muestra aleatoria simple"
@@ -124,7 +106,7 @@ probables). Los alces capturados se devuelven a la población y luego se extrae
 una nueva muestra, esta vez de tamaño $m$. Este es un método importante que se
 usa ampliamente en ecología, conocido como \textit{captura-recaptura}. ¿Cuál es
 la probabilidad de que exactamente $k$ de los $m$ alces en la nueva muestra
-hayan sido marcados previamente? (Suponga que un alce que fue capturado antes no
+hayan sido marcados previamente? Suponga que un alce que fue capturado antes no
 tiene más o menos probabilidades de ser capturado nuevamente.
 
 \textbf{Solución}
@@ -141,7 +123,7 @@ para $k$ tal que $0 \leq k \leq n$ y $0 \leq m-k \leq N-n$, y la probabilidad es
 probabilidad es 0 ya que entonces ni siquiera hay $k$ alces etiquetados en toda
 la población).
 
-\section{Problema}
+\textbf{Problema}
 
 Hay 100 pasajeros en fila para abordar un avión con 100 asientos (con cada
 asiento asignado a uno de los pasajeros). El primer pasajero en la fila decide
@@ -160,7 +142,7 @@ asiento del primer pasajero. Esto en particular es cierto cuando $k=n$. Pero el
 $n$-ésimo pasajero solo puede ocupar su asiento o el del primer pasajero. Por lo
 tanto la probabilidad es $\frac{1}{2}$.
 
-\section{El problema de los dos mentirosos}
+\textbf{El problema de los dos mentirosos}
 
 Los sujetos $A$ y $B$ dicen la verdad con la probabilidad de $1/3$ y mienten con
 una probabilidad de $(2/3)$.
@@ -173,7 +155,7 @@ cierta.
 \textbf{Solución}
 
 Sea $E$ el evento en el que $A$ hace una declaración y $B$ la confirma. Esto
-puede pasar de dos manetas:
+puede pasar de dos maneras:
 
 \begin{itemize}
     \item $T$: $A$ y $B$, ambos dicen la verdad.
@@ -194,7 +176,7 @@ En conclusión:
 
 $P(T|E) = \frac{P(T)}{P(E)} = \frac{1/9}{5/9} = \frac{1}{5}$
 
-\section{La ameba sobreviviente}
+\textbf{La ameba sobreviviente}
 
 Una población comienza con una sola ameba. Para esta y para las generaciones
 posteriores, existe una probabilidad de 3/4 de que una ameba individual se
@@ -210,14 +192,14 @@ movimientos corresponde a considerar el destino de $N$ amebas simultáneamente.
 Esto produce $1-\frac{1-p}{p}=1-\frac{1/4}{3/4}=\frac{2}{3}$ por los argumentos
 habituales.
 
-\section{Duelo justo}
+%\subsection{Duelo justo}
+%
+%Pepe y Juan se han retado a un duelo. Tomarán turnos disparando uno al otro
+%hasta que uno sea herido. Pepe, quien puede atinarle a Juan solamente el 40\% de
+%las veces, es el disparador más débil, por lo que le será permitido disparar
+%primero. Ellos han determinado que en el duelo no se favorezca a nadie.
+%
+%¿Cuál es la probabilidad de herir a Pepe?
 
-Pepe y Juan se han retado a un duelo. Tomarán turnos disparando uno al otro
-hasta que uno sea herido. Pepe, quien puede atinarle a Juan solamente el 40\% de
-las veces, es el disparador más débil, por lo que le será permitido disparar
-primero. Ellos han determinado que en el duelo no se favorezca a nadie.
 
-¿Cuál es la probabilidad de herir a Pepe?
-
-\end{document}
 
