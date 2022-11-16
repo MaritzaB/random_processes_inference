@@ -41,4 +41,6 @@ plt.annotate(
     [90, 0.15],
 )
 
-plt.show()
+filepath = "reports/figures/stirling.png"
+plt.savefig(filepath)
+plt.clf()
