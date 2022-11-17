@@ -1,0 +1,74 @@
+
+
+\section{Distribución de Poisson}
+
+Supongamos que estamos interesados en conteos que ocurren en un intervalo de
+tiempo (por ejemplo, dentro de una hora en particular). Debido a que son
+conteos, no son negativos y tienen un valor entero. Sabemos que estos recuentos
+tienen dos propiedades importantes. Primero, ocurren con alguna tasa promedio
+fija. En segundo lugar, se produce una observación independientemente del
+intervalo desde la última observación. Entonces la distribución de Poisson es un
+modelo apropiado \cite{forsyth2018probability}.
+
+\begin{theorem}{Distribución de Poisson}{Poisson}
+Una variable aleatoria $X$, no negativa de valor entero, tiene una distribución de
+Poisson cuando su distribución de probabilidad toma la forma:
+
+\begin{equation}
+    P({X=k})=\lambda^k e^{-\lambda}
+\end{equation}
+
+Donde $\lambda > 0$ es un parámetro conocido como la intensidad de la distribución.
+    
+\end{theorem}
+
+La distribución de Poisson es una distribución de probabilidad, porque es no
+negativa y porque:
+
+\begin{center}
+    \[
+\sum_{i=0}^{\infty} \frac{\lambda^i}{i!} = e^\lambda
+\]
+\end{center}
+
+tal que,
+
+\begin{center}
+    \[
+\sum_{k=0}^{\infty} \frac{\lambda^i e^\lambda}{i!}  = 1
+\]
+\end{center}
+
+Una distribución de Poisson con intensidad $\lambda$ tiene:
+
+\begin{itemize}
+    \item Media $\lambda$;
+    \item Varianza $\lambda$
+\end{itemize}
+
+La distribución de Poisson se usa a menudo en situaciones en las que contamos el
+número de éxitos en una región o intervalo de tiempo en particular, y hay una
+gran cantidad de intentos, cada uno con una pequeña probabilidad de éxito
+\cite{blitzstein2015introduction}.
+
+Por ejemplo, las siguientes variables aleatorias podrían seguir una distribución
+que es aproximadamente Poisson.
+
+\begin{itemize}
+\item El número de correos electrónicos que recibe en una hora. Hay muchas
+personas que potencialmente podrían enviar un correo electrónico en esa hora,
+pero es poco probable que una persona específica realmente le envíe un correo
+electrónico en esa hora. Alternativamente, imagina subdividir la hora en
+milisegundos. Hay $3.6 \times 10^6$ segundos en una hora, pero en cualquier
+milisegundo específico es poco probable que reciba un correo electrónico.
+
+\item El número de chispas en una galleta con chispas de chocolate. Imagina
+subdividir la galleta en cubos pequeños; la probabilidad de obtener una chispa
+de chocolate en un solo cubo es pequeña, pero el número de cubos es grande.
+
+\item El número de terremotos en un año en alguna región del mundo. En cualquier
+momento y lugar dados, la probabilidad de un terremoto es pequeña, pero hay una
+gran cantidad de posibles momentos y lugares para que ocurran terremotos en el
+transcurso del año.
+
+\end{itemize}
