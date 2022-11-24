@@ -2,7 +2,8 @@ reports: \
 	reports/probability_random_processes_and_inference.pdf
 
 presentation: \
-	slides/counting_techniques_slides.pdf
+	slides/binomial_distribution.pdf
+#	slides/counting_techniques_slides.pdf
 
 exam: \
 	reports/exam.pdf
@@ -35,6 +36,9 @@ define lint
 endef
 
 slides/counting_techniques_slides.pdf: slides/counting_techniques_slides.tex
+	$(renderPresentation)
+
+slides/binomial_distribution.pdf:	slides/binomial_distribution.tex
 	$(renderPresentation)
 
 reports/probability_random_processes_and_inference.pdf: reports/probability_random_processes_and_inference.tex
