@@ -49,19 +49,24 @@
 
 \begin{frame}{Distribución Binomial}
   \begin{block}{Definición}
-    Función de probabilidad de una distribución binomial se define como la
+    La función de probabilidad de una distribución binomial se define como la
     probabilidad de que ocurran exactamente $k$ eventos exitosos de $n$ experimentos
     independientes de probabilidad $p$.
 
     \begin{equation}
       P(k) = C(n,k) p^k q^{n-k}
     \end{equation}
-
-    Esto a menudo es escrito como:
+    
+    Esto a también es escrito como:
     \begin{equation}
       b(k; n,p) = C(n,k) p^k q^{n-k}
     \end{equation}
     Donde $0 \leq k \leq n$
+  \end{block}
+  \begin{block}{}
+    Probabilidad de "éxito": $p$
+
+    Probabilidad de "fracaso": $q = 1 - p$
   \end{block}
 \end{frame}
 
@@ -89,7 +94,7 @@
 \begin{frame}{Eventos tipo Bernoulli}
 
   \begin{block}{Ejemplo}
-    Un jugador de baloncesto tiene un 80\% de cierto en tiros libres. Si tira tres
+    Un jugador de baloncesto tiene un 80\% de acierto en tiros libres. Si tira tres
     lanzamientos seguidos, ¿Cuál es la probabilidad de que acierte los tres?
   \end{block}
 
@@ -120,7 +125,7 @@
 
 \begin{frame}{Distribución Binomial}
   \begin{block}{Ejemplo}
-    Un jugador de baloncesto tiene un 80\% de cierto en tiros libres. Si tira tres
+    Un jugador de baloncesto tiene un 80\% de acierto en tiros libres. Si tira tres
     lanzamientos seguidos, ¿Cuál es la probabilidad de que acierte dos de los tres
     lanzamientos?
   \end{block}

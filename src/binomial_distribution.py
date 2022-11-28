@@ -2,7 +2,7 @@ from scipy.stats import binom
 import matplotlib.pyplot as plt
 
 n=20
-p=0.8
+p=0.5
 k_values = list(range(n+1))
 
 mean, var = binom.stats(n, p)
