@@ -109,7 +109,7 @@ La función de densidad de probabilidad está dada por:
   \begin{enumerate}
     \item Valor esperado:
     \begin{equation}
-      \mu = E(x) = \sum_{x}^{} x f(x) = \sum_{x}^{} x \binom{n}{x} p^x (1-p)^(n-x) = np
+      \mu = E(x) = \sum_{x}^{} x f(x) = \sum_{x}^{} x \binom{n}{x} p^x (1-p)^{n-x} = np
     \end{equation}
 
     \item Varianza:
@@ -192,6 +192,7 @@ Por lo que podemos hacer:
     \\
                                 = & 1 + \frac{(n+1)p - x}{xq} \\
     \end{array}
+    \label{eq:poissonGral}
   \end{equation}
 
 \end{frame}
@@ -262,22 +263,145 @@ Quitando el $\ln$, podemos concluir que para $n=0$,
 \end{frame}
 
 \begin{frame}{}
-  Si $x=1$:
+  Si $x=1$, a partir de la Ec. \eqref{eq:poissonGral}, tenemos:
 
+  \begin{equation}
+    \begin{array}{rl}
+    f(1,n,p)  = & (1 + \frac{(n+1)p - 1}{q}) \cdot f(0,n,p) \\
+    \\
+              = & (\frac{q + (n+1)p - 1}{q}) \cdot e^{-\lambda} \\
+    \\
+              = & (\frac{q + p + np - 1}{q}) \cdot e^{-\lambda} \\
+    \\
+              = & (\frac{np}{q}) \cdot e^{-\lambda} \\
+    \\
+              = & (\frac{\lambda}{q}) \cdot e^{-\lambda} \\
+    \end{array}
+  \end{equation}
+
+  Siempre que $n \to \infty$ y $p \to 0 \Rightarrow q \to 1$, porque $q=1-p$
+  Entonces:
+
+  \begin{equation}
+  f(1,n,p) = \lambda e^{-\lambda}
+  \end{equation}
+
+\end{frame}
+
+
+\begin{frame}{}
+  Si $x=2$, a partir de la Ec. \eqref{eq:poissonGral}, tenemos:
+
+  \begin{equation}
+    \begin{array}{rl}
+    f(2,n,p)  = & (1 + \frac{(n+1)p - 2}{2q}) \cdot f(1,n,p) \\
+    \\
+              = & (\frac{2q + (n+1)p - 2}{2q}) \cdot \lambda e^{-\lambda} \\
+    \\
+              = & (\frac{2q + np + p - 2}{2q}) \cdot \lambda e^{-\lambda} \\
+    \\
+              = & (\frac{2(1-p) + np + p - 2}{2q}) \cdot \lambda e^{-\lambda} \\
+    \\
+              = & (\frac{2 - 2p + np + p - 2}{2q}) \cdot \lambda e^{-\lambda} \\
+    \\
+              = & (\frac{np - p}{2q}) \cdot \lambda e^{-\lambda} \\
+
+    \end{array}
+  \end{equation}
+
+  Pero $np=\lambda$
+
+\end{frame}
+
+\begin{frame}{}
+  \begin{equation}
+    f(2,n,p)  = (\frac{\lambda - p}{2q}) \cdot \lambda e^{-\lambda}
+  \end{equation}
+
+  Pero si $p \to 0$, entonces $q \to 1$ porque $q=1-p$
+  Entonces, tenemos que:
+
+  \begin{equation}
+    f(2,n,p)  = (\frac{\lambda}{2}) \cdot \lambda e^{-\lambda}
+  \end{equation}
+
+
+
+\end{frame}
+
+\begin{frame}{}
+  Sabemos que si $x=0$: \\
+  $f(0,n,p) = \frac{\lambda^0}{0!} e^{-\lambda}$
+  \vfill
+  Si $x=1$: \\
+  $f(1,n,p) = \frac{\lambda^1}{1!} e^{-\lambda}$
+  \vfill
+  Si $x=2$: \\
+  $f(2,n,p)  = \frac{\lambda^2}{2!} \cdot \lambda e^{-\lambda}$
+  \vfill
+
+  \begin{block}{}
+    Entonces, si $x=k$:
+    \begin{equation}
+      f(k,n,p)  = \frac{\lambda^k}{k!} \cdot \lambda e^{-\lambda}
+    \end{equation}
+    Función de probabilidad de Poisson de V.A.
   
+  \end{block}
 \end{frame}
 
+\begin{frame}
+  Para una V.A. discreta de Poisson podemos definir tres parámetros importantes:
 
-\begin{frame}{}
+  \begin{enumerate}
+    \item Valor esperado:
+    \begin{equation}
+      \mu = E(x) = \sum_{x} xf(x) = \sum_{x} \frac{x e^{-\lambda}\lambda^k}{x!} = \lambda
+    \end{equation}
+
+    \item Varianza:
+    \begin{equation}
+      \sigma^2 = \sum_{x} \frac{x^2 e^{-\lambda}\lambda^k}{x!} - (\sum_{x} \frac{x e^{-\lambda}\lambda^k}{x!})^2 = \lambda
+    \end{equation}
+
+    \item Desviación estándar:
+    \begin{equation}
+      \sigma = \sqrt{\lambda}
+    \end{equation}
+
+  \end{enumerate}
+
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Función de distribución de Poisson}
+  \begin{block}{Ejemplo}
+    El número de incidentes de tránsito que ocurren en una cierta avenida en un día
+    cualquiera sigue una distribución Poisson de media $\lambda=1$. Entonces:
+  \end{block}
+
+  \begin{center}
+    \includegraphics[scale=0.5]{figures/poisson_distribution_lambda_1.png}
+  \end{center}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Función de distribución de Poisson}
+  \begin{block}{Ejemplo}
+    El número de incidentes de tránsito que ocurren en una cierta avenida en un día
+    cualquiera sigue una distribución Poisson de media $\lambda=4$. Entonces:
+  \end{block}
+  \begin{center}
+    \includegraphics[scale=0.5]{figures/poisson_distribution_lambda_4.png}
+  \end{center}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Función de distribución de Poisson}
+  \begin{block}{Ejemplo}
+    El número de incidentes de tránsito que ocurren en una cierta avenida en un día
+    cualquiera sigue una distribución Poisson de media $\lambda=10$. Entonces:
+  \end{block}
+  \begin{center}
+    \includegraphics[scale=0.5]{figures/poisson_distribution_lambda_10.png}
+  \end{center}
 \end{frame}
 
 \end{document}

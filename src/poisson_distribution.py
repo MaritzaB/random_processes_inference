@@ -1,7 +1,7 @@
 from scipy.stats import poisson
 import matplotlib.pyplot as plt
 
-mu=5
+mu=2
 n=20
 k_values = list(range(n+1))
 
@@ -13,7 +13,7 @@ plt.bar(k_values,distribution, color="gray")
 plt.title("Distribución Binomial")
 plt.ylabel("Probabilidad(k)")
 plt.xlabel("Valores k (lanzamientos exitosos)")
-filepath = "slides/figures/poisson_distribution.png"
+filepath = "slides/figures/poisson_distribution_lambda_2.png"
 plt.savefig(filepath)
 plt.clf()
 
