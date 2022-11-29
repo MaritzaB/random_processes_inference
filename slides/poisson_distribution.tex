@@ -1,0 +1,146 @@
+\documentclass{beamer}
+
+\mode<presentation>{
+  \usetheme{Warsaw}
+}
+
+
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{tikz}
+\usepackage{pgf}  %Para realizar figures
+\usepackage{xcolor} % Para los colores
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{tcolorbox}  %Cuadros de teoremas
+
+
+\title[ \hspace{21mm} \insertframenumber \ de \inserttotalframenumber ]
+{Distribución de Poisson}
+
+\subtitle
+{Probabilidad, procesos aleatorios e inferencia}
+
+\author[]
+{Ana Maritza Bello Yáñez}
+
+
+\institute[Instituto Polit\'ecnico Nacional]
+{
+  \inst{1}
+  Centro de Investigaci\'on en Computaci\'on
+  }
+
+\date[Short Occasion]
+{\today}
+
+\keywords{}
+
+\begin{document}
+
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Distribución de Poisson}
+  \begin{block}{}
+    Esta distribución es útil cuando se quiere estudiar la ocurrencia de eventos por
+    unidad de tiempo:\\
+    \vfill
+    errores/mes, quejas/semana, defectos/día. \\
+    \vfill
+    Para su aplicación, la probabilidad de ocurrencia del evento debe ser constante
+    en tiempo o espacio y debe haber independencia de ocurrencia de eventos.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Distribución de Poisson}
+  \begin{block}{Definición}
+    También se puede usar como una aproximación de la distribución binomial, esto es
+    cuando:
+
+    $n \to \infty $ y $p \to 0 $
+
+    De manera que el promedio $\lambda = np$ se hace constante.
+  \end{block}
+
+  \begin{block}{}
+    La expresión binomial de la función de densidad de probabilidad para tales
+    sucesos tiende a la siguiente forma simplificada:
+
+    \begin{equation}
+      P(x)=\frac{\lambda ^ x}{x!}e^{-\lambda}
+    \end{equation}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Distribución binomial}
+  \begin{block}{Retomando la distribución binomial...}
+La variable aleatoria $X$ representa el número de éxitos con probabilidad $p$,
+obtenidos en $n$ intentos.
+
+La función de densidad de probabilidad está dada por:
+
+    \begin{equation}
+      P(X=x) = f(x) = \binom{n}{x} p^x q^{n-x}
+    \end{equation}
+
+    Donde $\binom{n}{x}$ es la combinatoria de $n$ en $x$.
+
+    La función de distribución está dada por:
+
+    \begin{equation}
+      P(X \leq x) = \sum_{i}^{} f(x_i)
+    \end{equation}
+
+  \end{block}
+\end{frame}
+
+
+\begin{frame}{Distribución Binomial}
+  Para una v.a. discreta binomial podemos definir tres parámetros importantes:
+
+  \begin{enumerate}
+    \item Valor esperado:
+    \begin{equation}
+      \mu = E(x) = \sum_{x}^{} x f(x) = \sum_{x}^{} x \binom{n}{x} p^x (1-p)^(n-x) = np
+    \end{equation}
+
+    \item Varianza:
+    \begin{equation}
+      \sigma^2 = \sum_{x} x^2 \binom{n}{x} p^x (1-p)^{n-x} - (\sum_{x} \binom{n}{x} p^x (1-p)^{n-x})^2 = np(1-p)
+    \end{equation}
+
+    \item Desviación estándar:
+    \begin{equation}
+      \sigma = \sqrt{\sigma^2}
+    \end{equation}
+
+  \end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{Aproximación de la dist. Binomial a Poisson}
+  La distribución binomial depende de 3 parámetros:
+
+  \begin{equation}
+    f(x,n,p) = \binom{n}{x} p^x (1-p)^{n-x}
+  \end{equation}
+
+\end{frame}
+
+
+\begin{frame}{}
+\end{frame}
+
+
+
+\end{document}
+
