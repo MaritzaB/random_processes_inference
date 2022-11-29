@@ -134,13 +134,151 @@ La función de densidad de probabilidad está dada por:
     f(x,n,p) = \binom{n}{x} p^x (1-p)^{n-x}
   \end{equation}
 
+Entonces, queremos saber si existe una relación entre el experimento actual y el
+anterior.
+
+Por lo que podemos hacer:
+
+\begin{equation}
+  \begin{array}{rr}
+  \frac{f(x,n,p)}{f(x-1,n,p)} = & \frac{\binom{n}{x} p^x (1-p)^{n-x}}{\binom{n}{x-1} p^{x-1} (1-p)^{n-(x-1)}} \\
+  \\
+%                              = & \frac{\binom{n}{x} p^x (1-p)^{n} (1-p)^{-x}}{\binom{n}{x-1} \frac{p^x}{p} (1-p)^{n}(1-p)^{-(x-1)}} \\
+
+                              = & \frac{\binom{n}{x} p^x (1-p)^{n} (1-p)^{-x}}{\binom{n}{x-1} \frac{p^x}{p} (1-p)^{n}(1-p)^{-x} (1-p)}
+  \end{array}
+\end{equation}
+
+\end{frame}
+
+
+\begin{frame}{}
+  \begin{equation}
+    \begin{array}{rr}
+    \frac{f(x,n,p)}{f(x-1,n,p)} = & \frac{\binom{n}{x} p}{\binom{n}{x-1} (1-p)} \\
+    \\
+                                = & \frac{\binom{n}{x} p}{\binom{n}{x-1} q} \\
+    \end{array}
+  \end{equation}
+
+  Pero...
+  
+  \begin{equation}
+    \begin{array}{rr}
+    \frac{\binom{n}{x}}{\binom{n}{x-1}} = & \frac{\frac{n!}{(n-x)!x!}}{\frac{n!}{(n-(x-1))!(x-1)!}} \\
+    \\
+                                        = & \frac{n-x+1}{x}
+    \end{array}
+  \end{equation}
+
+  Por lo que...
+
+  \begin{equation}
+    \begin{array}{rr}
+    \frac{f(x,n,p)}{f(x-1,n,p)} = & \frac{n-x+1}{x} \cdot \frac{p}{q}
+    \end{array}
+  \end{equation}
+
+\end{frame}
+
+\begin{frame}{}
+  \begin{equation}
+    \begin{array}{rr}
+    \frac{f(x,n,p)}{f(x-1,n,p)} = & \frac{(n+1)p - xp}{xq} \\
+    \\
+                                = & \frac{(n+1)p - x(1-q)}{xq} \\
+    \\
+                                = & \frac{(n+1)p - x + xq}{xq} \\
+    \\
+                                = & 1 + \frac{(n+1)p - x}{xq} \\
+    \end{array}
+  \end{equation}
+
+\end{frame}
+
+\begin{frame}{}
+
+  Ahora podemos hacer el caso cuando $x=0$:
+
+  \begin{equation}
+    f(0,n,p) = \binom{n}{0} p^0 (1-p)^{n-0} = (\frac{n!}{(n-0)! 0!})(1-p)^n = (1-p)^n
+  \end{equation}
+
+Pero sabemos que la esperanza matemática $\lambda = np \Rightarrow p =
+\frac{\lambda}{n}$,
+  
+entonces,
+
+\begin{equation}
+  f(0,n,p) = (1-\frac{\lambda}{n})^n
+\end{equation}
+
+Podemos hacer que:
+
+\begin{equation}
+  \ln(f(0,n,p)) = n \ln((1-\frac{\lambda}{n}))
+\end{equation}
+
+\end{frame}
+
+\begin{frame}{}
+  Usando la serie de Taylor:
+
+  \begin{equation}
+    \ln(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + ...
+  \end{equation}
+
+  Tenemos que:
+
+  \begin{equation}
+    \begin{array}{rl}
+    \ln(1+(-\frac{\lambda}{n})) = & (-\frac{\lambda}{n}) - \frac{(-\frac{\lambda}{n})^2}{2} + \frac{(-\frac{\lambda}{n})^3}{3} - \frac{(-\frac{\lambda}{n})^4}{4} + ... \\
+    \\
+                                = & -\frac{\lambda}{n} + \frac{\lambda^2}{2n^2} - \frac{\lambda^3}{3n^3} - \frac{\lambda^4}{4n^4}+...
+    \end{array}
+  \end{equation}
+
+  Pero sabemos que $n \to \infty$, por lo que nos queda:
+
+  \begin{equation}
+    n \ln(1-\frac{\lambda}{n}) = -\lambda
+  \end{equation}  
+
+\end{frame}
+
+\begin{frame}{}
+Sabiendo que: \\
+
+$ \lim_{n \to \infty} [\ln (f(0,n,p))] = \lim_{n \to \infty} (1 -
+\frac{\lambda}{n})^n = -\lambda$
+
+\vfill
+Quitando el $\ln$, podemos concluir que para $n=0$,
+
+\begin{equation}
+  f(0,n,p) = e^{-\lambda}
+\end{equation}
+
+\end{frame}
+
+\begin{frame}{}
+  Si $x=1$:
+
+  
 \end{frame}
 
 
 \begin{frame}{}
 \end{frame}
 
+\begin{frame}{}
+\end{frame}
 
+\begin{frame}{}
+\end{frame}
+
+\begin{frame}{}
+\end{frame}
 
 \end{document}
 
