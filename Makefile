@@ -2,7 +2,8 @@ reports: \
 	reports/probability_random_processes_and_inference.pdf
 
 presentation: \
-	slides/poisson_distribution.pdf
+	slides/expectation_variance_covariance.pdf
+#	slides/poisson_distribution.pdf
 #	slides/binomial_distribution.pdf
 #	slides/counting_techniques_slides.pdf
 
@@ -43,6 +44,9 @@ slides/binomial_distribution.pdf:	slides/binomial_distribution.tex
 	$(renderPresentation)
 
 slides/poisson_distribution.pdf:	slides/poisson_distribution.tex
+	$(renderPresentation)
+
+slides/expectation_variance_covariance.pdf:	slides/expectation_variance_covariance.tex
 	$(renderPresentation)
 
 reports/probability_random_processes_and_inference.pdf: reports/probability_random_processes_and_inference.tex

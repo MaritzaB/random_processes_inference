@@ -1,0 +1,101 @@
+\documentclass{beamer}
+
+\mode<presentation>{
+  \usetheme{Warsaw}
+}
+
+
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{tikz}
+\usepackage{pgf}  %Para realizar figures
+\usepackage{xcolor} % Para los colores
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{tcolorbox}  %Cuadros de teoremas
+
+
+\title[ \hspace{21mm} \insertframenumber \ de \inserttotalframenumber ]
+{Momentos de una variable aleatoria. \\Esperanza, Varianza y Covarianza}
+
+\subtitle
+{Probabilidad, procesos aleatorios e inferencia}
+
+\author[]
+{Ana Maritza Bello Yáñez}
+
+
+\institute[Instituto Polit\'ecnico Nacional]
+{
+  \inst{1}
+  Centro de Investigaci\'on en Computaci\'on
+  }
+
+\date[Short Occasion]
+{\today}
+
+\keywords{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Momentos de una v.a.}
+Los momentos de una variable aleatoria son cantidades que reflejan ciertas
+características de un conjunto de datos numérico y se definen de la
+siguiente manera:
+
+\begin{itemize}
+\item $E(X)$ también se le denomina como primer momento. También se puede
+denotar como $\bar{X}$ o $\mu{X}$, que implican una \textit{operación de
+promedio} sobre la variable $X$.
+  \item $E(X^2)$ es el segundo momento.
+  \item $E(X^3)$ es el tercer momento.
+  ...
+  \item $E(X^n)$ es el $n$-ésimo momento.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Esperanza}
+La esperanza es un número que representa el valor promedio que toma una variable
+aleatoria.\\
+
+Sea $X$ una variable aleatoria discreta con función de probabilidad $f(x)$, que
+puede tomar los valores $x_i=(i=1,2,...)$.\\
+
+Entonces, se define la esperanza de $X$, como la suma sobre todos los posibles
+valores que la variable aleatoria puede tomar de $X$ por la probabilidad $P(X=x_i)=f_{X}(x_i)$.
+
+\begin{equation}
+  \bar{X} = E(X) = \sum_{i=1}^{n} x_i \cdot P(X=x_i)
+\end{equation}
+
+Siempre y cuando esta suma sea absolutamente convergente.
+
+\begin{equation}
+  \sum_{x} |x| f(x) < \infty
+\end{equation}
+
+\end{frame}
+
+\begin{frame}{Esperanza}
+  La esperanza también es llamada el primer momento de una variable aleatoria.
+\end{frame}
+
+\begin{frame}{}
+\end{frame}
+
+\begin{frame}{}
+\end{frame}
+
+\begin{frame}{}
+\end{frame}
+
+\end{document}
