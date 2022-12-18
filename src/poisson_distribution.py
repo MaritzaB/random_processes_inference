@@ -10,7 +10,7 @@ distribution = [poisson.pmf(k, mu) for k in k_values]
 
 plt.plot(k_values,distribution, color="blue", linestyle="dashed")
 plt.bar(k_values,distribution, color="gray")
-plt.title("Distribución Binomial")
+plt.title("Distribución de Poisson")
 plt.ylabel("Probabilidad(k)")
 plt.xlabel("Valores k (lanzamientos exitosos)")
 filepath = "slides/figures/poisson_distribution_lambda_2.png"

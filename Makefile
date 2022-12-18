@@ -2,10 +2,10 @@ reports: \
 	reports/probability_random_processes_and_inference.pdf
 
 presentation: \
-	slides/expectation_variance_covariance.pdf
-#	slides/poisson_distribution.pdf
-#	slides/binomial_distribution.pdf
-#	slides/counting_techniques_slides.pdf
+	slides/expectation_variance_covariance.pdf \
+	slides/poisson_distribution.pdf \
+	slides/binomial_distribution.pdf \
+	slides/counting_techniques_slides.pdf
 
 exam: \
 	reports/exam.pdf
