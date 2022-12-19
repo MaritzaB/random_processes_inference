@@ -1,0 +1,53 @@
+\section{Distribución Bernoulli}
+
+Un ensayo Bernoulli se define como aquel experimento aleatorio con únicamente
+dos posibles resultados, llamados genéricamente: éxito y fracaso. Supondremos
+que las probabilidades de estos resultados son $p$ y $1 - p$, respectivamente.
+Si se define la variable aleatoria $X$ como aquella función que lleva el
+resultado éxito al número 1 y el resultado fracaso al número 0, enton- ces
+decimos que $X$ tiene una distribución Bernoulli con parámetro $p \in (0, 1)$ y
+escribimos $X \sim Ber(p)$. La función de probabilidad se puede escribir de la
+siguiente forma.
+
+\begin{equation}
+    f(x) = \left\lbrace
+        \begin{array}{ll} 
+            1-p & \text{ si } x = 0, \\
+            p   & \text{ si } x=1, \\
+            0   & \text{ en otro caso.}
+        \end{array}\right.
+\end{equation}
+
+O bien de manera compacta,
+
+\begin{equation}
+    f(x) = \left\lbrace
+        \begin{array}{ll} 
+            p^x (1-p)^{1-x} & \text{ si } x = 0,1, \\
+            0   & \text{ en otro caso.}
+        \end{array}\right.
+\end{equation}
+
+En la realización de todo experimento aleatorio siempre es posible pregun-
+tarse por la ocurrencia o no ocurrencia de un evento cualquiera. Este es el
+esquema general donde surge esta distribución de probabilidad. La distri-
+bución Bernoulli es sencilla, pero de muy amplia aplicación.
+
+\subsection{Ejemplo de evento tipo Bernoulli}
+
+Un jugador de baloncesto tiene un 80\% de acierto en tiros libres. Si tira tres
+lanzamientos seguidos, ¿Cuál es la probabilidad de que acierte los tres?
+
+Para un tiro:
+
+Probabilidad de éxito $p=0.8$
+
+Probabilidad de fracaso: $q = 1 - 0.8 = 0.2$
+
+Para tres tiros:
+
+Probabilidad de éxito $P(A \cap A \cap A) = p \cdot p \cdot p = 0.8 \cdot 0.8
+\cdot 0.8 = 0.512$
+
+Probabilidad de fracaso $P(\bar{A} \cap \bar{A} \cap \bar{A}) = q \cdot q \cdot q = 0.2 \cdot 0.2
+\cdot 0.2 = 0.008$
