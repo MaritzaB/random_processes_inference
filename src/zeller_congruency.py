@@ -3,7 +3,9 @@ import datetime
 birthdate = input(
     "Introduce la fecha en formato dd-mm-yyyy: "
 )
-date = datetime.datetime.strptime(birthdate, "%d-%m-%Y")
+date = datetime.datetime.strptime(
+    birthdate, "%d-%m-%Y"
+)
 
 day = int(date.day)
 monthh = int(date.month)
@@ -34,4 +36,7 @@ weekday = {
 
 value = weekday[d]
 
-print(f"El dia {date} cae en ", value)
+print(
+    f"El dia {date} cae en ",
+    value,
+)

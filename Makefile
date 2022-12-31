@@ -87,7 +87,7 @@ clean:
 	rm --force *.pdf
 
 format:
-	black --line-length 60 src/*.py
+	black --line-length 50 src/*.py
 
 linter:
 	$(call lint, src)
