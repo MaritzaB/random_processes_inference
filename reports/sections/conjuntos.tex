@@ -1,6 +1,6 @@
-\section*{Teoría de conjuntos}
+\section{Teoría de conjuntos}
 
-\subsection*{Introducción}
+\subsection{Introducción}
 
 El concepto de conjunto, es fundamental en matemáticas. Su estudio, se basa en
 el hecho de que éstos pueden ser combinados, mediante ciertas operaciones, para
@@ -19,7 +19,7 @@ Phillipp Cantor (1845, 1918). Las ideas y conceptos de la teoría de conjuntos
 han irrumpido literalmente en todas las ramas de las matemáticas y cambiaron su
 faz por completo.
 
-\subsection*{Definición básica de conjunto}
+\subsection{Definición básica de conjunto}
 
 Un conjunto es cualquier colección de objetos bien definidos por medio de alguna
 o algunas propiedades en común, de dichos objetos. Por objeto entenderemos no
@@ -30,7 +30,7 @@ conjunto.
 Representamos a los conjuntos por medio de letras mayúsculas, así $A$, $B$, $C$,
 etc., nos representan conjuntos.
 
-\subsection*{Elemento}
+\subsection{Elemento}
 
 Se llaman elementos o miembros a los objetos que componen un conjunto; y se
 denotan con letras minúsculas, como: $a, b, x, y$, etc. Para indicar que un
@@ -38,26 +38,41 @@ objeto $x$ pertenece o es miembro de un conjunto $A$, escribimos $x \in A$, que
 se lee \textit{“x elemento de A”} y, si no pertenece al conjunto $A$, escribimos
 $x \notin A$, que se lee \textit{“x no es elemento de A”}.
 
-\subsection*{Conjunto universo}
+\subsection{Conjunto universo}
 Llamamos conjunto universo y lo denotamos por $\mathbb U$, al conjunto del cual se
 seleccionan los elementos para formar conjuntos.
 
 En general identificamos al conjunto universo como un todo, pero no
 representamos de una manera única a este “todo”, así habrá ocasiones que un
-conjunto sea considerado conjunto universo y en otras no, por ejemplo:
-considerando el conjunto P de los número pares, se tiene que
-
-\begin{tabular}{ |l|l|l| }
-    
-\multirow{2}{4em}{$\mathbb C$ conjunto de los complejos} & \multirow{2}{4em}{$\mathbb R$ números reales} \\
-    & & $\mathbb I$ números irracionales \\
-    & & $\mathbb Q$ números racionales
-    %& & {$\mathbb Z$ números enteros}
-\end{tabular}
+conjunto sea considerado conjunto universo y en otras no.
 
 
+    \begin{equation}
+        \text{Complejos } \mathbb{ C}  =
+        \left\lbrace\begin{array}{lll} 
+            \text{Reales } \mathbb{ R} = \left\lbrace 
+                \begin{array}{ll}
+                    \text{Racionales } \mathbb{ Q} = \left\lbrace 
+                    \begin{array}{l}
+                        \text{Enteros } \mathbb{ Z} = \left\lbrace 
+                        \begin{array}{l}
+                            \text{Naturales } \mathbb{N} \\
+                            \text{Cero } 0 \\
+                            \text{Enteros negativos}
+                        \end{array}\right.
+                        \\
+                        \text{Fraccionarios}
+                    \end{array}\right.
+                    \\
+                    \text{Irracionales}
+                \end{array}\right.
+            \\ 
+            \text{Imaginarios }
+        \end{array}\right.
+\end{equation}
 
-\subsection*{Conjunto vacío}
+
+\subsection{Conjunto vacío}
 
 El conjunto vacío o nulo es un conjunto que no tiene elementos, el conjunto
 vacío se representa por: $\emptyset$, o bien por \{\}.
@@ -66,7 +81,7 @@ No confundir el conjunto $A = \emptyset $ con el conjunto $ A = \{\emptyset\} $,
 ya que el primer conjunto indica que no tiene ningún elemento y el segundo
 conjunto indica que tiene un elemento y ese elemento es el conjunto vacío.
 
-\subsection*{Igualdad de conjuntos}
+\subsection{Igualdad de conjuntos}
 
 Decimos que dos conjuntos $A$ y $B$ son iguales y denotamos $A=B$, si y solo si
 $A$ es un subconjunto de $B$, y $B$ es un subconjunto de $A$.
@@ -75,7 +90,7 @@ $A$ es un subconjunto de $B$, y $B$ es un subconjunto de $A$.
     A=B \iff A \subseteq B \land B \subseteq A
 \end{equation}
 
-\subsection*{Subconjunto}
+\subsection{Subconjunto}
 
 Si todos los elementos de un conjunto $A$ son también elementos de un conjunto
 $B$, esto es, si cuando $x \in A$ entonces $x \in B$ (simbólicamente $x \in A
@@ -96,7 +111,7 @@ equivalente a la siguiente preoposición:
     (\exists \ x \in \mathbb U)[x \in A \land x \not\in B]
 \end{equation}
 
-\subsection*{Propiedades de los conjuntos}
+\subsection{Propiedades de los conjuntos}
 
 \begin{enumerate}
     \item Si $A$ es cualquier conjunto diferente del vacío, entonces $A \subseteq A$ .
@@ -118,32 +133,32 @@ $B \subseteq A$
     Si $ A \subset B $ y $ B \subset C $, entonces $ A \subset C $
 \end{theorem}
 
-\subsection*{Cardinalidad}
+\subsection{Cardinalidad}
 
 Sea $A$ un conjunto, la cardinalidad de $A$ es el número de elementos diferentes
 del conjunto $A$ y se representa por $|A|$.
 
-\subsection*{Conjunto potencia}
+\subsection{Conjunto potencia}
 Sea $A$ un conjunto finito, llamaremos conjunto potencia al conjunto formado por
 todos los subconjuntos de $A$. El conjunto potencia se denota como $P(A)$ o bien
 $2^A$.
 
-\subsection*{Operaciones entre conjuntos}
+\subsection{Operaciones entre conjuntos}
 
 % Definition of circles
 \def\firstcircle{(0,0) circle (1.5cm)}
 \def\secondcircle{(0:2cm) circle (1.5cm)}
 \def\rectangle{(-2,-2) rectangle (4,2)}
 
-\colorlet{circle edge}{blue!50}
-\colorlet{circle area}{blue!20}
+\colorlet{circle edge}{gray!50}
+\colorlet{circle area}{gray!20}
 
 \tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
     outline/.style={draw=circle edge, thick}}
 
 \setlength{\parskip}{5mm}
 
-\subsubsection*{Unión}
+\subsubsection{Unión}
 
 La unión de dos conjuntos $A$ y $B$, denotada por $ A \cup B $ (que se lee “A
 unión B”) es un nuevo conjunto formado por los elementos que pertenecen a $A$ o
@@ -164,12 +179,13 @@ conjuntos.
         \draw[filled] \firstcircle node {$A$}
                       \secondcircle node {$B$};
         \node[anchor=south] at (current bounding box.north) {$A \cup B$};
+        \node at (3.5,1.5){$\mathbb U$};
     \end{tikzpicture}
     \caption{Representación gráfica de la unión de conjuntos $A \cup B$}
     \label{fig:unionConjuntos}
 \end{figure}
 
-\subsubsection*{Intersección}
+\subsubsection{Intersección}
 
 La intersección de dos conjuntos $A$ y $B$, denotada por $A \cap B$ (que se lee
 “ A intersección B”), es un nuevo conjunto formado por los elementos que
@@ -192,12 +208,13 @@ ambos conjuntos.
         \draw[outline] \firstcircle node {$A$};
         \draw[outline] \secondcircle node {$B$};
         \node[anchor=south] at (current bounding box.north) {$A \cap B$};
+        \node at (3.5,1.5){$\mathbb U$};
     \end{tikzpicture}
     \caption{Representación gráfica de la intersección de los conjuntos de $A \cap B$.}
     \label{fig:interseccionConjuntos}
 \end{figure}
 
-\subsubsection*{Complemento}
+\subsubsection{Complemento}
 
 Sea $A \subseteq U$ un conjunto. El complemento de A denotado por $\bar{A}$,
 $A'$, $A^C$ ó $U-A$, se define como el conjunto de todos los elementos que están
@@ -220,13 +237,13 @@ están en el conjunto $A$. Simbólicamente: $ \bar{A}={x | x \notin A}$.
             \fill[white!80] \firstcircle;
             \draw[draw=circle edge,thick] \firstcircle node {$A$};
         \end{scope}
-        \node[anchor=south] at (current bounding box.north) {$\bar{A}$};
+        \node[anchor=south] at (current bounding box.north) {};
     \end{tikzpicture}
     \caption{Representación gráfica del complemento de $\bar{A}$}
     \label{fig:unionConjuntos}
 \end{figure}
 
-\subsubsection*{Diferencia}
+\subsubsection{Diferencia}
 
 Sean $A$ y $B$ dos conjuntos, definimos la diferencia de $A$ y $B$, que se
 denota por $A-B$, como el conjunto de todos los elementos que pertenecen a $A$
@@ -251,6 +268,7 @@ pero no pertenecen a $B$. Simbólicamente:
             \draw[outline] \firstcircle
                            \secondcircle node {$B$};
             \node[anchor=south] at (current bounding box.north) {$A - B$};
+            \node at (3.5,1.5){$\mathbb U$};
         \end{tikzpicture}
     \end{subfigure}
 \hfill
@@ -267,13 +285,14 @@ pero no pertenecen a $B$. Simbólicamente:
             \draw[outline] \firstcircle node {$A$}
                            \secondcircle;
             \node[anchor=south] at (current bounding box.north) {$B - A$};
+            \node at (3.5,1.5){$\mathbb U$};
         \end{tikzpicture}
 \end{subfigure}
 \caption{Representación gráfica de la diferencia de los conjuntos de $A-B$ y de $B-A$.}
 \label{fig:diferenciaConjuntos}
 \end{figure}
 
-\subsubsection*{Diferencia simétrica}
+\subsubsection{Diferencia simétrica}
 La diferencia simétrica de dos conjuntos $A$ y $B$, se denota como $A \triangle
 B$, se define como la unión de $A-B$ y $B-A$. Simbólicamente:
 
@@ -290,12 +309,13 @@ B$, se define como la unión de $A-B$ y $B-A$. Simbólicamente:
         \draw[filled, even odd rule] \firstcircle node {$A$}
                                      \secondcircle node{$B$};
         \node[anchor=south] at (current bounding box.north) {$A \triangle B$};
+        \node at (3.5,1.5){$\mathbb U$};
     \end{tikzpicture}
     \caption{Representación gráfica de la diferencia simétrica de los conjuntos de $A \triangle B$.}
     \label{fig:diferenciaSimetricaConjuntos}
 \end{figure}
 
-\subsection*{Propiedades del álgebra de conjuntos}
+\subsection{Propiedades del álgebra de conjuntos}
 
 \begin{itemize}
 
@@ -342,7 +362,7 @@ B$, se define como la unión de $A-B$ y $B-A$. Simbólicamente:
 \item \textbf{Dominación}
 \begin{equation}
     \begin{array}{ll}
-        A \cap \emptyset & = A \\
+        A \cap \emptyset & = \emptyset \\
         A \cup \mathbb{U} & = A
     \end{array}
 \end{equation}

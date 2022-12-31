@@ -1,7 +1,43 @@
-%\input{custom/specifications}
+\subsection{Congruencia de Zeller}
 
-\subsection*{Congruencia de Zeller}
+La congruencia de Zeller es un algoritmo que permite obtener, a partir de una
+fecha, el día de la semana que le corresponde.
 
-\lstinputlisting[language=Python]{../src/zeller_congruency.py}
+Se atribuye su creación a Julius Christian Johannes Zeller, un sacerdote
+protestante alemán que vivió en el siglo XIX.
 
+Zeller observó que existía una dependencia entre las fechas del calendario
+gregoriano y el día de la semana que les correspondía. A raíz de esa
+observación, obtuvo (se dice que por tanteo), esta fórmula, en apariencia
+mágica, que lleva su nombre.
 
+La fórmula en sí es muy sencilla, y se basa en algunas operaciones de aritmética
+modular (el resto, también llamado módulo, de las divisiones)
+
+Es necesario tener en cuenta que la fórmula presentada a continuación es válida
+sólo para el calendario gregoriano, promulgado por el papa Gregorio XIII en
+1582, pero adoptado en distintas fechas en cada país.
+
+Para el caledario gregoriano la congruencia de Zeller es:
+
+\begin{equation}
+    h = (q + [\frac{13(m+1)}{5}] + K [\frac{K}{4}] + [\frac{J}{4}] - 2J ) \text{ mod } 7
+\end{equation}
+
+Para el calendario juliano es:
+
+\begin{equation}
+    h = (q + [\frac{13(m+1)}{5}] + K [\frac{K}{4}] + 5 - J ) \text{ mod } 7
+\end{equation}
+
+Donde:
+
+\begin{itemize}
+    \item $h$ es el día de la semana.
+    \item $q$ es el día del mes.
+    \item $m$ es el mes.
+    \item $K$ el año del siglo (año mod 100)
+    \item $J$ es el siglo de base cero.
+\end{itemize}
+
+Veáse código en Sec. (\ref{sec:zeller})

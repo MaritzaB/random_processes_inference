@@ -1,0 +1,32 @@
+\section{Axiomas de Peano}\label{sect: Axiomas de Peano}
+Los axiomas de Peano son un sistema de postulados para la aritmética ideados por el matem\'atico Giuseppe Peano en el siglo XIX para definir los n\'umeros naturales.
+
+Estos axiomas fueron publicados en 1889 en un art\'iculo denominado \textit{Aritmetices principia, nova methodo exposita}.
+
+Los cinco axiomas son los siguientes:
+\begin{enumerate}
+	\item $N(1)$: El \textbf{1} es un n\'umero natural.
+	\item $\forall x(N(x)\to N(x'))$:Todo n\'umero natural, tiene un sucesor \textbf{$n^*$}
+	\item $\neg \exists x(N(x)\land 1=x')$: El \textbf{1} no es el sucesor de ning\'un n\'umero natural.
+	\item $\forall x \forall y ((N(x)\land N(y)\land x'=y')\to x=y)$: Si hay dos n\'umeros naturales n y m con el mismo sucesor, entonces n y m son el mismo n\'umero natural.
+	\item $\left(\phi(1)\land \forall x(\phi(x)\to \phi(x'))\right) \to \forall x \phi(x)$: Si el 1 pertenece a un conjunto de n\'umeros naturales, y dado un elemento cualquiera, el sucesor tambi\'en pertenece al conjunto. Entonces, todos los n\'umeros naturales pertencen a ese conjunto.
+\end{enumerate}
+
+Cabe mencionar que el axioma 5 es el principio de la inducci\'on matem\'atica.
+
+Existe un debate para determinar si el $0$ pertenece o no al conjunto de los n\'umeros naturales. Sin embargo, se tomar\'a en cuenta dependiendo de la aplicaci\'on. Es por esa raz\'on que los 5 axiomas existen en la versi\'on donde el $0$ es el n\'umero natural. As\'i, los axiomas 1 al 5, donde se indique el n\'umero 1, se cambia por el 0.
+
+Adem\'as de sus 5 axiomas, Peano define la suma y la multiplicaci\'on:
+\begin{itemize}
+	\item suma
+	\begin{eqnarray*}
+		\forall n(n+1=n')\\
+		\forall n\forall m(n+m'=(n+m)')
+	\end{eqnarray*}
+	\item Multiplicaci\'on
+	\begin{eqnarray*}
+		\forall n(nx1=n)\\
+		\forall n \forall m(nxm'=(nxm)+n)
+	\end{eqnarray*}
+\end{itemize}
+De igual manera, cuando interviene el 0, \'este se colocar\'a en lugar del 1.

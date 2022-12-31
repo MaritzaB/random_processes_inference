@@ -1,0 +1,84 @@
+
+\subsection{Problema del cumpleaños}
+
+Este problema se presenta a menudo como ejemplo en el c\'alculo de
+probabilidades Ec. (\ref{eq:probabilidad}). Este problema puede ser enunciado de la siguiente
+forma. 
+
+\textit{En un grupo de $n$ personas escogidas al azar, ¿cuál es la probabilidad de que
+al menos dos de ellas tengan el mismo d\'ia de cumpleaños?}
+
+Se asume que los nacimientos se distribuyen de manera uniforme a lo largo de
+todo el año, y, por simplicidad, también asumimos que no existe el 29 de
+febrero.
+
+Otra forma alternativa de presentar el problema es la siguiente:
+
+\textit{¿Cuál es el número mínimo de personas necesario en un grupo para que sea más
+probable encontrar al menos dos con el mismo d\'ia de cumpleaños?}
+
+Resolveremos la primera versión del problema, ya que con esto podremos hallar
+también la respuesta a la segunda versión.
+
+Soluci\'on.
+
+Comenzaremos por resolver el problema para un tamaño muestral $n = 1, 2$ y $3$,
+y posteriormente extenderemos el razonamiento al caso general. Para $n = 1$ , es
+decir, cuando s\'olo hay una persona, la probabilidad $P_1$ de coincidir con otra
+persona es cero, dado que no existe otra persona. Para $n = 2$, esto es, hay dos
+personas, la probabilidad $P_2$ de que coincidan en su d\'ia de cumpleaños de
+acuerdo con la Ec. (\ref{eq:probabilidad}) es:
+
+
+\begin{equation}
+P_2 = \frac{365}{365^2} = \frac{1}{365}
+\end{equation}
+
+ya que hay 365 maneras diferentes de que su día de cumpleaños coincida
+(una por cada día del año), y $365 \cdot 365 = 3652$ maneras diferentes de que
+se produzcan sus cumpleaños.
+
+Para $n = 3$ personas, podemos calcular la probabilidad $p_3$ de que al menos
+dos de ellas coincidan en su día de cumpleaños, a partir de la Ec.
+(\ref{eq:complementRule}), como 1 menos la probabilidad del suceso contrario, es
+decir, menos la probabilidad de que todas ellas cumplan años en d\'ias
+diferentes.
+
+De esta forma, tenemos:
+
+\begin{equation}
+p_3 = 1- \frac{364}{365} = 1 - \frac {364 \cdot 363}{365^2}
+\end{equation}
+
+%ya que la segunda persona puede cumplir años en cualquiera de los 365 días del
+%año, pero s\'olo en 364 de ellos \'este no coincidirá con el cumpleaños de la
+%primera persona; de igual forma, el cumpleaños de la tercera persona no
+%coincidir\'a con el cumpleaños de las otras dos en 363 de los 365 casos
+%posibles. Aplicando el mismo razonamiento para cualquier $n$ entre 1 y 365,
+%obtenemos:
+%
+%\begin{equation}
+%	\begin{array}{l}
+%		P_n = 1 - \frac{364}{365} \cdot \frac{364}{365} \cdot \frac{364}{365} ...
+%	
+%			= 1 - \frac{365 \cdot - n + 1}{365} \\
+%	
+%			= \frac {364 \cdot 362 \cdot 363 \cdot 362 ... ( 365-n+1)}
+%				{365^{n-1}} \\
+%	
+%			= \frac {364 \cdot 362 \cdot 363 \cdot 362 ... (365-n+1)}
+%				{365^{n}} \\
+%	
+%			= \frac{365!} {365^n \cdot (365-n)!}
+%
+%	\end{array}
+%\end{equation}
+%
+%Con lo que damos soluci\'on al problema 1. Obviamente, $P_n$ es 1 para todo $n$
+%mayor que 365 (en una reuni\'on de más de 365 personas, necesariamente ha de
+%haber al menos dos personas con el mismo d\'ia de cumpleaños). En el cuadro 1
+%mostramos los valores que toma la probabilidad $p_n$ para algunos valores de n,
+%seg\'un la expresi\'on (\ref{e6}) que acabamos de calcular.
+%
+
+
