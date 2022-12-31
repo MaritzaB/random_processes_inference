@@ -7,7 +7,9 @@ utilizan en momentos diferentes. De hecho, los planos 1, 2 y 3 se utilizan para
 30\%, 20\% y 50\% de los productos respectivamente. La tasa de defectos difiere
 en los 3 procedimientos de la siguiente manera,\
 
+\begin{center}
 $P(D|P_1)=0.01 P(D|P_2)=0.03 P(D|P_3)=0.02 $ \
+\end{center}
 
 En donde $P(D|P_j)$ es la probabilidad de que un producto esté defectuoso, dado
 el plano j.\
@@ -20,18 +22,30 @@ el responsable?\\
 
 A partir del planteamiento del problema \
 
+\begin{center}
 $P(P_1)=0.30, P(P_2)=0.20 y P(P_3)=0.50$ debemos calcular $P(P_j|D)$ para $j =
 1, 2, 3.$
+\end{center}
 
 La regla de Bayes muestra que\
 
-$P(P_1|D)=\frac{(P(P_1)P(D|P1)}{P(P_1)P(P_1|D)+P(P_2)P(D|P_2)+P(P_3)P(D|P_3)} =
-\frac{(0.30)(0.01)}{(0.3)(0.01)+(0.20)(0.03)+(0.50)(0.02)}=\frac{0.003}{0.019}=0.158$\ 
+\begin{center}
+$P(P_1|D)=\frac{(P(P_1)P(D|P1))}{P(P_1)P(P_1|D)+P(P_2)P(D|P_2)+P(P_3)P(D|P_3)} = $
+\end{center}
+
+\begin{center}
+$\frac{(0.30)(0.01)}{(0.3)(0.01)+(0.20)(0.03)+(0.50)(0.02)}=\frac{0.003}{0.019}=0.158$\ 
+\end{center}
 
 De igual manera,\
 
+\begin{center}
 $P(P_2|D) = \frac{(0.03)(0.20)}{0.019} = 0.316$ y
-$P(P_3|D)=\frac{(0.02)(0.50)}{0.019}=0.526.$\
+\end{center}
+
+\begin{center}
+$P(P_3|D)=\frac{(0.02)(0.50)}{0.019}=0.526.$
+\end{center}
 
 La probabilidad condicional de un defecto, dado el plano 3, es la mayor de las
 tres; por consiguiente, un defecto en un producto elegido al azar tiene más
@@ -94,7 +108,10 @@ $|E_1|=50, |E_2|=20,|E_1 \cap E_2|=10,$
 
 entonces
 
-$p(E_1 \cup E_2)=p(E_1)+p(E_2)-p(E_1 \cap E_2) = \frac{50}{100} + \frac{20}{100} - \frac{10}{100} = \frac{3}{5}$
+\begin{center}
+$p(E_1 \cup E_2)=p(E_1)+p(E_2)-p(E_1 \cap E_2) = \frac{50}{100} + \frac{20}{100}
+- \frac{10}{100} = \frac{3}{5}$
+\end{center}
 
 
 \textbf{Problema}
@@ -116,7 +133,9 @@ tener exactamente k sea elk etiquetado, necesitamos elegir $k$ de los $n$ alces
 etiquetados, y luego $m-k$ de los $N-n$ elk no etiquetados. Entonces la
 probabilidad es
 
+\begin{center}
 $\frac{\binom{n}{k}*\binom{N-n}{m-k}}{\binom{N}{m}}$
+\end{center}
 
 para $k$ tal que $0 \leq k \leq n$ y $0 \leq m-k \leq N-n$, y la probabilidad es
 0 para todos los demas valores de $k$ (por ejemplo, si $k > n$ la
@@ -162,19 +181,25 @@ puede pasar de dos maneras:
     \item $L$: $A$ y $B$, ambos están mintiendo.
 \end{itemize}
 
+\begin{center}
 $P(E)=P(T)+P(L)=\frac{1}{3}*\frac{1}{3}+\frac{2}{3}*\frac{2}{3}-\frac{5}{9}$
+\end{center}
 
 Dado que observamos $E$, estamos interesados en encontrar la probabilidad de que
 el proceso subyacente sea, de hecho, $T$, es decir, $P(T|E)$. De la fórmula de las
 probabilidades condicionales, tenemos que:
 
+\begin{center}
 $P(T|E)=\frac{P(T \cap E)}{P(E)}$  y $P(T \cap E) = P(T)$
+\end{center}
 
 ya que $T \subset E$.
 
 En conclusión:
 
+\begin{center}
 $P(T|E) = \frac{P(T)}{P(E)} = \frac{1/9}{5/9} = \frac{1}{5}$
+\end{center}
 
 \textbf{La ameba sobreviviente}
 

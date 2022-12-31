@@ -22,7 +22,7 @@ dado $B$. Deseamos cuantificar la probabilidad de que la salida pertenece a
 algún otro evento $A$. Así, podemos construir una nueva probabilidad que tome en
 cuenta el conocimiento disponible: una ley de probabilidad para cuaquier evento
 $A$. Especificamente, la probabilidad condicional de $A$ dado $B$, denotado por
-$P(A|B)$.
+$P(A|B)$ \cite{vsirca2016probability}.
 
 Para calcular $P(A|B)$ consideramos aquellos resultados del evento $A$ que están en
 el evento $B$. Esto nos da los resultados en el evento $A \cap B$ y nos lleva al
@@ -132,7 +132,8 @@ exacta de la condición implicada en el evento A.
 \subsection{Propiedades de las leyes de la probabilidad}
 
 Las leyes de la probabilidad tienen propiedades que pueden deducirse de los
-axiomas. Algunas de ellas, son las que se muestran a continuación.
+axiomas \cite{walpole2012probabilidad}. Algunas de ellas, son las que se muestran
+a continuación.
 
 \begin{tcolorbox}[colback=gray!5!white,colframe=gray!60!black,title=Resumen: Propiedades de las leyes de la probabilidad]
     Sean $A$, $B$ y $C$ eventos:
@@ -186,8 +187,8 @@ esto resulta en:
 
 que comunmente llamamos \textit{regla de la multiplicación}.
 
-Para verificar algunas de las propiedades de las leyes de la probabilida,
-podemos usar diagramas de Venn, Fig. (poner diagramas de Venn). Si $A \subset
+Para verificar algunas de las propiedades de las leyes de la probabilidad,
+podemos usar diagramas de Venn, Fig. (\ref{fig:unionIntersection}). Si $A \subset
 B$, entonces $B$ es la unión de eventos los eventos disjuntos $A$ y $A_c \cap
 B$, por lo que por el axioma de adición, tenemos:
 
@@ -247,7 +248,7 @@ con lo que podemos verificar la Ec. \eqref{eq:propProb3}
 \subsection{Teorema de la probabilidad total}
 \begin{theorem}{Teorema de la probabilidad total}{TotalProbabilityTheorem}
 Sean $A_1, ..., A_n$ eventos disjuntos que forman una partición de un espacio
-muestral, Fig(poner figura!!), y asumiendo $P(A_i)>0$, para todo $i$. Entonces,
+muestral, y asumiendo $P(A_i)>0$, para todo $i$. Entonces,
 para cualquier evento $B$, tenemos:
 
 \begin{center}
