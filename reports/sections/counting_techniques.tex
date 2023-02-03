@@ -1,0 +1,142 @@
+
+\section{T\'ecnicas de conteo}
+
+Muchos problemas de combinatoria implican conteo. Ya que el número de objetos a
+contar podría ser muy grande, es importante ser capaz de conta el conjunto de
+objetos sin tener que enlistarlos a todos.
+
+\subsection{Principio de multiplicaci\'on}
+
+El principio de multiplicación lo utilizamos para contar el número de formas en
+las que pueden ocurrir dos eventos simultáneos. El principio de la multiplicación
+establece que si un evento puede ocurrir de $n_1$ formas diferentes, y para cada
+una de estas ppuede ocurrir un segundo evento simultáneo en $n_2$ formas
+diferentes, entonces los dos eventos pueden ocurrir de $n_1 * n_2$ formas
+diferentes.
+
+Así, para una serie de $k$ eventos, tenemos:
+\begin{theorem}{Principio de multiplicación}{multiplicación}
+	\begin{equation}
+		n_1*n_2*n_3*...*n_k
+		\label{eq:reglaMultiplicacion}
+	\end{equation}
+\end{theorem}
+
+
+\subsection{Diagrama de Árbol}
+
+Los diagramas de árbol muestran todos los resultados posibles de un evento. Cada
+rama en un diagrama de árbol representa un posible resultado.
+Los diagramas de \'arbol pueden usarse para encontrar el n\'umero de resultados
+posibles y calcular la probabilidad de los posibles resultados.
+
+%Por ejemplo,
+
+\begin{figure}[h]
+	\begin{center}		
+	\begin{tikzpicture}[level distance=1cm, level 1/.style={sibling distance=3cm},
+		level 2/.style={sibling distance=2cm}, every node/.style={circle, draw,
+		align=center} ]
+				\centering
+				\node[circle,draw]{$P_n$}
+		child{node{1} child{node{2} child{node{3}} } child{node{3} child{node{2}}} }
+		child{node{2} child{node{1} child{node{3}} } child{node{3} child{node{1}}} }
+		child{node{3} child{node{1} child{node{2}} } child{node{2} child{node{1}}} };
+			\end{tikzpicture}
+		\end{center}
+		\caption{Permutaciones para 3 elementos}
+		\label{permutaciones_tree}
+\end{figure}
+
+
+\subsection{Principio de adición}
+
+Supongamos que existen $k$ conjuntos de elementos con $n_1$ elementos en el
+primer conjunto, $n_2$ elementos en el segundo conjuntos, etc. Si todos los
+elementos son distintos, es decir, si si todos los pares dek conjunto $k$ son
+disjuntos, entonces el número de elementos de la unión de los conjuntos es $n_1
++ n_2 + ... + n_k $.
+
+Usando la nomenclatura de conjuntos, el principio de adición está definido de la
+siguiente manera:
+
+\begin{theorem}{Principio de adición}{adicion}
+Sean $A$ y $B$ dos eventos disjuntos, entonces la probabilidad de la unión de
+los conjuntos está dada por:
+
+\begin{equation}
+	P(A \cup B) = P(A) + P(B)
+\end{equation}
+
+De manera general, si el espacio de muestreo tiene un número infinito de
+elementos y $A_1, A_2, ... $ son una secuencia de eventos disjuntos, entonces la
+probabilidad de la unión es:
+
+\begin{equation}
+	P(A_1 \cup A_2 \cup ...) = P(A_1) + P(A_2) + ...
+\end{equation}
+
+\end{theorem}
+
+\input{sections/palomar_principle}
+
+\input{sections/permutaciones}
+
+\subsection{Combinación}
+
+Existe una estrecha relaci\'on entre el n\'umero de combinaciones y el
+coeficiente binomial ya que el n\'umero de combinaciones es igual al coeficiente
+binomial $\binom{n}{k}$.
+
+Para contar el n\'umero de combinaciones, tenga en cuenta que al seleccionar una
+$k$-permutación es lo mismo que seleccionar primero una combinación de $k$ elementos
+y luego ordenarlos. Ya que hay $k!$ formas de ordenar los $k$ elementos
+seleccionados, vemos que el número de $k$-permutaciones es igual al n\'umero de
+combinaciones por $k!$. Por lo tanto, la n\'umero de combinaciones posibles,
+viene dado por:
+
+\begin{equation}
+	\binom{n}{k} = \frac{n!}{k!(n-k)!}
+\end{equation}
+
+Ejemplo: El n\'umero de combinaciones de dos de las cuatro letras A, B, C, y D
+se encuentra haciendo que $n = 4$ y $ k = 2$, está dado por:
+
+\begin{center}
+	$\binom{4}{2} = \frac{4!}{2!(4-2)!}$
+\end{center}
+
+
+\input{sections/monty_hall_problem}
+
+\input{sections/birthday_problem}
+
+\subsection{Resumen de técnicas de conteo}
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=gray!60!black,title=Resumen: Técnicas de conteo]
+
+	\begin{itemize}
+		\item \textbf{Permutaciones} de $n$ objetos:
+		\begin{center}
+		$n!$
+		\end{center}
+
+		\item \textbf{\textit{k}-Permutaciones} de $n$ objetos:
+		\begin{center}
+		$\frac{n!}{(n-k)!}$
+		\end{center}
+
+		\item \textbf{Combinaciones} de $k$ de $n$ objetos:
+		\begin{center}
+		$\binom{n}{k} = \frac{n!}{k!(n-k)!}$
+		\end{center}
+
+		\item \textbf{Particiones} de $n$ objetos en $r$ grupos, con el \textit{i}-ésimo
+		grupo con $n_i$ objetos:
+		\begin{center}
+			$\binom{n}{n_1,n_2,...,n_r} = \frac{n!}{n_1!,n_2!,...,n_r!}$
+		\end{center}
+
+	\end{itemize}
+	
+\end{tcolorbox}

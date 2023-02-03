@@ -1,0 +1,51 @@
+\section{Ley de los grandes números}
+
+Esta ley establece que, bajo ciertas condiciones, el promedio de variables
+aleatorias converge a una constante cuando el número de
+sumandos crece a infinito. Demostraremos dos versiones de esta afirmación, las
+cuales se distinguen por el tipo de convergencia de la que se trate. La ley
+débil establece la convergencia en probabilidad y la ley fuerte dice que la
+convergencia es casi segura. La ley fuerte implica entonces la ley débil.\\
+
+
+\begin{tcolorbox}[colback=gray!5!white,colframe=gray!60!black,title=Teorema de Bernoulli: Ley débil de los grandes números]
+Sean $X_1 , X_2 , ...$ independientes e idénticamente distribuidas con media $\mu$.
+Entonces:
+
+\begin{equation}
+    \frac{1}{n} \sum_{i=1}^{n} X_i \rightarrow^p \mu
+    \label{eq:big_number_law}
+\end{equation}
+
+\end{tcolorbox}
+
+
+Sea $S_n = (X_1 + · · · + X_n )/n$, y sea $\phi (t)$ la función característica
+de cualquier elemento $X$ de la sucesión. Como $X$ tiene esperanza
+finita $\mu$ y por la expansión \eqref{eq:big_number_law},
+
+\begin{equation}
+    \phi (t) = 1 + it(\mu + o(1)) \text{, cuando } t \rightarrow 0
+\end{equation}
+
+Por independencia la función característica de $S_n$ es entonces
+
+\begin{equation}
+    \phi S_n(t) = \phi^n (t/n)= (1 + i(t/n)(\mu + o(1)))^n \text{, cuando } t \rightarrow 0
+\end{equation}
+
+Haciendo $n \rightarrow \infty$ se obtiene $\phi_{S_n} (t) \rightarrow e^{i \mu
+t}$, en donde $e^{i \mu t}$ es la función característica de la variable
+aleatoria constante $\mu$. Esto implica que $S_n \rightarrow^d \mu$. El
+resultado se obtiene al recordar que la convergencia en distribución a una
+constante es equivalente a la convergencia en probabilidad.
+
+Este mismo resultado puede demostrarse fácilmente a partir de la desigualdad de
+Chebyshev bajo la hipótesis adicional de existencia de la varianza.
+
+Sea nuevamente $S_n = (X_1 + ... + X_n )/n$. Entonces $E(S_n ) = \mu$ y
+$\text{Var}(S_n) = \sigma^2/n$, suponiendo $\text{Var}(X) = \sigma^2 < \infty$.
+La desigualdad de Chebyshev aplicada a la variable $S_n$ asegura que para
+cualquier $\epsilon > 0$ se cumple $P (|S_n - \mu| \geq \epsilon) \leq \sigma^2
+/n \epsilon^2$. Basta ahora tomar el límite cuando $n$ tiende a infinito para
+obtener el resultado.

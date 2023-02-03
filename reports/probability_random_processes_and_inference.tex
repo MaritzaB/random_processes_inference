@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{tikz}
+\usepackage{amsmath}    %Caracteres especiales de matematicas
+\usepackage[hidelinks]{hyperref}    % Vinculos [que no estén subrayados]
+\usepackage{listings}   %Introducir codigo
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage[makeroom]{cancel}
+\usepackage{pdflscape}  %Voltear la página
+\usepackage{tcolorbox}  %Cuadros de teoremas
+\usepackage{fancyhdr, lastpage}
+\usepgflibrary{fpu}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{tikz-3dplot}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{external}
+\tcbuselibrary{listings,theorems}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usetikzlibrary{automata, arrows.meta, positioning}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              Paqueterías para portada                %
+
+
+%\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters
+%\usepackage{fouriernc} % Use the New Century Schoolbook font
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagestyle{fancy}   %Encabezado en las páginas
+\chead{Probabilidad, procesos aleatorios e inferencia}  %Encabezado central
+\lhead{}    %Encabezado izquiero vacio
+\rhead{}    %Encabezado derecho vacio
+%% Cambiar letra a tamaño 12
+
+\usepackage[Glenn]{fncychap}
+% Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+
+\input{custom/specifications}
+\input{custom/tikz-3dplot_documentation_figures}
+
+\begin{document}
+
+\input{titlepage}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       Caja del teorema                            %
+%                                                                   %
+\newtcbtheorem{theorem}{Teorema}             %
+{colback=gray!5,colframe=gray!35!black,fonttitle=\bfseries}{th}   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\pagebreak
+\input{sections/s05_resumen}
+
+\input{sections/milenium_problems}
+
+\input{sections/s02_experiments}
+
+\input{sections/conjuntos}
+
+\input{sections/s03_binomio_de_newton}
+
+\input{sections/s08_pascal_triangle}
+
+\input{sections/counting_techniques}
+
+\input{sections/aproximacion_stirling}
+
+\input{counting_exercises}
+
+\input{exam}
+
+\input{sections/s01_probabilidad}
+
+\input{sections/conditional_probability}
+
+\input{sections/s04_levi_civita}
+
+\input{sections/s07_zeller}
+
+\input{sections/rotation_matrix}
+
+\input{sections/matrices_de_rotacion}
+
+\input{sections/euler_angles}
+
+\input{sections/godel_theorem}
+
+\input{sections/peano_axioms}
+
+\input{sections/benford_law}
+
+\input{sections/challenger}
+
+\input{sections/divisibility_criteria}
+
+\input{sections/variable_and_parameter}
+
+\input{sections/boxplots}
+
+\input{sections/distribution_function}
+
+\input{sections/distributions/momentum}
+
+\input{sections/markov_chains}
+
+\input{sections/big_numbers_law}
+
+\input{sections/distributions/bernoulli_distribution}
+
+\input{sections/distributions/binomial_distribution}
+
+\input{sections/distributions/poisson_distribution}
+
+\input{sections/distributions/exponential_distribution}
+
+\pagebreak
+\bibliography{../references/references.bib} 
+\bibliographystyle{unsrt}
+
+\pagebreak
+\input{sections/appendix.tex}
+
+\end{document}
+
+%poner alef 1 y alef2
+% Axiomas de peano
